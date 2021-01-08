@@ -7,7 +7,7 @@
 - [Code Organization](#code-organization)
 - [Setting Up the project locally](#setting-up-the-project-locally)
 - [Submitting a Pull Request](#submitting-a-pull-request)
-- [Read Before you collaborate](#read-before-you-contribute.)
+- [Read Before you collaborate](#read-before-you-contribute)
 
 ## Code of Conduct
 
@@ -136,7 +136,7 @@ React and Vue markup Code.
 
 Thing to no worry about.
 
-The site, as mentioned before is made with only Tailwind and Alpinejs.
+The site, as mentioned before is made with only Tailwind and Alpinejs. ( icons from tablericons, https://tablericons.com/ )
 
 There is no need to implement react or other proggraming languages. WickedBlocks is meant to be a project to come and work, is not made to show off our skills. With this I mean that there is no need to implement animations, innecesary code and so on... is a simple but helpful project.
 
