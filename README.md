@@ -1,6 +1,9 @@
+
 ![Wicked Blocks](https://github.com/michael-andreuzza/wickedblocks/blob/master/wbGithub.png)
 
 # https://blocks.wickedtemplates.com/
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3b3b2cb6-ab6b-4c79-ae12-74a51ee2a241/deploy-status)](https://app.netlify.com/sites/wt006/deploys)
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/michael-andreuzza/wickedblocks/blob/master/LICENSE)
 
