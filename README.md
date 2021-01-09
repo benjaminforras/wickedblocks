@@ -2,6 +2,9 @@
 
 # https://blocks.wickedtemplates.com/
 
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/michael-andreuzza/wickedblocks/blob/master/LICENSE)
+
+
 
 ## WICKEDBLOCKS.
 WICKEDBLOCKS are a growing collection of more than 120 layout blocks and components built with Tailwind CSS V2 ready to copy paste on your Tailwind project.
