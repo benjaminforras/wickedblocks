@@ -10,17 +10,17 @@
 
 
 ## WICKEDBLOCKS.
-WICKEDBLOCKS are a growing collection of more than 120 layout blocks and components built with Tailwind CSS V2 ready to copy paste on your Tailwind project.
+WICKEDBLOCKS is a growing collection of more than 120 layout blocks and components built with Tailwind CSS V2. All are ready to copy paste to your Tailwind project.
 
 
 ## Why WICKEDBLOCKS?
-Because we ain't got time for that...so let's be productive and deploy our work even quicker.
+Because we ain't got time for that! Let's be productive and deploy our work even quicker.
 
-## Buildt status.
+## Build status.
 Superb, all working.
 
 ## Code Style.
- I have used Headwind for VS Code "as is", no configuration, nothing, nada, so the way to tidy up the classes is the original Headwing way to do it, but I have probably messed up somewhere, because Headwind was quicker than me to move the class 1 or 2 spaces to left or right.
+I have used Headwind for VS Code "as is", with no configuration, nothing, nada! The way to tidy up the classes is the original Headwing way of doing it, but I have probably messed up somewhere, because Headwind was quicker than me to move the class 1 or 2 spaces to left or right.
 
 For example, this is a paragraph:
 
@@ -33,7 +33,7 @@ For example, this is a paragraph:
 ```
 
 ## Tech stack.
-The blocks are written with only HTML and style with Tailwind CSS V2 as it says on the site...for navigation and other I used Alpine.js and because that's the point of them.
+The blocks are only written with  HTML and styled with Tailwind CSS V2 as it says on the site. For navigation, and some other blocks, I used Alpine.js because that's the point of it.
 
 
 ## How to use WickedBlocks.
@@ -43,30 +43,30 @@ The blocks are written with only HTML and style with Tailwind CSS V2 as it says 
 - Click on the copy icon.
 - Paste into your project.
 
-*The sections are having the same padding, you can go ahead to change it to yours. I personally would recommend to use px-5 lg:px-20 or lg:px-24 on all your sections. so you can have a nice white space and consistence.
+*Sections have the same padding, you can go ahead to change it to yours. I personally would recommend to use px-5 lg:px-20 or lg:px-24 on all your sections. so you can have a nice white space and consistence.
 
-*The sections when you copy them are commented, remember to remove the arrows wrapping the markup.
+*Remember that sections contain comments when you copy them, be sure to remove the arrows wrapping the markup.
 
-Example of website layout using only the blocks on codepen.
+Example of a website layout using only these blocks can be found on this codepen.
 - https://codepen.io/MichaelAndreuzza/pen/wvzpByO
 
 
 ## Features.
 Right now, what you can do is:
 
-- 114 blocks.
-- See the code.
-- Copy the code to clipboard.
+- View all 114 blocks.
+- See the code for each and every one of them.
+- Copy the code and use in your projects.
 
-Too many, right? Comming more soon.
+Too many, right? No way! More coming soon.
 
 ## Upcoming Features.
- - Responsive.
+ - Responsive blocks.
  - React code version.
  - Vue code version.
- - Open in codepen.
+ - Preview in codepen.
  - Open in Tailwind Play ( If Adam opens the API )
- - Donwload code.
+ - Download the code.
 
 ## Clone the source locally.
 ```
@@ -75,7 +75,7 @@ $ cd wickedblocks
 ```
 
 
-## Install depenencies.
+## Install dependencies.
 
 ```
 $ npm install
@@ -83,7 +83,7 @@ $ npm start
 
 ```
 
-## How to open live?
+## How to view live?
 Navigate to the HTML file that you want see and it open it with the live browser, or simply open any and navigate through the live project.
 
 
