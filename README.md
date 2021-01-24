@@ -37,8 +37,8 @@ The blocks are only written with  HTML and styled with Tailwind CSS V2 as it say
 
 
 ## How to use WickedBlocks.
-- Navigato to https://blocks.wickedtemplates.com/
-- Choose the block/section that you neadd for your project.
+- Navigate to https://blocks.wickedtemplates.com/
+- Choose the block/section that you need for your project.
 - Visualize the markup, HTML by selecting the tab "code".
 - Click on the copy icon.
 - Paste into your project.
@@ -92,5 +92,5 @@ Navigate to the HTML file that you want see and it open it with the live browser
 Read how to [Contributing](https://github.com/michael-andreuzza/wickedblocks/blob/master/contributing.md).
 
 ## License
-Released under the [MIT License](https://github.com/michael-andreuzza/wickedblocks/blob/master/LICENSE)Copyright 2021 Michael Andreuzza 
-Twitter: @Mike_Andreuzza
+Released under the [MIT License](https://github.com/michael-andreuzza/wickedblocks/blob/master/LICENSE) Copyright 2021 Michael Andreuzza 
+Twitter: [@Mike_Andreuzza](https://twitter.com/Mike_Andreuzza)
