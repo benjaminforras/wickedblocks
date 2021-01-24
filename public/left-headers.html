@@ -16,6 +16,7 @@
   </head>
 
   <body class="antialiased bg-blue-1300">
+
     <!----- Snackbar -->
     <div x-data="noticesHandler()" class="fixed inset-0 flex flex-col-reverse items-end justify-start w-screen h-screen"
       @notice.window="add($event.detail)" style="pointer-events:none">
