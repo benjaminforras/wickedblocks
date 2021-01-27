@@ -26,7 +26,7 @@
                     x-transition:enter-end="transform opacity-100" x-transition:leave="transition ease-out duration-500"
                     x-transition:leave-start="transform translate-x-0 opacity-100"
                     x-transition:leave-end="transform translate-x-full opacity-0" @click="remove(notice.id)"
-                    class="z-50 flex items-center justify-center w-full h-16 mb-4 text-lg font-semibold tracking-tighter text-white cursor-pointer lg:mr-6 dark:text-cyan-900 text-whiteshadow-xl lg:w-1/4 rounded-xl"
+                    class="z-50 flex items-center justify-center w-full h-16 mb-4 text-lg font-semibold tracking-tighter text-white shadow-xl cursor-pointer lg:mr-6 lg:w-1/4 rounded-xl"
                     :class="{
             				'bg-blue-800 dark:bg-lightBlue-400  ': notice.type === 'success',
             			 }" style="pointer-events:all" x-text="notice.text">
@@ -59,7 +59,7 @@
                     <button x-data="{usedKeyboard: false}" @keydown.window.tab="usedKeyboard = true"
                         @click="$dispatch('open-menu', { open: true })" :class="{'focus:outline-none': !usedKeyboard}"
                         class="items-center px-8 py-3 font-semibold text-white transition duration-500 ease-in-out transform bg-blueGray-700 rounded-xl hover:bg-teal-1000 md:ml-4 md:w-auto font-lg focus:outline-none hover:text-blue-1400">
-                        Quick Acces to Blockss
+                        Quick Acces to Blocks
                     </button>
                 </nav>
             </div>
@@ -469,8 +469,7 @@
                                     <span
                                         class="font-semibold text-white transition duration-500 ease-in-out transform hover:text-yellow-1000">WICKEDTEMPLATES</span>
                                     <br>
-                                    "Stunning landing page templates created with Tailwind CSS v2 for developers by
-                                    Mike."
+                                    "Free &amp; premium Well designed landing pages to integrate with your next project."
                                 </p>
                                 <a class="inline-flex items-center mt-3 transition duration-500 ease-in-out transform text-teal-1000 hover:text-yellow-1000"
                                     href="http://wickedtemplates.com/" target="_blank">

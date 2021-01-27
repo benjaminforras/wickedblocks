@@ -23,14 +23,7 @@
 
     <body class="antialiased bg-blue-1300">
 
-        <a href="http://wickedtemplates.com/?ref=WickedBlocksWidget" target="_blank"
-            class="fixed bottom-0 right-0 z-10 m-2 rounded-full">
 
-            <div class="flex items-center justify-start hidden font-medium text-gray-900 w-52 lg:block title-font">
-                <img class="object-cover object-center rounded-full bg-blue-1300" alt="badge"
-                    src="./WickedTemplates.svg">
-            </div>
-        </a>
         <!--- Opacitiy to nav style="backdrop-filter: saturate(180%) blur(5px) !important; background-color:  rgba(0, 0, 0, 0.30) !important;"-->
         <div class="z-50 w-full text-gray-500 border-b border-blueGray-900 bg-blue-1300 lg:px-20">
             <div x-data="{ open: false }"
@@ -95,7 +88,7 @@
             <div x-show.transition.opacity.duration.500="open" @click="open = false"
                 class="fixed inset-0 bg-opacity-25 bg-blue-1400">
             </div>
-            <div class="fixed right-0 z-10 w-full h-screen max-w-xs overflow-y-scroll transition duration-300 transform border-l shadow-xl top-10 bg-blue-1300 border-blueGray-500 text-lightBlue-500"
+            <div class="fixed right-0 z-10 w-full h-screen max-w-xs overflow-y-scroll transition duration-500 ease-in-out transform border-l shadow-xl top-10 bg-blue-1300 border-blueGray-500 text-lightBlue-500"
                 :class="{'translate-x-full': !open}">
                 <button @click="open = false" x-ref="closeButton" :class="{'focus:outline-none': !usedKeyboard}"
                     class="absolute top-0 right-0 p-2 mt-16 mr-6 transition duration-500 ease-in-out transform border-2 border-yellow-1000 hover:bg-yellow-1000 hover:text-blue-1400 rounded-xl">
@@ -243,7 +236,19 @@
         <!----end sidebar -->
         <!----Hero  -->
         <section class="bg-blue-1300 body-font">
-            <div class="container justify-center px-5 py-8 pt-8 mx-auto lg:px-24">
+            <div class="container justify-center px-5 py-8 pt-4 mx-auto lg:px-24">
+                <div
+                    class="flex inline-flex flex-wrap items-center w-full px-4 py-2 mb-4 bg-opacity-25 border-2 bg-teal-1000 bg-opacity-20 border-teal-1000 rounded-2xl">
+                    <p class="my-2 font-semibold text-white">Wickedblocks is one of the products of the week on producthunt, come and support!
+
+                    </p>
+                    <a class="lg:ml-auto" href="https://www.producthunt.com/posts/wickedblocks?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-wickedblocks"
+                        target="_blank"><img
+                            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=281332&theme=light"
+                            alt="WickedBlocks - Tailwind V2 blocks ready to copy paste | Product Hunt" style="width: 250px; height: 54px;"
+                            width="250" height="54" /></a>
+
+                </div>
                 <div class="flex flex-col w-full mb-2 ">
                     <h2 class="w-full mx-auto mb-6 text-xs font-semibold tracking-widest text-white">COZ WE AIN'T
                         GOT TIME FOR THAT..
@@ -253,7 +258,7 @@
                         Tailwind CSS Blocks!
                     </h1>
                 </div>
-                <div class="flex flex-col w-full mb-10 lg:text-center ">
+                <div class="flex flex-col w-full mb-4 lg:text-center ">
                     <p class="text-xl font-normal leading-relaxed tracking-tight text-left text-blueGray-400 lg:w-1/2">
                         <span class="font-semibold tracking-tighter uppercase text-teal-1000">WICKEDBLOCKS</span> is an
                         open source
@@ -859,7 +864,8 @@
             </div>
         </footer>
         <footer class="mt-10 border-t border-gray-800 body-font">
-            <div class="container flex flex-col flex-wrap items-center px-5 py-6 mx-auto md:flex-row md:flex-no-wrap lg:px-20 ">
+            <div
+                class="container flex flex-col flex-wrap items-center px-5 py-6 mx-auto md:flex-row md:flex-no-wrap lg:px-20 ">
                 <p class="mb-4 text-sm font-semibold text-center text-white lg:mr-6 lg:mb-0">
                     Released under the MIT License Copyright 2021 © Michael Andreuzza
                 </p>
