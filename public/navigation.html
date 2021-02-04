@@ -26,7 +26,7 @@
                     x-transition:enter-end="transform opacity-100" x-transition:leave="transition ease-out duration-500"
                     x-transition:leave-start="transform translate-x-0 opacity-100"
                     x-transition:leave-end="transform translate-x-full opacity-0" @click="remove(notice.id)"
-                    class="z-50 flex items-center justify-center w-full h-16 mb-4 text-lg font-semibold tracking-tighter text-white cursor-pointer lg:mr-6 dark:text-cyan-900 text-whiteshadow-xl lg:w-1/4 rounded-xl"
+                    class="z-50 flex items-center justify-center w-full h-16 mb-4 text-lg font-semibold tracking-tighter text-white shadow-xl cursor-pointer lg:mx-auto lg:w-1/4 rounded-xl"
                     :class="{
             				'bg-blue-800 dark:bg-lightBlue-400  ': notice.type === 'success',
             			 }" style="pointer-events:all" x-text="notice.text">
@@ -218,7 +218,7 @@
                                             <span class="mx-4 font-medium tracking-tighter">Gallery</span>
                                         </div>
                                     </a>
-                                    
+
                                     <a class="flex items-center justify-start px-3 py-1 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-2 border-transparent text-md text-blueGray-400 rounded-xl hover:text-blueGray-100 hover:border-gray-00 hover:bg-gray-900 border-blueGray-900 "
                                         href="./footers.html">
                                         <div class="p-3 text-white bg-teal-500 rounded-lg">
@@ -1270,6 +1270,32 @@
         <script src="./rainbow-code/src/language/generic.js"></script>
         <script src="./rainbow-code/src/language/html.js"></script>
         <script src="./rainbow-code/src/language/numbers.js"></script>
+        <script>
+            // Snackbar
+            function noticesHandler() {
+                return {
+                    notices: [],
+                    visible: [],
+                    add(notice) {
+                        notice.id = Date.now()
+                        this.notices.push(notice)
+                        this.fire(notice.id)
+                    },
+                    fire(id) {
+                        this.visible.push(this.notices.find(notice => notice.id == id))
+                        const timeShown = 2000 * this.visible.length
+                        setTimeout(() => {
+                            this.remove(id)
+                        }, timeShown)
+                    },
+                    remove(id) {
+                        const notice = this.visible.find(notice => notice.id == id)
+                        const index = this.visible.indexOf(notice)
+                        this.visible.splice(index, 1)
+                    },
+                };
+            }
+        </script>
     </body>
 
 </html>
