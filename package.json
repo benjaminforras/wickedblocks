@@ -19,7 +19,6 @@
         "rainbow-code": "^2.1.7",
         "rimraf": "^3.0.2",
         "serve": "^11.3.2",
-        "tailwindcss-border-gradients": "^2.0.3",
         "tailwindcss-gradients": "^3.0.0"
     },
     "devDependencies": {

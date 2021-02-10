@@ -1,6 +1,6 @@
 <!-- component -->
 <!DOCTYPE html>
-<html lang="en" class="scroll">
+<html lang="en" class="t scroll">
 
     <head>
         <meta charset="UTF-8">
@@ -19,60 +19,66 @@
         <meta name="msapplication-TileColor" content="#010412">
         <meta name="theme-color" content="#010412">
         <!-- Uncomment for cdn tailwind (if you haven't built your tailwind.css yet) <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">-->
+
+
     </head>
 
-    <body class="antialiased bg-blue-1300">
+    <body class="antialiased transition-colors duration-1000 bg-white dark:bg-black">
         <!--- Opacitiy to nav style="backdrop-filter: saturate(180%) blur(5px) !important; background-color:  rgba(0, 0, 0, 0.30) !important;"-->
-        <div class="z-50 w-full text-gray-500 border-b border-blueGray-900 bg-blue-1300 lg:px-20">
+        <div
+            class="fixed z-50 w-full text-gray-500 bg-white border-b dark:bg-black border-blueGray-100 dark:border-gray-600 shadow-dropdown lg:px-20">
             <div x-data="{ open: false }"
-                class="flex flex-col max-w-screen-xl mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-                <div class="flex flex-row items-center justify-between p-4 ">
+                class="flex flex-col max-w-screen-xl py-2 mx-auto md:items-center md:justify-between md:flex-row md:px-6">
+                <div class="flex flex-row items-center justify-between p-2 ">
                     <a href="./index.html" class=" focus:outline-none">
-                        <h1 class="text-2xl font-bold tracking-tighter text-white uppercase lg:text-3xl title-font ">
-                            WickedBlocks
-                            <span class="text-xs">©</span>
-                        </h1>
+                        <div class="inline-flex items-center">
+                            <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
+                            </div>
+                            <h2
+                                class="text-lg font-bold tracking-tighter uppercase transition duration-500 ease-in-out transform text-dark-1 hover:text-lightBlue-500 dark:text-blueGray-400">
+                                Wickedblocks
+                            </h2>
+                        </div>
                     </a>
-                    <button class="rounded-xl md:hidden focus:outline-none " @click="open = !open">
+                    <button class="rounded-lg md:hidden focus:outline-none " @click="open = !open">
                         <svg fill="#ffffff" viewBox="0 0 20 20" class="w-12 h-12">
                             <path x-show="!open" fill-rule="evenodd"
                                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
                                 clip-rule="evenodd"></path>
                             <path x-show="open" fill-rule="evenodd"
                                 d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
+                                clip-rule="evenodd" style="display: none;"></path>
                         </svg>
                     </button>
                 </div>
                 <nav :class="{'flex': open, 'hidden': !open}"
-                    class="flex-col flex-grow hidden px-5 pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-                    <a class="inline-flex items-center p-3 font-semibold text-white transition duration-500 ease-in-out transform lg:ml-auto rounded-xl md:w-auto font-lg focus:outline-none hover:text-yellow-1000 md:ml-4"
-                        href="https://github.com/michael-andreuzza/wickedblocks" target="">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github"
-                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
-                        </svg>
-                    </a>
-                    <a class="inline-flex items-center p-3 font-semibold text-white transition duration-500 ease-in-out transform rounded-xl md:w-auto font-lg focus:outline-none hover:text-blue-1500 md:mr-4"
-                        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fblocks.wickedtemplates.com%2F&via=Mike_Andreuzza&text=WICKEDBLOCKS%20are%20a%20growing%20collection%20of%20more%20than%20120%20layout%20blocks%20and%20components%20built%20with%20Tailwind%20CSS%20V2%20ready%20to%20copy%20paste%20on%20your%20Tailwind%20project.&hashtags=tailwindcss%2Cwebdev%2Cuiux">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter"
-                            width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path
-                                d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
-                        </svg>
-                    </a>
-                    <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                    class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
+                    <a class="px-4 py-2 mt-2 transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md text-blueGray-500 md:mt-0 md:ml-auto hover:text-lightBlue-500 focus:text-gray-300 hover:bg-gray-1 focus:bg-gray-1 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 "
+                        href=".">GitHub</a>
+                    <a class="px-4 py-2 mt-2 transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md text-blueGray-500 md:mr-auto md:mt-0 md:ml-4 hover:text-lightBlue-500 focus:text-gray-300 hover:bg-gray-1 focus:bg-gray-1 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
+                        href="/faq">Twiter</a>
+                        <div class="flex theme-switcher lg:mr-4" role="group">
+                            <button
+                                class="px-4 py-2 mx-0 text-sm bg-white border border-r-0 rounded-l-lg outline-none border-blueGray-200 text-blueGray-500 focus:outline-none focus:ring focus:ring-black focus:ring-opacity-50 hover:bg-blueGray-200 hover:text-white focus:shadow-outline theme-switcher-button theme-switcher-light"
+                                title="Light"> Light
+                            </button>
+                            <button
+                                class="px-4 py-2 mx-0 text-sm bg-white border outline-none border-blueGray-200 text-blueGray-500 focus:outline-none focus:ring focus:ring-black focus:ring-opacity-50 hover:bg-blueGray-200 hover:text-white focus:shadow-outline theme-switcher-button theme-switcher-dark"
+                                title="Dark"> Dark
+                            </button>
+                            <button
+                                class="px-4 py-2 mx-0 text-sm bg-white border border-l-0 rounded-r-lg outline-none border-blueGray-200 text-blueGray-500 focus:outline-none focus:ring focus:ring-black focus:ring-opacity-50 hover:bg-blueGray-200 hover:text-white focus:shadow-outline theme-switcher-button theme-switcher-auto"
+                                title="Auto"> Auto
+                            </button>
+                        </div>
+
+                    <div @click.away="open = false" class="relative items-center" x-data="{ open: false }">
                         <button @click="open = !open"
-                            class="items-center px-8 py-3 font-semibold text-white transition duration-500 ease-in-out transform bg-blueGray-700 rounded-xl hover:bg-teal-1000 md:w-auto font-lg focus:outline-none hover:text-blue-1400">
-                            <span> Blocks Menu</span>
+                            class="flex items-center px-8 py-2 text-sm font-semibold tracking-wide text-white transition duration-500 ease-in-out transform border rounded-lg cursor-pointer bg-dark-1 border-dark-1 focus:outline-none focus:ring focus:ring-black focus:ring-opacity-50 hover:bg-white hover:text-dark-1">
+                            <span class="mr-auto">Menu</span>
                             <svg fill="currentColor" viewBox="0 0 20 20"
                                 :class="{'rotate-180': open, 'rotate-0': !open}"
-                                class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform rotate-0 md:-mt-1">
+                                class="inline w-4 h-4 mt-1 ml-6 transition-transform duration-200 transform rotate-0 md:-mt-1">
                                 <path fill-rule="evenodd"
                                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                                     clip-rule="evenodd"></path>
@@ -84,183 +90,15 @@
                             x-transition:leave="transition ease-in duration-75"
                             x-transition:leave-start="transform opacity-100 scale-100"
                             x-transition:leave-end="transform opacity-0 scale-95"
-                            class="absolute right-0 z-30 w-full mt-2 origin-top-right md:max-w-screen-sm md:w-screen"
+                            class="absolute right-0 w-full mt-2 origin-top-right bg-black shadow-xl rounded-m ddark:border-gray-800 md:w-48"
                             style="display: none;">
-                            <div class="px-2 pt-2 pb-4 border shadow-xl border-blueGray-900 rounded-xl bg-blue-1300">
-                                <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-                                    <a class="flex items-center justify-start px-3 py-1 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-2 border-transparent text-md text-blueGray-400 rounded-xl hover:text-blueGray-100 hover:border-gray-00 hover:bg-gray-900 border-blueGray-900 "
-                                        href="./left-headers.html">
-                                        <div class="p-3 text-white bg-teal-500 rounded-lg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
-                                                stroke-width="2" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <line x1="4" y1="4" x2="4" y2="20" />
-                                                <rect x="8" y="9" width="12" height="6" rx="2" stroke="#FCE952" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <span class="mx-4 font-medium tracking-tighter">Left Headers</span>
-                                        </div>
-                                    </a>
-                                    <a class="flex items-center justify-start px-3 py-1 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-2 border-transparent text-md text-blueGray-400 rounded-xl hover:text-blueGray-100 hover:border-gray-00 hover:bg-gray-900 border-blueGray-900 "
-                                        href="./centered-headers.html">
-                                        <div class="p-3 text-white bg-teal-500 rounded-lg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
-                                                stroke-width="2" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <line x1="12" y1="4" x2="12" y2="9" />
-                                                <line x1="12" y1="15" x2="12" y2="20" />
-                                                <rect x="6" y="9" width="12" height="6" rx="2" stroke="#FCE952" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <span class="mx-4 font-medium tracking-tighter">Centered Headers</span>
-                                        </div>
-                                    </a>
-                                    <a class="flex items-center justify-start px-3 py-1 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-2 border-transparent text-md text-blueGray-400 rounded-xl hover:text-blueGray-100 hover:border-gray-00 hover:bg-gray-900 border-blueGray-900 "
-                                        href="./right-headers.html">
-                                        <div class="p-3 text-white bg-teal-500 rounded-lg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
-                                                stroke-width="2" stroke="currentColor" fill="none"
-                                                stroke-linecap="round">
-                                                <line x1="20" y1="4" x2="20" y2="20" />
-                                                <rect x="4" y="9" width="12" height="6" rx="2" stroke="#FCE952" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <span class="mx-4 font-medium tracking-tighter">Right Headers</span>
-                                        </div>
-                                    </a>
-                                    <a class="flex items-center justify-start px-3 py-1 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-2 border-transparent text-md text-blueGray-400 rounded-xl hover:text-blueGray-100 hover:border-gray-00 hover:bg-gray-900 border-blueGray-900 "
-                                        href="./auth.html">
-                                        <div class="p-3 text-white bg-teal-500 rounded-lg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
-                                                stroke-width="2" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path
-                                                    d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
-                                                <path d="M20 12h-13l3 -3m0 6l-3 -3" stroke="#FCE952" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <span class="mx-4 font-medium tracking-tighter">Auth</span>
-                                        </div>
-                                    </a>
-                                    <a class="flex items-center justify-start px-3 py-1 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-2 border-transparent text-md text-blueGray-400 rounded-xl hover:text-blueGray-100 hover:border-gray-00 hover:bg-gray-900 border-blueGray-900 "
-                                        href="./pricing.html">
-                                        <div class="p-3 text-white bg-teal-500 rounded-lg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
-                                                stroke-width="2" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path
-                                                    d="M11 3l9 9a1.5 1.5 0 0 1 0 2l-6 6a1.5 1.5 0 0 1 -2 0l-9 -9v-4a4 4 0 0 1 4 -4h4" />
-                                                <circle cx="9" cy="9" r="2" stroke="#FCE952" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <span class="mx-4 font-medium tracking-tighter">Pricing</span>
-                                        </div>
-                                    </a>
-                                    <a class="flex items-center justify-start px-3 py-1 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-2 border-transparent text-md text-blueGray-400 rounded-xl hover:text-blueGray-100 hover:border-gray-00 hover:bg-gray-900 border-blueGray-900 "
-                                        href="./clients.html">
-                                        <div class="p-3 text-white bg-teal-500 rounded-lg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
-                                                stroke-width="2" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <circle cx="12" cy="7" r="4" />
-                                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" stroke="#FCE952" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <span class="mx-4 font-medium tracking-tighter">Clients</span>
-                                        </div>
-                                    </a>
-                                    <a class="flex items-center justify-start px-3 py-1 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-2 border-transparent text-md text-blueGray-400 rounded-xl hover:text-blueGray-100 hover:border-gray-00 hover:bg-gray-900 border-blueGray-900 "
-                                        href="./grids.html">
-                                        <div class="p-3 text-white bg-teal-500 rounded-lg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
-                                                stroke-width="2" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <rect x="4" y="4" width="6" height="5" rx="2" />
-                                                <rect x="4" y="13" width="6" height="7" rx="2" />
-                                                <rect x="14" y="4" width="6" height="7" rx="2" />
-                                                <rect x="14" y="15" width="6" height="5" rx="2" stroke="#FCE952" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <span class="mx-4 font-medium tracking-tighter">Grids</span>
-                                        </div>
-                                    </a>
-                                    <a class="flex items-center justify-start px-3 py-1 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-2 border-transparent text-md text-blueGray-400 rounded-xl hover:text-blueGray-100 hover:border-gray-00 hover:bg-gray-900 border-blueGray-900 "
-                                        href="./forms.html">
-                                        <div class="p-3 text-white bg-teal-500 rounded-lg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
-                                                stroke-width="2" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
-                                                <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" stroke="#FCE952" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <span class="mx-4 font-medium tracking-tighter">Forms</span>
-                                        </div>
-                                    </a>
-                                    <a class="flex items-center justify-start px-3 py-1 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-2 border-transparent text-md text-blueGray-400 rounded-xl hover:text-blueGray-100 hover:border-gray-00 hover:bg-gray-900 border-blueGray-900 "
-                                        href="./gallery.html">
-                                        <div class="p-3 text-white bg-teal-500 rounded-lg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
-                                                stroke-width="2" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" stroke="#FCE952" />
-                                                <line x1="15" y1="8" x2="15.01" y2="8" />
-                                                <rect x="4" y="4" width="16" height="16" rx="3" />
-                                                <path d="M4 15l4 -4a3 5 0 0 1 3 0l5 5" stroke="#FCE952" />
-                                                <path d="M14 14l1 -1a3 5 0 0 1 3 0l2 2" stroke="#FCE952" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <span class="mx-4 font-medium tracking-tighter">Gallery</span>
-                                        </div>
-                                    </a>
-                                    <a class="flex items-center justify-start px-3 py-1 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-2 border-transparent text-md text-blueGray-400 rounded-xl hover:text-blueGray-100 hover:border-gray-00 hover:bg-gray-900 border-blueGray-900 "
-                                        href="./navigation.html">
-                                        <div class="p-3 text-white bg-teal-500 rounded-lg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
-                                                stroke-width="2" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <rect x="4" y="4" width="16" height="16" rx="2" />
-                                                <line x1="4" y1="9" x2="20" y2="9" stroke="#FCE952" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <span class="mx-4 font-medium tracking-tighter">Navigation</span>
-                                        </div>
-                                    </a>
-                                    <a class="flex items-center justify-start px-3 py-1 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-2 border-transparent text-md text-blueGray-400 rounded-xl hover:text-blueGray-100 hover:border-gray-00 hover:bg-gray-900 border-blueGray-900 "
-                                        href="./footers.html">
-                                        <div class="p-3 text-white bg-teal-500 rounded-lg">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
-                                                stroke-width="2" <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6"
-                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <rect x="4" y="4" width="16" height="16" rx="2" />
-                                                <line x1="4" y1="15" x2="20" y2="15" stroke="#FCE952" />
-                                            </svg>
-                                        </div>
-                                        <div class="ml-3">
-                                            <span class="mx-4 font-medium tracking-tighter">Footers</span>
-                                        </div>
-                                    </a>
-                                </div>
+                            <div class="px-2 py-2 rounded-lg bg-black-500 ">
+                                <a class="block px-8 py-2 mt-2 font-semibold text-white transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 hover:text-blue-400 focus:text-white hover:bg-gray-800 focus:outline-none focus:shadow-outline"
+                                    href="#">V 1.0</a>
+                                <a class="block px-8 py-2 mt-2 font-semibold text-white transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 hover:text-blue-400 focus:text-white hover:bg-gray-800 focus:outline-none focus:shadow-outline"
+                                    href="#">V 2.0</a>
+                                <a class="block px-8 py-2 mt-2 font-semibold text-white transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 hover:text-blue-400 focus:text-white hover:bg-gray-800 focus:outline-none focus:shadow-outline "
+                                    href="#">V 3.0</a>
                             </div>
                         </div>
                     </div>
@@ -268,659 +106,375 @@
             </div>
         </div>
         <!----Hero  -->
-        <section class="bg-blue-1300 body-font">
-            <div class="container justify-center px-5 py-10 pt-4 mx-auto lg:px-24">
+        <section class=" body-font">
+            <div class="container justify-center px-5 py-10 pt-24 mx-auto lg:px-20">
                 <div class="flex flex-col w-full mb-2 ">
-                    <h2 class="w-full mx-auto mb-6 text-xs font-semibold tracking-widest text-white">COZ WE AIN'T
+                    <h2 class="w-full mx-auto mb-6 text-xs font-semibold tracking-widest text-blueGray-400">COZ WE AIN'T
                         GOT TIME FOR THAT..
                     </h2>
                     <h1
-                        class="text-6xl font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-teal-1000 to-yellow-1000 lg:text-5xl xl:text-9xl md:text-4xl ">
-                        Tailwind CSS Blocks!
+                        class="text-6xl font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-tr from-cyan-400 to-lightBlue-500 lg:text-5xl xl:text-6xl md:text-4xl dark:from-lightBlue-800 dark:to-lightblue-700">
+                        Tailwind CSS Blocks
                     </h1>
                 </div>
-                <div class="flex flex-col w-full mb-4 lg:text-center ">
-                    <p class="text-xl font-normal leading-relaxed tracking-tight text-left text-blueGray-400 lg:w-1/2">
-                        <span class="font-semibold tracking-tighter uppercase text-teal-1000">WICKEDBLOCKS</span> is an
+                <div class="flex flex-col w-full lg:text-center ">
+                    <p class="text-xl font-normal leading-relaxed tracking-tight text-left text-blueGray-500 lg:w-1/2">
+                        <span class="font-semibold tracking-tighter uppercase text-lightBlue-500 dark:lightBlue-700">WICKEDBLOCKS</span> is
+                        an
                         open source
                         growing collection
                         of layout blocks and components built with
                         Tailwind CSS V2 ready to copy paste on your Tailwind project, bla, bla, bla...
                     </p>
                 </div>
-                <div class="flex flex-wrap justify-start lg:w-3/3">
-                    <a class="mr-2 lg:mr-4 " href="#leftheaders">
-                        <button
-                            class="inline-flex items-center px-6 py-2 my-2 mt-2 text-lg font-medium tracking-normal text-left text-white transition duration-500 ease-in-out transform rounded-lg cursor-pointer bg-blueGray-800 lg:w-auto hover:bg-blueGray-600 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50 hover:text-white">
-                            Left Headers
-                        </button>
-                    </a>
-                    <a class="mr-2 lg:mr-4 " href="#centeredheaders">
-                        <button
-                            class="inline-flex items-center px-6 py-2 my-2 mt-2 text-lg font-medium tracking-normal text-left text-white transition duration-500 ease-in-out transform rounded-lg cursor-pointer bg-blueGray-800 lg:w-auto hover:bg-blueGray-600 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50 hover:text-white ">
-                            Center Headers
-                        </button>
-                    </a>
-                    <a class="mr-2 lg:mr-4 " href="#rightheaders">
-                        <button
-                            class="inline-flex items-center px-6 py-2 my-2 mt-2 text-lg font-medium tracking-normal text-left text-white transition duration-500 ease-in-out transform rounded-lg cursor-pointer bg-blueGray-800 lg:w-auto hover:bg-blueGray-600 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50 hover:text-white ">
-                            Right Headers
-                        </button>
-                    </a>
-                    <a class="mr-2 lg:mr-4 " href="#auth">
-                        <button
-                            class="inline-flex items-center px-6 py-2 my-2 mt-2 text-lg font-medium tracking-normal text-left text-white transition duration-500 ease-in-out transform rounded-lg cursor-pointer bg-blueGray-800 lg:w-auto hover:bg-blueGray-600 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50 hover:text-white">
-                            Authentication
-                        </button>
-                    </a>
-                    <a class="mr-2 lg:mr-4 " href="#price">
-                        <button
-                            class="inline-flex items-center px-6 py-2 my-2 mt-2 text-lg font-medium tracking-normal text-left text-white transition duration-500 ease-in-out transform rounded-lg cursor-pointer bg-blueGray-800 lg:w-auto hover:bg-blueGray-600 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50 hover:text-white ">
-                            Pricing
-                        </button>
-                    </a>
-                    <a class="mr-2 lg:mr-4 " href="#clients">
-                        <button
-                            class="inline-flex items-center px-6 py-2 my-2 mt-2 text-lg font-medium tracking-normal text-left text-white transition duration-500 ease-in-out transform rounded-lg cursor-pointer bg-blueGray-800 lg:w-auto hover:bg-blueGray-600 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50 hover:text-white ">
-                            Clients
-                        </button>
-                    </a>
-                    <a class="mr-2 lg:mr-4 " href="#grids">
-                        <button
-                            class="inline-flex items-center px-6 py-2 my-2 mt-2 text-lg font-medium tracking-normal text-left text-white transition duration-500 ease-in-out transform rounded-lg cursor-pointer bg-blueGray-800 lg:w-auto hover:bg-blueGray-600 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50 hover:text-white ">
-                            Grids
-                        </button>
-                    </a>
-                    <a class="mr-2 lg:mr-4 " href="#forms">
-                        <button
-                            class="inline-flex items-center px-6 py-2 my-2 mt-2 text-lg font-medium tracking-normal text-left text-white transition duration-500 ease-in-out transform rounded-lg cursor-pointer bg-blueGray-800 lg:w-auto hover:bg-blueGray-600 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50 hover:text-white">
-                            Forms
-                        </button>
-                    </a>
-                    <a class="mr-2 lg:mr-4 " href="#gallery">
-                        <button
-                            class="inline-flex items-center px-6 py-2 my-2 mt-2 text-lg font-medium tracking-normal text-left text-white transition duration-500 ease-in-out transform rounded-lg cursor-pointer bg-blueGray-800 lg:w-auto hover:bg-blueGray-600 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50 hover:text-white ">
-                            Gallery
-                        </button>
-                    </a>
-                    <a class="mr-2 lg:mr-4 " href="#nav">
-                        <button
-                            class="inline-flex items-center px-6 py-2 my-2 mt-2 text-lg font-medium tracking-normal text-left text-white transition duration-500 ease-in-out transform rounded-lg cursor-pointer bg-blueGray-800 lg:w-auto hover:bg-blueGray-600 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50 hover:text-white">
-                            Navigation
-                        </button>
-                    </a>
-                    <a class="mr-2 lg:mr-4 " href="#footers">
-                        <button
-                            class="inline-flex items-center px-6 py-2 my-2 mt-2 text-lg font-medium tracking-normal text-left text-white transition duration-500 ease-in-out transform rounded-lg cursor-pointer bg-blueGray-800 lg:w-auto hover:bg-blueGray-600 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50 hover:text-white ">
-                            Footers
-                        </button>
-                    </a>
-                    <a class="mr-2 lg:mr-4 " href="https://www.wickedtemplates.com/" target="_blank">
-                        <button
-                            class="inline-flex items-center px-6 py-2 my-2 mt-2 text-lg font-medium tracking-normal text-left text-white transition duration-500 ease-in-out transform rounded-lg cursor-pointer bg-blueGray-800 lg:w-auto hover:bg-blueGray-600 focus:outline-none focus:ring focus:ring-blue-600 focus:ring-opacity-50 hover:text-white ">
-                            Tailwind Templates
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="ml-2 icon icon-tabler icon-tabler-arrow-up-right" width="20" height="20"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <line x1="17" y1="7" x2="7" y2="17" />
-                                <polyline points="8 7 17 7 17 16" />
-                            </svg>
-                        </button>
-                    </a>
-                </div>
             </div>
         </section>
         <!----end hero -->
-        <!----Left Headers-->
-        <section class="text-left " id="leftheaders">
+        <div>
             <div
-                class="container flex flex-col items-end justify-start px-5 py-5 mx-auto text-left lg:py-20 lg:px-24 md:flex-row ">
-                <div
-                    class="flex flex-col items-start justify-start w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0 ">
-
-                    <h1
-                        class="justify-start w-full mb-4 text-4xl font-bold leading-tight tracking-tighter text-left text-teal-1000 lg:text-5xl">
-                        Left Headers.</h1>
-
-                    <p class="mb-4 text-base leading-snug tracking-tight text-left text-white lg:text-xl">
-                        These headers have text on the left side of the screen including zero to 2 call to action, on
-                        the
-                        right side there's an image
-                        or other assets. You can use them as a hero or within sections.
-                    </p>
-                    <div class="flex justify-start text-left">
-                        <span
-                            class="justify-start px-4 py-2 mr-4 text-left rounded-lg bg-coolGray-900 text-teal-1000">12
-                            Blocks</span>
-                        <a class="font-xs" href="./left-headers.html">
-                            <button
-                                class="flex items-center w-full px-4 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform border-2 rounded-lg border-blueGray-600 hover:border-yellow-1000 hover:bg-yellow-1000 hover:text-blue-1400 md:w-auto font-lg focus:outline-none focus:text-blue-1000 ">
-                                See All
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 " width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <line x1="15" y1="16" x2="19" y2="12" />
-                                        <line x1="15" y1="8" x2="19" y2="12" />
-                                    </svg>
-                                </span>
-                            </button>
+                class="grid grid-cols-1 px-5 mt-6 border-t border-blueGray-200 dark:border-gray-600 bg-blueGray-50 dark:bg-black gap-y-8 lg:py-10 lg:px-28">
+                <div class="grid grid-cols-1 pt-8 gap-y-6 lg:grid-cols-4 lg:gap-5">
+                    <div>
+                        <h3 class="text-lg font-normal tracking-tight text-dark-1 dark:text-blueGray-500">
+                            All Blocks
+                        </h3>
+                    </div>
+                    <div
+                        class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6 md:grid-cols-2 lg:col-span-3">
+                        <a href="./left-headers.html" class="block group">
+                            <figure>
+                                <div
+                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
+                                    <img class="w-full h-auto "
+                                        src="./assets/sections/headers-left/headers-left-header-1.png" alt="">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                    </div>
+                                </div>
+                                <figcaption class="mt-3">
+                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">Left Headers</p>
+                                    <p class="text-sm text-gray-500">12 blocks</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="./centered-headers.html" class="block group">
+                            <figure>
+                                <div
+                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
+                                    <img class="w-full h-auto"
+                                        src="./assets/sections/headers-center/headers-center-header-1.png" alt="">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                    </div>
+                                </div>
+                                <figcaption class="mt-3">
+                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">Centered Headers</p>
+                                    <p class="text-sm text-gray-500">15 blocks</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="./right-headers.html" class="block group">
+                            <figure>
+                                <div
+                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
+                                    <img class="w-full h-auto"
+                                        src="./assets/sections/headers-right/headers-right-header-1.png" alt="">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                    </div>
+                                </div>
+                                <figcaption class="mt-3">
+                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">Right Headers</p>
+                                    <p class="text-sm text-gray-500">12 blocks</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="./auth.html" class="block group">
+                            <figure>
+                                <div
+                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
+                                    <img class="w-full h-auto" src="./assets/sections/auth/auth-2.png" alt="">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                    </div>
+                                </div>
+                                <figcaption class="mt-3">
+                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
+                                        Authentication
+                                    </p>
+                                    <p class="text-sm text-gray-500">4 blocks</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="./pricing.html" class="block group">
+                            <figure>
+                                <div
+                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
+                                    <img class="w-full h-auto" src="./assets/sections/pricing/price-1.png" alt="">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                    </div>
+                                </div>
+                                <figcaption class="mt-3">
+                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
+                                        Pricing
+                                    </p>
+                                    <p class="text-sm text-gray-500">6 blocks</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="./clients.html" class="block group">
+                            <figure>
+                                <div
+                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
+                                    <img class="w-full h-auto" src="./assets/sections/clients/clients-1.png" alt="">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                    </div>
+                                </div>
+                                <figcaption class="mt-3">
+                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
+                                        Clients
+                                    </p>
+                                    <p class="text-sm text-gray-500">7 blocks</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="./grids.html" class="block group">
+                            <figure>
+                                <div
+                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
+                                    <img class="w-full h-auto" src="./assets/sections/grids/grids-1.png" alt="">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                    </div>
+                                </div>
+                                <figcaption class="mt-3">
+                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
+                                        Grids
+                                    </p>
+                                    <p class="text-sm text-gray-500">16 blocks</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="./forms.html" class="block group">
+                            <figure>
+                                <div
+                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
+                                    <img class="w-full h-auto" src="./assets/sections/forms/forms-1.png" alt="">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                    </div>
+                                </div>
+                                <figcaption class="mt-3">
+                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
+                                        Forms
+                                    </p>
+                                    <p class="text-sm text-gray-500">11 blocks</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="./gallery.html" class="block group">
+                            <figure>
+                                <div
+                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
+                                    <img class="w-full h-auto" src="./assets/sections/gallery/gallery-1.png" alt="">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                    </div>
+                                </div>
+                                <figcaption class="mt-3">
+                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
+                                        Gallery
+                                    </p>
+                                    <p class="text-sm text-gray-500">13 blocks</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="./navigation.html" class="block group">
+                            <figure>
+                                <div
+                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
+                                    <img class="w-full h-auto" src="./assets/sections/nav/nav-1.png" alt="">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                    </div>
+                                </div>
+                                <figcaption class="mt-3">
+                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
+                                        Navigation
+                                    </p>
+                                    <p class="text-sm text-gray-500">8 blocks</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="./footer" class="block group">
+                            <figure>
+                                <div
+                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
+                                    <img class="w-full h-auto" src="./assets/sections/footers/footer-1.png" alt="">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                    </div>
+                                </div>
+                                <figcaption class="mt-3">
+                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
+                                        Footer
+                                    </p>
+                                    <p class="text-sm text-gray-500">8 blocks</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                        <a href="/components/marketing/sections/team-sections" class="block group">
+                            <figure>
+                                <div
+                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
+                                    <img class="w-full h-auto" src="./assets/sections/wt.png" alt="">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                    </div>
+                                </div>
+                                <figcaption class="mt-3">
+                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
+                                        Team Sections
+                                    </p>
+                                    <p class="text-sm text-gray-500">8 blocks</p>
+                                </figcaption>
+                            </figure>
                         </a>
                     </div>
                 </div>
-                <div class="hidden md:block lg:max-w-lg lg:w-full md:w-1/2">
-                    <img class="object-cover object-center mx-auto rounded-lg shadow" alt="badge"
-                        src="./assets/intros/left-header.svg">
-                </div>
             </div>
-        </section>
-        <!----Centered Headers-->
-        <section class="text-left lg:pt-8" id="centeredheaders">
+        </div>
+        <footer class="text-gray-600 border-t body-font">
             <div
-                class="container flex flex-col items-end justify-start px-5 py-5 mx-auto text-left lg:py-20 lg:px-24 md:flex-row ">
-                <div
-                    class="flex flex-col items-start justify-start w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0 ">
-
-                    <h1
-                        class="justify-start w-full mb-4 text-4xl font-bold leading-tight tracking-tighter text-left text-teal-1000 lg:text-5xl">
-                        Centered Headers.</h1>
-                    <p class="mb-4 text-base leading-snug tracking-tight text-left text-white lg:text-xl">
-                        These headers have text on top of none, one or two call to action, sometimes there's an image or
-                        other assets, like text or call to actions as mentioned. You can use them as a hero or within
-                        sections.
+                class="container flex flex-col flex-wrap px-5 py-12 mx-auto lg:px-16 md:items-center lg:items-start md:flex-row md:flex-no-wrap">
+                <div class="flex-shrink-0 mx-auto text-center w-52 md:mx-0 md:text-left">
+                    <a class="flex items-center justify-start font-medium text-white title-font">
+                        <img class="object-contain rounded-lg objllcfit" alt="badge"
+                            src="./assets/Wickedblockswidget.svg">
+                    </a>
+                    <p class="my-4 text-sm font-medium text-center text-blueGray-500 lg:mb-0">
+                        Released under the MIT License Copyright 2021 © Michael Andreuzza
                     </p>
-                    <div class="flex justify-start text-left">
-                        <span class="justify-start px-4 py-2 mb-6 mr-5 text-left border-2 rounded-lg border-blueGray-900 bg-coolGray-900 text-teal-1000">15
-                            Blocks</span>
-                        <a class="font-xs" href="./centered-headers.html">
-                            <button
-                                class="flex items-center w-full px-4 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform border-2 rounded-lg border-blueGray-600 hover:border-yellow-1000 hover:bg-yellow-1000 hover:text-blue-1400 md:w-auto font-lg focus:outline-none focus:text-blue-1000">
-                                See All
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 " width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <line x1="15" y1="16" x2="19" y2="12" />
-                                        <line x1="15" y1="8" x2="19" y2="12" />
-                                    </svg>
-                                </span>
-                            </button>
-                        </a>
+                </div>
+                <div class="flex flex-wrap flex-grow mx-auto mt-10 -mb-10 text-left md:pl-20 md:mt-0">
+
+                    <div class="w-1/2 px-4 lg:w-1/2">
+                        <h2
+                            class="mb-3 tracking-tighter text-transparent text-md bg-clip-text bg-gradient-to-r from-lightBlue-400 via-lightBlue-500 to-cyan-400">
+                            SOCIAL</h2>
+                        <nav class="mb-10 list-none">
+                            <li>
+                                <a href="https://twitter.com/WickedTemplates"
+                                    class="text-blueGray-400 hover:text-lightBlue-500">Twitter</a>
+                            </li>
+                            <li>
+                                <a href="https://www.producthunt.com/posts/wicked-templates"
+                                    class="text-blueGray-400 hover:text-lightBlue-500">Product Hunt</a>
+                            </li>
+                            <li>
+                                <a href="https://dribbble.com/MichaelAndreuzza"
+                                    class="text-blueGray-400 hover:text-lightBlue-500">Dribbble</a>
+                            </li>
+                        </nav>
+                    </div>
+
+                    <div class="w-1/2 px-4 lg:w-1/2">
+                        <h2
+                            class="mb-3 tracking-tighter text-transparent text-md bg-clip-text bg-gradient-to-r from-lightBlue-400 via-lightBlue-500 to-cyan-400">
+                            OTHER PROJECTS</h2>
+                        <nav class="mb-10 list-none">
+                            <li>
+                                <a href="https://www.wickedtemplates.com"
+                                    class="text-blueGray-400 hover:text-lightBlue-500">
+                                    Wicked Templates
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://colorsandfonts.com"
+                                    class="text-blueGray-400 hover:text-lightBlue-500">Colors
+                                    &amp; fonts</a>
+                            </li>
+                            <li>
+                                <a href="https://unicornsfeed.com"
+                                    class="text-blueGray-400 hover:text-lightBlue-500">TheUnicornsFeed</a>
+                            </li>
+                        </nav>
                     </div>
                 </div>
-                <div class="hidden md:block lg:max-w-lg lg:w-full md:w-1/2">
-                    <img class="object-cover object-center mx-auto rounded-lg shadow" alt="badge"
-                        src="./assets/intros/centered-header.svg">
-                </div>
-            </div>
-        </section>
-        <!----Right Headers-->
-        <section class="text-left lg:pt-8" id="rightheaders">
-            <div
-                class="container flex flex-col items-end justify-start px-5 py-5 mx-auto text-left lg:py-20 lg:px-24 md:flex-row ">
-                <div
-                    class="flex flex-col items-start justify-start w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0 ">
-
-                    <h1
-                        class="justify-start w-full mb-4 text-4xl font-bold leading-tight tracking-tighter text-left text-teal-1000 lg:text-5xl">
-                        Right Headers.</h1>
-                    <p class="mb-4 text-base leading-snug tracking-tight text-left text-white lg:text-xl">
-                        These headers have text on the right side of the screen with one or two call to action, on the
-                        left side there's an image or other assets. You can use them as a hero or within sections.
-                    </p>
-                    <div class="flex justify-start text-left">
-                        <span class="justify-start px-4 py-2 mb-6 mr-5 text-left border-2 rounded-lg border-blueGray-900 bg-coolGray-900 text-teal-1000">12
-                        Blocks</span>
-                        <a class="font-xs" href="./right-headers.html">
-                            <button
-                                class="flex items-center w-full px-4 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform border-2 rounded-lg border-blueGray-600 hover:border-yellow-1000 hover:bg-yellow-1000 hover:text-blue-1400 md:w-auto font-lg focus:outline-none focus:text-blue-1000">
-                                See All
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 " width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <line x1="15" y1="16" x2="19" y2="12" />
-                                        <line x1="15" y1="8" x2="19" y2="12" />
-                                    </svg>
-                                </span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:block lg:max-w-lg lg:w-full md:w-1/2">
-                    <img class="object-cover object-center mx-auto rounded-lg shadow" alt="badge"
-                        src="./assets/intros/right-header.svg">
-                </div>
-            </div>
-        </section>
-        <!----Auth -->
-        <section class="text-left lg:pt-8" id="auth">
-            <div
-                class="container flex flex-col items-end justify-start px-5 py-5 mx-auto text-left lg:py-20 lg:px-24 md:flex-row ">
-                <div
-                    class="flex flex-col items-start justify-start w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0 ">
-
-                    <h1
-                        class="justify-start w-full mb-4 text-4xl font-bold leading-tight tracking-tighter text-left text-teal-1000 lg:text-5xl">
-                        Auth Components.</h1>
-                    <p class="mb-4 text-base leading-snug tracking-tight text-left text-white lg:text-xl">
-                        Authentication/Authorization is used by a server when the server needs to know exactly who is
-                        accessing their information or site.
-                    </p>
-                    <div class="flex justify-start text-left">
-                        <span class="justify-start px-4 py-2 mb-6 mr-5 text-left border-2 rounded-lg border-blueGray-900 bg-coolGray-900 text-teal-1000">4
-                        Blocks</span>
-                        <a class="font-xs" href="./auth.html">
-                            <button
-                                class="flex items-center w-full px-4 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform border-2 rounded-lg border-blueGray-600 hover:border-yellow-1000 hover:bg-yellow-1000 hover:text-blue-1400 md:w-auto font-lg focus:outline-none focus:text-blue-1000">
-                                See All
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 " width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <line x1="15" y1="16" x2="19" y2="12" />
-                                        <line x1="15" y1="8" x2="19" y2="12" />
-                                    </svg>
-                                </span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:block lg:max-w-lg lg:w-full md:w-1/2">
-                    <img class="object-cover object-center mx-auto rounded-lg" alt="badge"
-                        src="./assets/intros/auth.svg">
-                </div>
-            </div>
-        </section>
-        <!----Pricing -->
-        <section class="text-left lg:pt-8" id="price">
-            <div
-                class="container flex flex-col items-end justify-start px-5 py-5 mx-auto text-left lg:py-20 lg:px-24 md:flex-row ">
-                <div
-                    class="flex flex-col items-start justify-start w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0 ">
-
-                    <h1
-                        class="justify-start w-full mb-4 text-4xl font-bold leading-tight tracking-tighter text-left text-teal-1000 lg:text-5xl">
-                        Pricing.</h1>
-                    <p class="mb-4 text-base leading-snug tracking-tight text-left text-white lg:text-xl">
-                        The Pricing Table component is used to display price + features about your products. Cards and
-                        tables are often used for this.
-                    </p>
-                    <div class="flex justify-start text-left">
-                        <span
-                            class="justify-start px-4 py-2 mb-6 mr-5 text-left border-2 rounded-lg border-blueGray-900 bg-coolGray-900 text-teal-1000">6
-                            Blocks</span>
-                        <a class="font-xs" href="./pricing.html">
-                            <button
-                                class="flex items-center w-full px-4 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform border-2 rounded-lg border-blueGray-600 hover:border-yellow-1000 hover:bg-yellow-1000 hover:text-blue-1400 md:w-auto font-lg focus:outline-none focus:text-blue-1000">
-                                See All
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 " width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <line x1="15" y1="16" x2="19" y2="12" />
-                                        <line x1="15" y1="8" x2="19" y2="12" />
-                                    </svg>
-                                </span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:block lg:max-w-lg lg:w-full md:w-1/2">
-                    <img class="object-cover object-center mx-auto rounded-lg" alt="badge"
-                        src="./assets/intros/pricing.svg">
-                </div>
-            </div>
-        </section>
-        <!----Clients -->
-        <section class="text-left lg:pt-8" id="clients">
-            <div
-                class="container flex flex-col items-end justify-start px-5 py-5 mx-auto text-left lg:py-20 lg:px-24 md:flex-row ">
-                <div
-                    class="flex flex-col items-start justify-start w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0 ">
-
-                    <h1
-                        class="justify-start w-full mb-4 text-4xl font-bold leading-tight tracking-tighter text-left text-teal-1000 lg:text-5xl">
-                        Clients.</h1>
-                    <p class="mb-4 text-base leading-snug tracking-tight text-left text-white lg:text-xl">
-                        A website testimonial showcases the quality and success of a site’s products or services, this
-                        ones can include:
-                        Customer experiences,
-                        Case studies,
-                        Customer photos,
-                        Video reviews,
-                        Customer quotes, and even "plain Jane" logos.
-                    </p>
-                    <div class="flex justify-start text-left">
-                        <span
-                            class="justify-start px-4 py-2 mb-6 mr-5 text-left border-2 rounded-lg border-blueGray-900 bg-coolGray-900 text-teal-1000">7
-                            Blocks</span>
-                        <a class="font-xs" href="./clients.html">
-                            <button
-                                class="flex items-center w-full px-4 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform border-2 rounded-lg border-blueGray-600 hover:border-yellow-1000 hover:bg-yellow-1000 hover:text-blue-1400 md:w-auto font-lg focus:outline-none focus:text-blue-1000">
-                                See All
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 " width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <line x1="15" y1="16" x2="19" y2="12" />
-                                        <line x1="15" y1="8" x2="19" y2="12" />
-                                    </svg>
-                                </span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:block lg:max-w-lg lg:w-full md:w-1/2">
-                    <img class="object-cover object-center mx-auto rounded-lg" alt="badge"
-                        src="./assets/intros/clients.svg">
-                </div>
-            </div>
-        </section>
-        <!----Grids -->
-        <section class="text-left lg:pt-8" id="grids">
-            <div
-                class="container flex flex-col items-end justify-start px-5 py-5 mx-auto text-left lg:py-20 lg:px-24 md:flex-row ">
-                <div
-                    class="flex flex-col items-start justify-start w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0 ">
-
-                    <h1
-                        class="justify-start w-full mb-4 text-4xl font-bold leading-tight tracking-tighter text-left text-teal-1000 lg:text-5xl">
-                        Flexbox Grids.</h1>
-                    <p class="mb-4 text-base leading-snug tracking-tight text-left text-white lg:text-xl">
-                        The flex layout allows responsive elements within a container to be automatically arranged
-                        depending upon screen size.
-                    </p>
-                    <div class="flex justify-start text-left">
-                        <span
-                            class="justify-start px-4 py-2 mb-6 mr-5 text-left border-2 rounded-lg border-blueGray-900 bg-coolGray-900 text-teal-1000">16
-                            Blocks</span>
-                        <a class="font-xs" href="./grids.html">
-                            <button
-                                class="flex items-center w-full px-4 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform border-2 rounded-lg border-blueGray-600 hover:border-yellow-1000 hover:bg-yellow-1000 hover:text-blue-1400 md:w-auto font-lg focus:outline-none focus:text-blue-1000">
-                                See All
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 " width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <line x1="15" y1="16" x2="19" y2="12" />
-                                        <line x1="15" y1="8" x2="19" y2="12" />
-                                    </svg>
-                                </span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:block lg:max-w-lg lg:w-full md:w-1/2">
-                    <img class="object-cover object-center mx-auto rounded-lg" alt="badge"
-                        src="./assets/intros/grids.svg">
-                </div>
-            </div>
-        </section>
-        <!----Forms -->
-        <section class="text-left lg:pt-8" id="forms">
-            <div
-                class="container flex flex-col items-end justify-start px-5 py-5 mx-auto text-left lg:py-20 lg:px-24 md:flex-row ">
-                <div
-                    class="flex flex-col items-start justify-start w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0 ">
-
-                    <h1
-                        class="justify-start w-full mb-4 text-4xl font-bold leading-tight tracking-tighter text-left text-teal-1000 lg:text-5xl">
-                        Forms.</h1>
-                    <p class="mb-4 text-base leading-snug tracking-tight text-left text-white lg:text-xl">
-                        The form allows for user input and t is an interactive page that mimics a paper document or
-                        form, where users fill out particular
-                        fields with informaion.
-                    </p>
-                    <div class="flex justify-start text-left">
-                    <span
-                        class="justify-start px-4 py-2 mb-6 mr-5 text-left border-2 rounded-lg border-blueGray-900 bg-coolGray-900 text-teal-1000">11
-                        Blocks</span>
-                        <a class="font-xs" href="./forms.html">
-                            <button
-                                class="flex items-center w-full px-4 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform border-2 rounded-lg border-blueGray-600 hover:border-yellow-1000 hover:bg-yellow-1000 hover:text-blue-1400 md:w-auto font-lg focus:outline-none focus:text-blue-1000">
-                                See All
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 " width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <line x1="15" y1="16" x2="19" y2="12" />
-                                        <line x1="15" y1="8" x2="19" y2="12" />
-                                    </svg>
-                                </span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:block lg:max-w-lg lg:w-full md:w-1/2">
-                    <img class="object-cover object-center mx-auto rounded-lg" alt="badge"
-                        src="./assets/intros/form.svg">
-                </div>
-            </div>
-        </section>
-        <!---- gallery-->
-        <section class="text-left lg:pt-8" id="gallery">
-            <div
-                class="container flex flex-col items-end justify-start px-5 py-5 mx-auto text-left lg:py-20 lg:px-24 md:flex-row ">
-                <div
-                    class="flex flex-col items-start justify-start w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0 ">
-
-                    <h1
-                        class="justify-start w-full mb-4 text-4xl font-bold leading-tight tracking-tighter text-left text-teal-1000 lg:text-5xl">
-                        Galleries.</h1>
-                    <p class="mb-4 text-base leading-snug tracking-tight text-left text-white lg:text-xl">
-                        Galleries are a popular way of integrating images into a website, allowing users to see several
-                        images clearly at once.
-                    </p>
-                    <div class="flex justify-start text-left">
-                        <span
-                            class="justify-start px-4 py-2 mb-6 mr-5 text-left border-2 rounded-lg border-blueGray-900 bg-coolGray-900 text-teal-1000">13
-                            Blocks</span>
-                        <a class="font-xs" href="./gallery.html">
-                            <button
-                                class="flex items-center w-full px-4 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform border-2 rounded-lg border-blueGray-600 hover:border-yellow-1000 hover:bg-yellow-1000 hover:text-blue-1400 md:w-auto font-lg focus:outline-none focus:text-blue-1000">
-                                See All
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 " width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <line x1="15" y1="16" x2="19" y2="12" />
-                                        <line x1="15" y1="8" x2="19" y2="12" />
-                                    </svg>
-                                </span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:block lg:max-w-lg lg:w-full md:w-1/2">
-                    <img class="object-cover object-center mx-auto rounded-lg" alt="badge"
-                        src="./assets/intros/gallery.svg">
-                </div>
-            </div>
-        </section>
-        <!---- Navigation -->
-        <section class="text-left lg:pt-8" id="nav">
-            <div
-                class="container flex flex-col items-end justify-start px-5 py-5 mx-auto text-left lg:py-20 lg:px-24 md:flex-row ">
-                <div
-                    class="flex flex-col items-start justify-start w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0 ">
-
-                    <h1
-                        class="justify-start w-full mb-4 text-4xl font-bold leading-tight tracking-tighter text-left text-teal-1000 lg:text-5xl">
-                        Navigation.</h1>
-                    <p class="mb-4 text-base leading-snug tracking-tight text-left text-white lg:text-xl">
-                        Navigation allows visitors to flow from one page to another without frustration.
-                        Without website navigation, your visitors can’t figure out how to find your blog, your email
-                        signup page, your product
-                        listings, pricing, contact information, your auntie's picture or help docs.
-                    </p>
-                    <div class="flex justify-start text-left">
-                    <span
-                        class="justify-start px-4 py-2 mb-6 mr-5 text-left border-2 rounded-lg border-blueGray-900 bg-coolGray-900 text-teal-1000">8
-                        Blocks</span>
-                        <a class="font-xs" href="./navigation.html">
-                            <button
-                                class="flex items-center w-full px-4 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform border-2 rounded-lg border-blueGray-600 hover:border-yellow-1000 hover:bg-yellow-1000 hover:text-blue-1400 md:w-auto font-lg focus:outline-none focus:text-blue-1000">
-                                See All
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 " width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <line x1="15" y1="16" x2="19" y2="12" />
-                                        <line x1="15" y1="8" x2="19" y2="12" />
-                                    </svg>
-                                </span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:block lg:max-w-lg lg:w-full md:w-1/2">
-                    <img class="object-cover object-center mx-auto rounded-lg" alt="badge"
-                        src="./assets/intros/nav.svg">
-                </div>
-            </div>
-        </section>
-        <!---- Footers -->
-        <section class="text-left lg:pt-8" id="footers">
-            <div
-                class="container flex flex-col items-end justify-start px-5 py-5 mx-auto text-left lg:py-20 lg:px-24 md:flex-row ">
-                <div
-                    class="flex flex-col items-start justify-start w-full pt-0 mb-16 text-left lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 md:mb-0 ">
-
-                    <h1
-                        class="justify-start w-full mb-4 text-4xl font-bold leading-tight tracking-tighter text-left text-teal-1000 lg:text-5xl">
-                        Footers.</h1>
-                    <p class="mb-4 text-base leading-snug tracking-tight text-left text-white lg:text-xl">
-                        The website footer is the section of content at the very bottom of a web page. It typically
-                        contains a copyright notice,
-                        link to a privacy policy, sitemap, logo, contact information, social media icons, and an email
-                        sign-up form. (This last one i wouldn't add on a footer though...)
-                    </p>
-                    <div class="flex justify-start text-left">
-                        <span
-                            class="justify-start px-4 py-2 mb-6 mr-5 text-left border-2 rounded-lg border-blueGray-900 bg-coolGray-900 text-teal-1000">10
-                            Blocks</span>
-                        <a class="font-xs" href="./footers.html">
-                            <button
-                                class="flex items-center w-full px-4 py-2 mt-auto font-semibold text-white transition duration-500 ease-in-out transform border-2 rounded-lg border-blueGray-600 hover:border-yellow-1000 hover:bg-yellow-1000 hover:text-blue-1400 md:w-auto font-lg focus:outline-none focus:text-blue-1000">
-                                See All
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 " width="24" height="24"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <line x1="15" y1="16" x2="19" y2="12" />
-                                        <line x1="15" y1="8" x2="19" y2="12" />
-                                    </svg>
-                                </span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden md:block lg:max-w-lg lg:w-full md:w-1/2">
-                    <img class="object-cover object-center mx-auto rounded-lg" alt="badge"
-                        src="./assets/intros/footer.svg">
-                </div>
-            </div>
-        </section>
-        <section class="mt-10 border-t border-gray-800">
-            <div class="container flex flex-wrap items-center px-5 py-24 mx-auto lg:px-20">
-                <div class="flex flex-col w-full p-8 mt-10 lg:w-4/6 md:w-1/2 md:ml-auto md:mt-0 ">
-                    <h1
-                        class="text-5xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-teal-1000 to-yellow-1000 lg:text-7xl">
-                        Do you Have
-                        <br>any Feedback?
-                    </h1>
-                    <p class="mt-4 text-xl leading-relaxed text-blueGray-300">Let me know what you think.</p>
-                    <span
-                        class="inline-block w-20 h-1 mt-6 mb-4 rounded-xl bg-gradient-to-r from-teal-1000 to-yellow-1000 "></span>
-                </div>
-                <div class="flex flex-col w-full p-8 lg:w-2/6 md:w-1/2 md:ml-auto lg:mt-10 md:mt-0">
-                    <form class="w-full" name="feedback" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                        <div class="relative mb-4">
-                            <textarea id="message" name="message"
-                                class="w-full px-3 py-1 text-base leading-6 text-white transition-colors duration-200 ease-in-out border border-transparent rounded-lg shadow outline-none resize-none bg-blueGray-700 h-28 focus:border-blueGray-900 focus:ring-2 focus:ring-blueGray-600"
-                                required></textarea>
-                        </div>
-                        <button type="submit"
-                            class="w-full px-8 py-2 font-bold transition-colors duration-500 ease-in-out transform rounded-lg focus:outline-none bg-teal-1000 hover:bg-yellow-1000 text-blue-1000">Send
-                            Feedback
-                        </button>
-                        <div class="mx-auto mt-10 ">
-                            <span>
-                                <img src="./assets/scribbles/scribble1.svg" />
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-        <footer class="pt-10 border-t border-gray-800 body-font">
-            <div
-                class="container flex flex-col flex-wrap items-center px-5 py-12 mx-auto md:flex-row md:flex-no-wrap lg:px-20 ">
-                <a class="flex items-center justify-start w-64 font-medium text-gray-900 title-font">
-                    <img class="object-cover object-center rounded-lg" alt="badge"
-                        src="./assets/Wickedblockswidget.svg">
-                </a>
-                <nav class="flex flex-wrap items-center justify-center py-6 text-base lg:ml-auto md:py-1 ">
-                    <span class="mr-6 font-semibold tracking-tighter text-teal-1000 text-md"> OTHER PROJECTS</span>
-                    <a href="https://colorsandfonts.com" class="mr-4 text-blueGray-300 hover:text-yellow-1000">
-                        ColorsAndFonts</a>
-                    <a href="https://unicornsfeed.com"
-                        class="mr-4 text-blueGray-300 hover:text-yellow-1000">TheUnicornsFeed</a>
-                    <a href="https://wickedtemplates.com"
-                        class="mr-4 text-blueGray-300 hover:text-yellow-1000">WickedTemplates</a>
-                </nav>
             </div>
         </footer>
-        <footer class="mt-10 border-t border-gray-800 body-font">
-            <div
-                class="container flex flex-col flex-wrap items-center px-5 py-6 mx-auto md:flex-row md:flex-no-wrap lg:px-20 ">
-                <p class="mb-4 text-sm font-semibold text-center text-white lg:mr-6 lg:mb-0">
-                    Released under the MIT License Copyright 2021 © Michael Andreuzza
+
+        <footer class="border-t ">
+            <div class="container flex flex-col flex-wrap items-center px-5 py-8 mx-auto lg:px-16 sm:flex-row">
+                <p class="mb-4 text-sm font-bold text-center text-blueGray-500 sm:text-left lg:mb-0">
+                    © 2020 Wicked
+                    Templates
+                    <span class="py-2 mx-4 mt-2 text-sm blue-1300"> by</span>
                 </p>
-                <a href="https://www.producthunt.com/posts/wickedblocks?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wickedblocks"
+                <a href="https://twitter.com/mike_andreuzza" class="" rel="noopener noreferrer" target="_blank">
+                    <img loading="lazy focus:outline-none" alt="team"
+                        class="flex-shrink-0 w-8 h-8 mx-4 ml-2 border-2 rounded-full border-blueGray-500 bg-blueGray-500 objec-fit lg:mb-0"
+                        src="./assets/mike.svg">
+                    <p class="mb-4 text-sm font-bold text-center text-blueGray-500 sm:text-left lg:mb-0">
+                        MICHAEL ANDREUZZA
+                </a>
+                </p>
+                <a class="lg:ml-auto"
+                    href="https://www.producthunt.com/posts/wickedblocks?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wickedblocks"
                     target="_blank"><img
-                        src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=281332&theme=dark&period=daily"
+                        src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=281332&theme=&period=daily"
                         alt="WickedBlocks - Tailwind V2 blocks ready to copy paste | Product Hunt"
                         style="width: 250px; height: 54px;" width="250" height="54" /></a>
-                <span class="inline-flex items-center lg:ml-auto">
-                    <p class="mb-4 text-sm font-bold text-center text-white sm:text-left lg:mb-0">
-                        <a href="https://twitter.com/mike_andreuzza" class="" rel="noopener noreferrer" target="_blank">
-                            <span class="py-2 mx-4 mt-2 text-sm text-white"> by</span>
-                            MICHAEL ANDREUZZA
-                        </a>
-                    </p>
-                    <img loading="lazy  alt=" team"
-                        class="flex-shrink-0 object-cover object-center w-8 h-8 ml-4 rounded-full bg-blueGray-50 lg:mb-0 "
-                        src="./assets/mike.svg">
-                </span>
             </div>
         </footer>
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        <script defer src="./js/theme.js"></script>
+        <script defer src="./js/select.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+        <a href="http://wickedtemplates.com/?ref=WickedBlocksWidget" target="_blank"
+            class="fixed bottom-0 right-0 z-10 m-2 rounded-full">
+            <div class="items-center justify-start hidden font-medium text-gray-900 h w-52 lg:block title-font">
+                <img class="object-cover object-center bg-white rounded-full dark:bg-black" alt="badge"
+                    src="./WickedTemplates.svg">
+            </div>
+        </a>
     </body>
 
 </html>

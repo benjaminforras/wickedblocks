@@ -13,11 +13,32 @@ module.exports = {
       './src/**/*.js',
     ],
   },
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       boxShadow: {
-        DEFAULT: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
+        smallest: '0px 4px 8px rgba(0,0,0,0.12)',
+        small: '0 5px 10px rgba(0,0,0,0.12)',
+        DEFAULT: '0 8px 30px rgba(0,0,0,0.12)',
+        large: '0 30px 60px rgba(0,0,0,0.12)',
+        hover: '0 30px 60px rgba(0,0,0,0.12)',
+        stycky: '0 12px 10px -10px rgba(0,0,0,0.12)',
+        dropdown: '0 4px 4px 0 rgba(0,0,0,0.02)',
+
+      },
+      fontSize: {
+       'xs': '.75rem',
+       'sm': '.875rem',
+       'tiny': '.875rem',
+        'base': '1rem',
+        'lg': '1.125rem',
+        'xl': '1.25rem',
+        '2xl': '1.5rem',
+       '3xl': '1.875rem',
+       '4xl': '2.25rem',
+        '5xl': '3rem',
+        '6xl': '4rem',
+       '7xl': '5rem',
       },
       height: {
         threescreen: '75vh',
@@ -27,40 +48,44 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       black: colors.black,
+      gray: colors.gray,
       white: colors.white,
-      gray: colors.coolGray,
+      coolGray: colors.coolGray,
+      trueGray: colors.trueGray,
       coolGray:colors.coolGray,
       blueGray: colors.blueGray,
       red: colors.red,
       orange:colors.orange,
-      yellow: colors.amber,
+      yellow: colors.yellow,
       lime:colors.lime,
-      green: colors.emerald,
+      green: colors.green,
       emerald: colors.emerald,
-      teal:colors.teal,
       cyan: colors.cyan,
       lightBlue:colors.lightBlue,
+      teal: colors.teal,
       blue: colors.blue,
       indigo: colors.indigo,
-      violiet:colors.violet,
-      purple: colors.violet,
+      violet:colors.violet,
+      purple: colors.purple,
       pink: colors.pink,
       fuchsia:colors.fuchsia,
-      rose:colors.rose,
-        blue: {
-          1000: '#001141',
-          1100: '#000018',
-          1200: '#030C34',
-          1300: '#000012',
-          1400:'#01071B',
-          1500: '#00acee',
-        },
+      rose: colors.rose,
+
         yellow: {
-        1000: '#FCE952',
+        1: '#FCE952',
 
         },
          teal: {
-        1000: '#63F7EE',
+        1: '#63F7EE',
+        2: '#09C2B7',
+
+        },
+          dark: {
+            1: '#01020A',
+            2: '#161c25',
+            3: '#252f3e',
+            4: '#334156',
+            5: '#42546f',
 
         },
       }
@@ -72,5 +97,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+
   ],
 }
