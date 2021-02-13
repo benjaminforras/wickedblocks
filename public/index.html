@@ -19,28 +19,25 @@
         <meta name="msapplication-TileColor" content="#010412">
         <meta name="theme-color" content="#010412">
         <!-- Uncomment for cdn tailwind (if you haven't built your tailwind.css yet) <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">-->
-
-
     </head>
 
-    <body class="antialiased transition-colors duration-1000 bg-white dark:bg-black">
+    <body class="antialiased transition-colors duration-1000 bg-white dark:bg-dark-1">
         <!--- Opacitiy to nav style="backdrop-filter: saturate(180%) blur(5px) !important; background-color:  rgba(0, 0, 0, 0.30) !important;"-->
-        <div
-            class="fixed z-50 w-full text-gray-500 bg-white border-b dark:bg-black border-blueGray-100 dark:border-gray-600 shadow-dropdown lg:px-20">
+        <div class="fixed z-50 w-full px-5 py-4 bg-white border dark:bg-dark-1 dark:border-blueGray-900 lg:px-20">
             <div x-data="{ open: false }"
-                class="flex flex-col max-w-screen-xl py-2 mx-auto md:items-center md:justify-between md:flex-row md:px-6">
-                <div class="flex flex-row items-center justify-between p-2 ">
-                    <a href="./index.html" class=" focus:outline-none">
+                class="flex flex-col w-full md:items-center justify-left md:flex-row lg:px-2 ">
+                <div class="flex flex-row items-center justify-between ">
+                    <a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none">
                         <div class="inline-flex items-center">
                             <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
                             </div>
                             <h2
-                                class="text-lg font-bold tracking-tighter uppercase transition duration-500 ease-in-out transform text-dark-1 hover:text-lightBlue-500 dark:text-blueGray-400">
-                                Wickedblocks
+                                class="font-semibold tracking-tighter transition duration-1000 ease-in-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold lg:mr-8">
+                                Wicked Blocks
                             </h2>
                         </div>
                     </a>
-                    <button class="rounded-lg md:hidden focus:outline-none " @click="open = !open">
+                    <button class=" md:hidden focus:outline-none" @click="open = !open">
                         <svg fill="#ffffff" viewBox="0 0 20 20" class="w-12 h-12">
                             <path x-show="!open" fill-rule="evenodd"
                                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
@@ -52,33 +49,18 @@
                     </button>
                 </div>
                 <nav :class="{'flex': open, 'hidden': !open}"
-                    class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-                    <a class="px-4 py-2 mt-2 transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md text-blueGray-500 md:mt-0 md:ml-auto hover:text-lightBlue-500 focus:text-gray-300 hover:bg-gray-1 focus:bg-gray-1 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 "
-                        href=".">GitHub</a>
-                    <a class="px-4 py-2 mt-2 transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md text-blueGray-500 md:mr-auto md:mt-0 md:ml-4 hover:text-lightBlue-500 focus:text-gray-300 hover:bg-gray-1 focus:bg-gray-1 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
-                        href="/faq">Twiter</a>
-                        <div class="flex theme-switcher lg:mr-4" role="group">
-                            <button
-                                class="px-4 py-2 mx-0 text-sm bg-white border border-r-0 rounded-l-lg outline-none border-blueGray-200 text-blueGray-500 focus:outline-none focus:ring focus:ring-black focus:ring-opacity-50 hover:bg-blueGray-200 hover:text-white focus:shadow-outline theme-switcher-button theme-switcher-light"
-                                title="Light"> Light
-                            </button>
-                            <button
-                                class="px-4 py-2 mx-0 text-sm bg-white border outline-none border-blueGray-200 text-blueGray-500 focus:outline-none focus:ring focus:ring-black focus:ring-opacity-50 hover:bg-blueGray-200 hover:text-white focus:shadow-outline theme-switcher-button theme-switcher-dark"
-                                title="Dark"> Dark
-                            </button>
-                            <button
-                                class="px-4 py-2 mx-0 text-sm bg-white border border-l-0 rounded-r-lg outline-none border-blueGray-200 text-blueGray-500 focus:outline-none focus:ring focus:ring-black focus:ring-opacity-50 hover:bg-blueGray-200 hover:text-white focus:shadow-outline theme-switcher-button theme-switcher-auto"
-                                title="Auto"> Auto
-                            </button>
-                        </div>
-
-                    <div @click.away="open = false" class="relative items-center" x-data="{ open: false }">
+                    class="flex-col items-center flex-grow hidden text-left dark:border-blueGray-900 md:border-l-2 md:flex justify-left md:flex-row">
+                    <a class="px-6 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-xl md:ml-4 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-400 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 "
+                        href="#">GitHub</a>
+                    <a class="px-6 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
+                        href="#">Twiter</a>
+                    <div @click.away="open = false" class="relative lg:ml-auto" x-data="{ open: false }">
                         <button @click="open = !open"
-                            class="flex items-center px-8 py-2 text-sm font-semibold tracking-wide text-white transition duration-500 ease-in-out transform border rounded-lg cursor-pointer bg-dark-1 border-dark-1 focus:outline-none focus:ring focus:ring-black focus:ring-opacity-50 hover:bg-white hover:text-dark-1">
-                            <span class="mr-auto">Menu</span>
+                            class="items-center px-6 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                            <span> Blocks Menu</span>
                             <svg fill="currentColor" viewBox="0 0 20 20"
                                 :class="{'rotate-180': open, 'rotate-0': !open}"
-                                class="inline w-4 h-4 mt-1 ml-6 transition-transform duration-200 transform rotate-0 md:-mt-1">
+                                class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform rotate-0 md:-mt-1">
                                 <path fill-rule="evenodd"
                                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                                     clip-rule="evenodd"></path>
@@ -90,391 +72,475 @@
                             x-transition:leave="transition ease-in duration-75"
                             x-transition:leave-start="transform opacity-100 scale-100"
                             x-transition:leave-end="transform opacity-0 scale-95"
-                            class="absolute right-0 w-full mt-2 origin-top-right bg-black shadow-xl rounded-m ddark:border-gray-800 md:w-48"
+                            class="absolute right-0 z-30 w-screen max-w-screen-md mt-2 origin-top-right"
                             style="display: none;">
-                            <div class="px-2 py-2 rounded-lg bg-black-500 ">
-                                <a class="block px-8 py-2 mt-2 font-semibold text-white transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 hover:text-blue-400 focus:text-white hover:bg-gray-800 focus:outline-none focus:shadow-outline"
-                                    href="#">V 1.0</a>
-                                <a class="block px-8 py-2 mt-2 font-semibold text-white transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 hover:text-blue-400 focus:text-white hover:bg-gray-800 focus:outline-none focus:shadow-outline"
-                                    href="#">V 2.0</a>
-                                <a class="block px-8 py-2 mt-2 font-semibold text-white transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 hover:text-blue-400 focus:text-white hover:bg-gray-800 focus:outline-none focus:shadow-outline "
-                                    href="#">V 3.0</a>
+                            <div
+                                class="px-2 pt-2 pb-4 bg-white border shadow-xl dark:border-blueGray-900 dark:bg-dark-1 rounded-xl">
+                                <div class="container flex flex-wrap justify-between w-full mx-auto">
+                                    <ul class="w-full p-2 md:w-1/3">
+                                        <li>
+                                            <a href="./left-headers.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Left Headers</a>
+                                        </li>
+                                        <li>
+                                            <a href="./centered-headers.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Center Headers</a>
+                                        </li>
+                                        <li>
+                                            <a href="./right-headers.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Right Headers</a>
+                                        </li>
+                                        <li>
+                                            <a href="./auth.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Authentication</a>
+                                        </li>
+
+                                    </ul>
+                                    <ul class="w-full p-2 md:w-1/3">
+                                        <li>
+                                            <a href="./pricing.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Pricing</a>
+                                        </li>
+                                        <li>
+                                            <a href="./clients.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Clients</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="./grids.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Grids</a>
+                                        </li>
+                                        <li>
+                                            <a href="./forms.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Forms</a>
+                                        </li>
+
+
+                                    </ul>
+                                    <ul class="w-full p-2 md:w-1/3">
+
+                                        <li>
+                                            <a href="./gallery.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Gallery</a>
+                                        </li>
+                                        <li>
+                                            <a href="./navigation.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Navigation</a>
+                                        </li>
+                                        <li>
+                                            <a href="./footers.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Footers</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.wickedtemplates.com/" target="_blank"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Wicked Templates</a>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </nav>
             </div>
+
+            </nav>
         </div>
+
         <!----Hero  -->
-        <section class=" body-font">
-            <div class="container justify-center px-5 py-10 pt-24 mx-auto lg:px-20">
-                <div class="flex flex-col w-full mb-2 ">
-                    <h2 class="w-full mx-auto mb-6 text-xs font-semibold tracking-widest text-blueGray-400">COZ WE AIN'T
-                        GOT TIME FOR THAT..
-                    </h2>
+        <section class="text-gray-700 body-font">
+            <div class="container px-8 mx-auto py-36 lg:px-4">
+                <div class="flex flex-col w-full mb-8 text-left lg:text-center">
                     <h1
-                        class="text-6xl font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-tr from-cyan-400 to-lightBlue-500 lg:text-5xl xl:text-6xl md:text-4xl dark:from-lightBlue-800 dark:to-lightblue-700">
-                        Tailwind CSS Blocks
+                        class="mb-6 text-2xl font-semibold tracking-tighter text-dark-1 dark:text-blueGray-300 sm:text-6xl title-font">
+                        Tailwind CSS blocks.
                     </h1>
-                </div>
-                <div class="flex flex-col w-full lg:text-center ">
-                    <p class="text-xl font-normal leading-relaxed tracking-tight text-left text-blueGray-500 lg:w-1/2">
-                        <span class="font-semibold tracking-tighter uppercase text-lightBlue-500 dark:lightBlue-700">WICKEDBLOCKS</span> is
-                        an
-                        open source
-                        growing collection
-                        of layout blocks and components built with
-                        Tailwind CSS V2 ready to copy paste on your Tailwind project, bla, bla, bla...
+                    <p
+                        class="mx-auto text-xl font-medium leading-relaxed lg:w-1/2 text-blueGray-500 dark:text-blueGray-200">
+                        Tailwind CSS
+                        an open source growing collection of layout blocks and components built with Tailwind CSS V2
+                        ready to copy paste on your
+                        Tailwind project
                     </p>
                 </div>
-            </div>
         </section>
         <!----end hero -->
-        <div>
-            <div
-                class="grid grid-cols-1 px-5 mt-6 border-t border-blueGray-200 dark:border-gray-600 bg-blueGray-50 dark:bg-black gap-y-8 lg:py-10 lg:px-28">
-                <div class="grid grid-cols-1 pt-8 gap-y-6 lg:grid-cols-4 lg:gap-5">
-                    <div>
-                        <h3 class="text-lg font-normal tracking-tight text-dark-1 dark:text-blueGray-500">
-                            All Blocks
-                        </h3>
-                    </div>
-                    <div
-                        class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6 md:grid-cols-2 lg:col-span-3">
-                        <a href="./left-headers.html" class="block group">
-                            <figure>
+        <div class="grid grid-cols-1 px-5 bg-white border-t dark:border-blueGray-900 gap-y-8 lg:py-10 lg:px-28 dark:bg-dark-1"
+            style="background-image: radial-gradient(circle 5px at top left, rgba(132,132,132, 0.23) 0%, rgba(132,132,132, 0.23) 50%,rgba(132,132,132, 0.23) 50%, rgba(132,132,132, 0.23) 30%,transparent 30%, transparent 50%),linear-gradient(90deg, rgba(51,51,51, 0),rgba(51,51,51, 0)); background-size: 20px 20px;">
+            <div class="grid grid-cols-1 pt-8 gap-y-6 lg:grid-cols-4 lg:gap-5 lg:-mt-44">
+                <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6 md:grid-cols-3 lg:col-span-5">
+                    <a href="./left-headers.html"
+                        class="block transition ease-in-out transform bg-white shadow rounded-xl duration-5000 ">
+                        <figure>
+                            <div
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
+                                <img class="w-full h-auto "
+                                    src="./assets/sections/headers-left/headers-left-header-1.png" alt="">
                                 <div
-                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
-                                    <img class="w-full h-auto "
-                                        src="./assets/sections/headers-left/headers-left-header-1.png" alt="">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
-                                    </div>
+                                    class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-                                <figcaption class="mt-3">
-                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">Left Headers</p>
-                                    <p class="text-sm text-gray-500">12 blocks</p>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <a href="./centered-headers.html" class="block group">
-                            <figure>
                                 <div
-                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
-                                    <img class="w-full h-auto"
-                                        src="./assets/sections/headers-center/headers-center-header-1.png" alt="">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
-                                    </div>
+                                    class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
                                 </div>
-                                <figcaption class="mt-3">
-                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">Centered Headers</p>
-                                    <p class="text-sm text-gray-500">15 blocks</p>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <a href="./right-headers.html" class="block group">
-                            <figure>
+                            </div>
+                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
+                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">Left Headers</p>
+                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                    12 blocks</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="./centered-headers.html"
+                        class="block transition ease-in-out transform bg-white shadow rounded-xl duration-5000 ">
+                        <figure>
+                            <div
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
+                                <img class="w-full h-auto"
+                                    src="./assets/sections/headers-center/headers-center-header-1.png" alt="">
                                 <div
-                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
-                                    <img class="w-full h-auto"
-                                        src="./assets/sections/headers-right/headers-right-header-1.png" alt="">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
-                                    </div>
+                                    class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-                                <figcaption class="mt-3">
-                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">Right Headers</p>
-                                    <p class="text-sm text-gray-500">12 blocks</p>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <a href="./auth.html" class="block group">
-                            <figure>
                                 <div
-                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
-                                    <img class="w-full h-auto" src="./assets/sections/auth/auth-2.png" alt="">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
-                                    </div>
+                                    class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
                                 </div>
-                                <figcaption class="mt-3">
-                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
-                                        Authentication
-                                    </p>
-                                    <p class="text-sm text-gray-500">4 blocks</p>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <a href="./pricing.html" class="block group">
-                            <figure>
+                            </div>
+                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
+                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">Centered Headers
+                                </p>
+                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                    15 blocks</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="./right-headers.html"
+                        class="block transition ease-in-out transform bg-white shadow rounded-xl duration-5000 ">
+                        <figure>
+                            <div
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
+                                <img class="w-full h-auto"
+                                    src="./assets/sections/headers-right/headers-right-header-1.png" alt="">
                                 <div
-                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
-                                    <img class="w-full h-auto" src="./assets/sections/pricing/price-1.png" alt="">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
-                                    </div>
+                                    class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-                                <figcaption class="mt-3">
-                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
-                                        Pricing
-                                    </p>
-                                    <p class="text-sm text-gray-500">6 blocks</p>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <a href="./clients.html" class="block group">
-                            <figure>
                                 <div
-                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
-                                    <img class="w-full h-auto" src="./assets/sections/clients/clients-1.png" alt="">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
-                                    </div>
+                                    class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
                                 </div>
-                                <figcaption class="mt-3">
-                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
-                                        Clients
-                                    </p>
-                                    <p class="text-sm text-gray-500">7 blocks</p>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <a href="./grids.html" class="block group">
-                            <figure>
+                            </div>
+                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
+                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">Right Headers
+                                </p>
+                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                    12 blocks</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="./auth.html"
+                        class="block transition ease-in-out transform bg-white shadow rounded-xl duration-5000 ">
+                        <figure>
+                            <div
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
+                                <img class="w-full h-auto" src="./assets/sections/auth/auth-2.png" alt="">
                                 <div
-                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
-                                    <img class="w-full h-auto" src="./assets/sections/grids/grids-1.png" alt="">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
-                                    </div>
+                                    class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-                                <figcaption class="mt-3">
-                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
-                                        Grids
-                                    </p>
-                                    <p class="text-sm text-gray-500">16 blocks</p>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <a href="./forms.html" class="block group">
-                            <figure>
                                 <div
-                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
-                                    <img class="w-full h-auto" src="./assets/sections/forms/forms-1.png" alt="">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
-                                    </div>
+                                    class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
                                 </div>
-                                <figcaption class="mt-3">
-                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
-                                        Forms
-                                    </p>
-                                    <p class="text-sm text-gray-500">11 blocks</p>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <a href="./gallery.html" class="block group">
-                            <figure>
+                            </div>
+                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
+                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                                    Authentication
+                                </p>
+                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                    4 blocks</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="./pricing.html"
+                        class="block transition ease-in-out transform bg-white shadow rounded-xl duration-5000 ">
+                        <figure>
+                            <div
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
+                                <img class="w-full h-auto" src="./assets/sections/pricing/price-1.png" alt="">
                                 <div
-                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
-                                    <img class="w-full h-auto" src="./assets/sections/gallery/gallery-1.png" alt="">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
-                                    </div>
+                                    class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-                                <figcaption class="mt-3">
-                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
-                                        Gallery
-                                    </p>
-                                    <p class="text-sm text-gray-500">13 blocks</p>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <a href="./navigation.html" class="block group">
-                            <figure>
                                 <div
-                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
-                                    <img class="w-full h-auto" src="./assets/sections/nav/nav-1.png" alt="">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
-                                    </div>
+                                    class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
                                 </div>
-                                <figcaption class="mt-3">
-                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
-                                        Navigation
-                                    </p>
-                                    <p class="text-sm text-gray-500">8 blocks</p>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <a href="./footer" class="block group">
-                            <figure>
+                            </div>
+                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
+                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                                    Pricing
+                                </p>
+                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                    6 blocks</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="./clients.html"
+                        class="block transition ease-in-out transform bg-white shadow rounded-xl duration-5000 ">
+                        <figure>
+                            <div
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
+                                <img class="w-full h-auto" src="./assets/sections/clients/clients-1.png" alt="">
                                 <div
-                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
-                                    <img class="w-full h-auto" src="./assets/sections/footers/footer-1.png" alt="">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
-                                    </div>
+                                    class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-                                <figcaption class="mt-3">
-                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
-                                        Footer
-                                    </p>
-                                    <p class="text-sm text-gray-500">8 blocks</p>
-                                </figcaption>
-                            </figure>
-                        </a>
-                        <a href="/components/marketing/sections/team-sections" class="block group">
-                            <figure>
                                 <div
-                                    class="relative overflow-hidden transition duration-150 ease-in-out transform border hover:border-white hover:shadow rounded-xl">
-                                    <img class="w-full h-auto" src="./assets/sections/wt.png" alt="">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out rounded-md shadow opacity-15">
-                                    </div>
-                                    <div
-                                        class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
-                                    </div>
+                                    class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
                                 </div>
-                                <figcaption class="mt-3">
-                                    <p class="text-sm font-normal text-dark-1 dark:text-blueGray-400">
-                                        Team Sections
-                                    </p>
-                                    <p class="text-sm text-gray-500">8 blocks</p>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
+                            </div>
+                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
+                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                                    Clients
+                                </p>
+                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                    7 blocks</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="./grids.html"
+                        class="block transition ease-in-out transform bg-white shadow rounded-xl duration-5000 ">
+                        <figure>
+                            <div
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
+                                <img class="w-full h-auto" src="./assets/sections/grids/grids-1.png" alt="">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
+                                </div>
+                                <div
+                                    class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                </div>
+                            </div>
+                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
+                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                                    Grids
+                                </p>
+                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                    16 blocks</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="./forms.html"
+                        class="block transition ease-in-out transform bg-white shadow rounded-xl duration-5000 ">
+                        <figure>
+                            <div
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
+                                <img class="w-full h-auto" src="./assets/sections/forms/forms-1.png" alt="">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
+                                </div>
+                                <div
+                                    class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                </div>
+                            </div>
+                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
+                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                                    Forms
+                                </p>
+                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                    11 blocks</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="./gallery.html"
+                        class="block transition ease-in-out transform bg-white shadow rounded-xl duration-5000 ">
+                        <figure>
+                            <div
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
+                                <img class="w-full h-auto" src="./assets/sections/gallery/gallery-1.png" alt="">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
+                                </div>
+                                <div
+                                    class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                </div>
+                            </div>
+                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
+                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                                    Gallery
+                                </p>
+                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                    13 blocks</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="./navigation.html"
+                        class="block transition ease-in-out transform bg-white shadow rounded-xl duration-5000 ">
+                        <figure>
+                            <div
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
+                                <img class="w-full h-auto" src="./assets/sections/nav/nav-1.png" alt="">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
+                                </div>
+                                <div
+                                    class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                </div>
+                            </div>
+                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
+                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                                    Navigation
+                                </p>
+                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                    8 blocks</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="./footer"
+                        class="block transition ease-in-out transform bg-white shadow rounded-xl duration-5000 ">
+                        <figure>
+                            <div
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
+                                <img class="w-full h-auto" src="./assets/sections/footers/footer-1.png" alt="">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
+                                </div>
+                                <div
+                                    class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                </div>
+                            </div>
+                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
+                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                                    Footer
+                                </p>
+                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                    8 blocks</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                    <a href="/components/marketing/sections/team-sections"
+                        class="block transition ease-in-out transform bg-white shadow rounded-xl duration-5000 ">
+                        <figure>
+                            <div
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
+                                <img class="w-full h-auto" src="./assets/sections/wt.png" alt="">
+                                <div
+                                    class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
+                                </div>
+                                <div
+                                    class="absolute inset-0 transition duration-150 ease-in-out bg-white opacity-0 group-hover:opacity-30">
+                                </div>
+                            </div>
+                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
+                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                                    Wicked Templates
+                                </p>
+
+                            </figcaption>
+                        </figure>
+                    </a>
                 </div>
             </div>
         </div>
-        <footer class="text-gray-600 border-t body-font">
+        <footer class="py-6 border dark:border-blueGray-900">
             <div
-                class="container flex flex-col flex-wrap px-5 py-12 mx-auto lg:px-16 md:items-center lg:items-start md:flex-row md:flex-no-wrap">
-                <div class="flex-shrink-0 mx-auto text-center w-52 md:mx-0 md:text-left">
-                    <a class="flex items-center justify-start font-medium text-white title-font">
-                        <img class="object-contain rounded-lg objllcfit" alt="badge"
-                            src="./assets/Wickedblockswidget.svg">
-                    </a>
-                    <p class="my-4 text-sm font-medium text-center text-blueGray-500 lg:mb-0">
-                        Released under the MIT License Copyright 2021 © Michael Andreuzza
-                    </p>
-                </div>
-                <div class="flex flex-wrap flex-grow mx-auto mt-10 -mb-10 text-left md:pl-20 md:mt-0">
-
-                    <div class="w-1/2 px-4 lg:w-1/2">
+                class="container px-6 mx-auto space-y-6 divide-y dark:divide-blueGray-900 lg:px-20 md:space-y-12 divide-opacity-50">
+                <div class="grid grid-cols-12">
+                    <div class="pb-6 col-span-full md:pb-0 md:col-span-6">
+                        <a href="#" class="flex justify-center space-x-3 md:justify-start">
+                            <img class="object-contain rounded-lg objllcfit w-52" alt="badge"
+                                src="./assets/Wickedblockswidget.svg">
+                        </a>
+                    </div>
+                    <div class="col-span-6 text-center md:text-left md:col-span-3">
                         <h2
                             class="mb-3 tracking-tighter text-transparent text-md bg-clip-text bg-gradient-to-r from-lightBlue-400 via-lightBlue-500 to-cyan-400">
                             SOCIAL</h2>
-                        <nav class="mb-10 list-none">
+                        <ul class="mb-10 list-none">
                             <li>
                                 <a href="https://twitter.com/WickedTemplates"
-                                    class="text-blueGray-400 hover:text-lightBlue-500">Twitter</a>
+                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">Twitter</a>
                             </li>
                             <li>
                                 <a href="https://www.producthunt.com/posts/wicked-templates"
-                                    class="text-blueGray-400 hover:text-lightBlue-500">Product Hunt</a>
+                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">Product
+                                    Hunt</a>
                             </li>
                             <li>
                                 <a href="https://dribbble.com/MichaelAndreuzza"
-                                    class="text-blueGray-400 hover:text-lightBlue-500">Dribbble</a>
+                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">Dribbble</a>
                             </li>
-                        </nav>
+                            </>
                     </div>
-
-                    <div class="w-1/2 px-4 lg:w-1/2">
+                    <div class="col-span-6 text-center md:text-left md:col-span-3">
                         <h2
                             class="mb-3 tracking-tighter text-transparent text-md bg-clip-text bg-gradient-to-r from-lightBlue-400 via-lightBlue-500 to-cyan-400">
                             OTHER PROJECTS</h2>
-                        <nav class="mb-10 list-none">
+                        <ul class="mb-10 list-none">
                             <li>
                                 <a href="https://www.wickedtemplates.com"
-                                    class="text-blueGray-400 hover:text-lightBlue-500">
+                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">
                                     Wicked Templates
                                 </a>
                             </li>
                             <li>
                                 <a href="https://colorsandfonts.com"
-                                    class="text-blueGray-400 hover:text-lightBlue-500">Colors
+                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">Colors
                                     &amp; fonts</a>
                             </li>
                             <li>
                                 <a href="https://unicornsfeed.com"
-                                    class="text-blueGray-400 hover:text-lightBlue-500">TheUnicornsFeed</a>
+                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">TheUnicornsFeed</a>
                             </li>
-                        </nav>
+                            </>
+                    </div>
+                </div>
+                <div class="grid justify-center pt-6 lg:justify-between">
+                    <div
+                        class="flex flex-col self-center text-sm text-center text-blueGray-500 dark:text-blueGray-200 md:block lg:col-start-1 md:space-x-6">
+                        <span>Released under the MIT License Copyright 2021 © Michael Andreuzza</span>
+
+                    </div>
+                    <div class="flex items-center justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
+                        <a class="lg:ml-auto"
+                            href="https://www.producthunt.com/posts/wickedblocks?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wickedblocks"
+                            target="_blank"><img
+                                src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=281332&theme=&period=daily"
+                                alt="WickedBlocks - Tailwind V2 blocks ready to copy paste | Product Hunt"
+                                style="width: 250px; height: 54px;" width="250" height="54" /></a>
                     </div>
                 </div>
             </div>
         </footer>
 
-        <footer class="border-t ">
-            <div class="container flex flex-col flex-wrap items-center px-5 py-8 mx-auto lg:px-16 sm:flex-row">
-                <p class="mb-4 text-sm font-bold text-center text-blueGray-500 sm:text-left lg:mb-0">
-                    © 2020 Wicked
-                    Templates
-                    <span class="py-2 mx-4 mt-2 text-sm blue-1300"> by</span>
-                </p>
-                <a href="https://twitter.com/mike_andreuzza" class="" rel="noopener noreferrer" target="_blank">
-                    <img loading="lazy focus:outline-none" alt="team"
-                        class="flex-shrink-0 w-8 h-8 mx-4 ml-2 border-2 rounded-full border-blueGray-500 bg-blueGray-500 objec-fit lg:mb-0"
-                        src="./assets/mike.svg">
-                    <p class="mb-4 text-sm font-bold text-center text-blueGray-500 sm:text-left lg:mb-0">
-                        MICHAEL ANDREUZZA
-                </a>
-                </p>
-                <a class="lg:ml-auto"
-                    href="https://www.producthunt.com/posts/wickedblocks?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wickedblocks"
-                    target="_blank"><img
-                        src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=281332&theme=&period=daily"
-                        alt="WickedBlocks - Tailwind V2 blocks ready to copy paste | Product Hunt"
-                        style="width: 250px; height: 54px;" width="250" height="54" /></a>
-            </div>
-        </footer>
+
         <script defer src="./js/theme.js"></script>
-        <script defer src="./js/select.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-        <a href="http://wickedtemplates.com/?ref=WickedBlocksWidget" target="_blank"
-            class="fixed bottom-0 right-0 z-10 m-2 rounded-full">
-            <div class="items-center justify-start hidden font-medium text-gray-900 h w-52 lg:block title-font">
-                <img class="object-cover object-center bg-white rounded-full dark:bg-black" alt="badge"
-                    src="./WickedTemplates.svg">
+        <!------ Toggles ----->
+        <div
+            class="fixed bottom-0 right-0 z-10 p-2 m-2 bg-white border shadow dark:bg-dark-1 dark:border-blueGray-900 rounded-xl">
+            <div class="items-center justify-start hidden font-medium text-gray-900 lg:flex title-font">
+                <div class="flex items-center theme-switcher " role="group">
+                    <button
+                        class="p-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-light"
+                        title="Light">
+                        Light
+                    </button>
+                    <button
+                        class="p-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-dark"
+                        title="Dark"> Dark
+                    </button>
+                    <button
+                        class="p-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-auto"
+                        title="Auto"> Auto
+                    </button>
+                </div>
             </div>
-        </a>
+        </div>
     </body>
 
 </html>

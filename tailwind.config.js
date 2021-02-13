@@ -16,14 +16,15 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+
       boxShadow: {
-        smallest: '0px 4px 8px rgba(0,0,0,0.12)',
-        small: '0 5px 10px rgba(0,0,0,0.12)',
-        DEFAULT: '0 8px 30px rgba(0,0,0,0.12)',
-        large: '0 30px 60px rgba(0,0,0,0.12)',
-        hover: '0 30px 60px rgba(0,0,0,0.12)',
-        stycky: '0 12px 10px -10px rgba(0,0,0,0.12)',
-        dropdown: '0 4px 4px 0 rgba(0,0,0,0.02)',
+        smallest: '0px 4px 8px rgba(248, 250, 252, 0.12)',
+        small: '0 5px 10px rgba(248, 250, 252, 0.12)',
+        DEFAULT: '0 8px 30px rgba(248, 250, 252, 0.12)',
+        large: '0 30px 60px rgba(248, 250, 252, 0.12)',
+        hover: '0 30px 60px rgba(248, 250, 252, 0.12)',
+        stycky: '0 12px 10px -10px rgba(248, 250, 252, 0.12)',
+        dropdown: '0 4px 4px 0 rgba(248, 250, 252, 0.02)',
 
       },
       fontSize: {
@@ -71,15 +72,12 @@ module.exports = {
       fuchsia:colors.fuchsia,
       rose: colors.rose,
 
-        yellow: {
-        1: '#FCE952',
+        primary: {
+        1: '#2D79F8',
 
         },
-         teal: {
-        1: '#63F7EE',
-        2: '#09C2B7',
 
-        },
+
           dark: {
             1: '#01020A',
             2: '#161c25',
@@ -97,6 +95,5 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
-
   ],
 }

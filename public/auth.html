@@ -1,6 +1,7 @@
 <!-- component -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="t scroll">
+
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -12,9 +13,9 @@
         <link rel="stylesheet" href="./css/wt.css" type="text/css" />
         <link href="./css/blackboard.css" rel="stylesheet" type="text/css">
         <!-- Uncomment for cdn tailwind (if you haven't built your tailwind.css yet) <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">-->
-
     </head>
-    <body class="antialiased transition-colors duration-1000">
+
+    <body class="antialiased transition-colors duration-1000 bg-white dark:bg-dark-1">
         <!----- Snackbar -->
         <div x-data="noticesHandler()"
             class="fixed inset-0 flex flex-col-reverse items-end justify-start w-screen h-screen"
@@ -25,30 +26,29 @@
                     x-transition:enter-end="transform opacity-100" x-transition:leave="transition ease-out duration-500"
                     x-transition:leave-start="transform translate-x-0 opacity-100"
                     x-transition:leave-end="transform translate-x-full opacity-0" @click="remove(notice.id)"
-                    class="z-50 flex items-center justify-center w-full h-16 mb-4 text-lg font-semibold tracking-tighter text-white rounded-lg shadow-xl cursor-pointer lg:mx-auto lg:w-1/4"
+                    class="z-50 flex items-center justify-center w-full h-16 mb-4 text-lg font-semibold tracking-tighter border shadow-xl cursor-pointer text-dark-1 lg:mx-auto lg:w-1/4 rounded-xl"
                     :class="{
-            				'bg-blue-800 dark:bg-lightBlue-400  ': notice.type === 'success',
-            			 }" style="pointer-events:all" x-text="notice.text">
+                    				'bg-white   ': notice.type === 'success',
+                    			 }" style="pointer-events:all" x-text="notice.text">
                 </div>
             </template>
         </div>
         <!--- Opacitiy to nav style="backdrop-filter: saturate(180%) blur(5px) !important; background-color:  rgba(0, 0, 0, 0.30) !important;"-->
-        <div
-            class="fixed z-50 w-full text-gray-500 bg-white border-b dark:bg-dark-1 border-blueGray-100 shadow-dropdown dark:bg-gray-1 lg:px-20">
+        <div class="fixed z-50 w-full px-5 py-4 bg-white border dark:bg-dark-1 dark:border-blueGray-900 lg:px-20">
             <div x-data="{ open: false }"
-                class="flex flex-col max-w-screen-xl py-2 mx-auto md:items-center md:justify-between md:flex-row md:px-6">
-                <div class="flex flex-row items-center justify-between p-2 ">
-                    <a href="./index.html" class=" focus:outline-none">
+                class="flex flex-col w-full md:items-center justify-left md:flex-row lg:px-2 ">
+                <div class="flex flex-row items-center justify-between ">
+                    <a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none">
                         <div class="inline-flex items-center">
                             <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
                             </div>
                             <h2
-                                class="text-lg font-bold tracking-tighter uppercase transition duration-500 ease-in-out transform text-dark-1 hover:text-lightBlue-500 ">
-                                Wickedblocks
+                                class="font-semibold tracking-tighter transition duration-1000 ease-in-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold lg:mr-8">
+                                Wicked Blocks
                             </h2>
                         </div>
                     </a>
-                    <button class="rounded-lg md:hidden focus:outline-none " @click="open = !open">
+                    <button class=" md:hidden focus:outline-none" @click="open = !open">
                         <svg fill="#ffffff" viewBox="0 0 20 20" class="w-12 h-12">
                             <path x-show="!open" fill-rule="evenodd"
                                 d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
@@ -60,149 +60,18 @@
                     </button>
                 </div>
                 <nav :class="{'flex': open, 'hidden': !open}"
-                    class="flex-col flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row">
-                    <a class="px-4 py-2 mt-2 transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md text-blueGray-500 md:mt-0 md:ml-auto hover:text-lightBlue-500 focus:text-gray-300 hover:bg-gray-1 focus:bg-gray-1 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 "
-                        href=".">GitHub</a>
-                    <a class="px-4 py-2 mt-2 transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md text-blueGray-500 md:mr-auto md:mt-0 md:ml-4 hover:text-lightBlue-500 focus:text-gray-300 hover:bg-gray-1 focus:bg-gray-1 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
-                        href="/faq">Twiter</a>
-                      <div class="mr-4 space-y-1" x-data="Components.customSelect({ open: false, value: 3, selected: 4 })"
-                        x-init="init()">
-                        <div class="relative ">
-                            <span class="inline-block rounded-lg w-44">
-                                <button x-ref="button" @click="onButtonClick()" type="button" aria-haspopup="listbox"
-                                    :aria-expanded="open" aria-labelledby="assigned-to-label"
-                                    class="relative w-full py-2 pl-3 pr-10 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-lg cursor-default focus:outline-none focus:shadow-outline-blue focus:border-blueGray-400 sm:text-sm sm:leading-5 ">
-                                    <div class="flex items-center space-x-3">
-                                        <span x-text="['Light', 'Dark', 'System'][value - 1]"
-                                            class="block truncate">light</span>
-                                    </div>
-                                    <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                                        <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                                            <path
-                                                d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
-                                                clip-rule="evenodd" fill-rule="evenodd"></path>
-                                        </svg>
-                                    </span>
-                                </button>
-                            </span>
-                            <div x-show="open" @focusout="onEscape()" @click.away="open = false"
-                                x-description="Select popover, show/hide based on select state."
-                                x-transition:leave="transition ease-in duration-100"
-                                x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                                class="absolute w-full mt-1 bg-white rounded-lg shadow-lg" style="display: none;">
-                                <ul @keydown.enter.stop.prevent="onOptionSelect()"
-                                    @keydown.space.stop.prevent="onOptionSelect()" @keydown.escape="onEscape()"
-                                    @keydown.arrow-up.prevent="onArrowUp()" @keydown.arrow-down.prevent="onArrowDown()"
-                                    x-ref="listbox" tabindex="-1" role="listbox" aria-labelledby="assigned-to-label"
-                                    :aria-activedescendant="activeDescendant"
-                                    class="py-1 overflow-auto text-base leading-6 rounded-lg shadow-xs max-h-56 focus:outline-none sm:text-sm sm:leading-5 theme-switcher">
-                                    <li id="assigned-to-option-1" role="option" @click="choose(1)"
-                                        @mouseenter="selected = 1" @mouseleave="selected = null"
-                                        :class="{ 'text-white bg-indigo-600': selected === 1, 'text-gray-900': !(selected === 1) }"
-                                        class="relative py-2 pl-4 text-gray-900 cursor-default select-none pr-9 theme-switcher-button theme-switcher-light">
-                                        <div class="flex items-center space-x-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="icon icon-tabler icon-tabler-sun" width="24" height="24"
-                                                viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <circle cx="12" cy="12" r="4" />
-                                                <path
-                                                    d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
-                                            </svg>
-                                            <span
-                                                :class="{ 'font-semibold': value === 1, 'font-normal': !(value === 1) }"
-                                                class="block font-normal truncate">
-                                                Light
-                                            </span>
-                                        </div>
-                                        <span x-show="value === 1"
-                                            :class="{ 'text-white': selected === 1, 'text-indigo-600': !(selected === 1) }"
-                                            class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
-                                            style="display: none;">
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd"
-                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                        </span>
-                                    </li>
-                                    <li id="assigned-to-option-2" role="option" @click="choose(2)"
-                                        @mouseenter="selected = 2" @mouseleave="selected = null" aria-selected="true"
-                                        :class="{ 'text-white bg-indigo-600': selected === 2, 'text-gray-900': !(selected === 2) }"
-                                        class="relative py-2 pl-4 text-gray-900 cursor-default select-none pr-9 theme-switcher-button theme-switcher-dark">
-                                        <div class="flex items-center space-x-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="icon icon-tabler icon-tabler-moon-stars" width="24" height="24"
-                                                viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path
-                                                    d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
-                                                <path
-                                                    d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
-                                                <path d="M19 11h2m-1 -1v2" />
-                                            </svg>
-                                            <span
-                                                :class="{ 'font-semibold': value === 2, 'font-normal': !(value === 2) }"
-                                                class="block font-normal truncate">
-                                                Dark
-                                            </span>
-                                        </div>
-                                        <span x-show="value === 2"
-                                            :class="{ 'text-white': selected === 2, 'text-indigo-600': !(selected === 2) }"
-                                            class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
-                                            style="display: none;">
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd"
-                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                        </span>
-                                    </li>
-                                    <li id="assigned-to-option-3" role="option" @click="choose(3)"
-                                        @mouseenter="selected = 3" @mouseleave="selected = null"
-                                        :class="{ 'text-white bg-indigo-600': selected === 3, 'text-gray-900': !(selected === 3) }"
-                                        class="relative py-2 pl-4 text-gray-900 cursor-default select-none pr-9 theme-switcher-button theme-switcher-auto">
-                                        <div class="flex items-center space-x-3">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="icon icon-tabler icon-tabler-device-desktop" width="24"
-                                                height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor"
-                                                fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <rect x="3" y="4" width="18" height="12" rx="1" />
-                                                <line x1="7" y1="20" x2="17" y2="20" />
-                                                <line x1="9" y1="16" x2="9" y2="20" />
-                                                <line x1="15" y1="16" x2="15" y2="20" />
-                                            </svg>
-                                            <span
-                                                :class="{ 'font-semibold': value === 3, 'font-normal': !(value === 3) }"
-                                                class="block font-normal truncate">
-                                                System
-                                            </span>
-                                        </div>
-                                        <span x-show="value === 3"
-                                            :class="{ 'text-white': selected === 3, 'text-indigo-600': !(selected === 3) }"
-                                            class="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600"
-                                            style="display: none;">
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd"
-                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div @click.away="open = false" class="relative items-center" x-data="{ open: false }">
+                    class="flex-col items-center flex-grow hidden text-left dark:border-blueGray-900 md:border-l-2 md:flex justify-left md:flex-row">
+                    <a class="px-6 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-xl md:ml-4 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-400 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 "
+                        href="#">GitHub</a>
+                    <a class="px-6 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
+                        href="#">Twiter</a>
+                    <div @click.away="open = false" class="relative lg:ml-auto" x-data="{ open: false }">
                         <button @click="open = !open"
-                            class="flex items-center px-8 py-2 text-sm font-semibold tracking-wide text-white transition duration-500 ease-in-out transform border rounded-lg cursor-pointer bg-dark-1 border-dark-1 focus:outline-none focus:ring focus:ring-black focus:ring-opacity-50 hover:bg-white hover:text-dark-1">
-                            <span class="mr-auto">Menu</span>
+                            class="items-center px-6 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                            <span> Blocks Menu</span>
                             <svg fill="currentColor" viewBox="0 0 20 20"
                                 :class="{'rotate-180': open, 'rotate-0': !open}"
-                                class="inline w-4 h-4 mt-1 ml-6 transition-transform duration-200 transform rotate-0 md:-mt-1">
+                                class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform rotate-0 md:-mt-1">
                                 <path fill-rule="evenodd"
                                     d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                                     clip-rule="evenodd"></path>
@@ -214,35 +83,100 @@
                             x-transition:leave="transition ease-in duration-75"
                             x-transition:leave-start="transform opacity-100 scale-100"
                             x-transition:leave-end="transform opacity-0 scale-95"
-                            class="absolute right-0 w-full mt-2 origin-top-right bg-black shadow-xl rounded-m ddark:border-gray-800 md:w-48"
+                            class="absolute right-0 z-30 w-screen max-w-screen-md mt-2 origin-top-right"
                             style="display: none;">
-                            <div class="px-2 py-2 rounded-lg bg-black-500 ">
-                                <a class="block px-8 py-2 mt-2 font-semibold text-white transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 hover:text-blue-400 focus:text-white hover:bg-gray-800 focus:outline-none focus:shadow-outline"
-                                    href="#">V 1.0</a>
-                                <a class="block px-8 py-2 mt-2 font-semibold text-white transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 hover:text-blue-400 focus:text-white hover:bg-gray-800 focus:outline-none focus:shadow-outline"
-                                    href="#">V 2.0</a>
-                                <a class="block px-8 py-2 mt-2 font-semibold text-white transition duration-500 ease-in-out transform bg-transparent rounded-lg text-md md:mt-0 hover:text-blue-400 focus:text-white hover:bg-gray-800 focus:outline-none focus:shadow-outline "
-                                    href="#">V 3.0</a>
+                            <div
+                                class="px-2 pt-2 pb-4 bg-white border shadow-xl dark:border-blueGray-900 dark:bg-dark-1 rounded-xl">
+                                <div class="container flex flex-wrap justify-between w-full mx-auto">
+                                    <ul class="w-full p-2 md:w-1/3">
+                                        <li>
+                                            <a href="./left-headers.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Left Headers</a>
+                                        </li>
+                                        <li>
+                                            <a href="./centered-headers.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Center Headers</a>
+                                        </li>
+                                        <li>
+                                            <a href="./right-headers.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Right Headers</a>
+                                        </li>
+                                        <li>
+                                            <a href="./auth.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Authentication</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="w-full p-2 md:w-1/3">
+                                        <li>
+                                            <a href="./pricing.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Pricing</a>
+                                        </li>
+                                        <li>
+                                            <a href="./clients.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Clients</a>
+                                        </li>
+                                        <li>
+                                            <a href="./grids.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Grids</a>
+                                        </li>
+                                        <li>
+                                            <a href="./forms.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Forms</a>
+                                        </li>
+                                    </ul>
+                                    <ul class="w-full p-2 md:w-1/3">
+                                        <li>
+                                            <a href="./gallery.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Gallery</a>
+                                        </li>
+                                        <li>
+                                            <a href="./navigation.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Navigation</a>
+                                        </li>
+                                        <li>
+                                            <a href="./footers.html"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Footers</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.wickedtemplates.com/" target="_blank"
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                Wicked Templates</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </nav>
             </div>
+            </nav>
         </div>
         <!----Hero  -->
-        <section class="bg-white body-font ">
+        <section class="body-font">
             <div class="container justify-center px-5 py-8 pt-32 mx-auto lg:px-20">
                 <div class="flex flex-col w-full mb-4 ">
                     <h1
-                        class="text-6xl font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-tr from-cyan-400 to-lightBlue-500 lg:text-5xl xl:text-6xl md:text-4xl ">
+                        class="mb-6 text-2xl font-semibold tracking-tighter text-dark-1 dark:text-blueGray-300 sm:text-6xl title-font ">
                         Authentication.
                     </h1>
                 </div>
-                <span class="px-4 py-2 text-left rounded-lg bg-blueGray-100 text-blueGray-500">4 Blocks</span>
+                <span class="px-4 py-2 text-left rounded-lg bg-blueGray-900 text-lightBlue-400">4 Blocks</span>
                 <div class="flex flex-col w-full mt-4 lg:text-center">
-                    <p class="text-xl font-normal leading-relaxed tracking-tight text-left text-blueGray-500 lg:w-1/2">
-                        <span class="font-semibold tracking-tighter uppercase text-lightBlue-500">Web
+                    <p
+                        class="text-xl font-medium leading-snug text-left text-blueGray-500 dark:text-blueGray-200 lg:w-1/2">
+                        <span class="font-semibold tracking-tighter uppercase text-lightBlue-400">Web
                             Authentication</span>
+                        is an
                         is a fairly recent W3C standard backed by major players like Google, Paypal, Mozilla, Microsoft,
                         and
                         Qualcomm. It aims at defining a web-browser API for the creation and use of strong
@@ -254,87 +188,94 @@
         </section>
         <!----end hero -->
         <!--- auth 1-->
-        <section class="w-full my-12 border-t border-b border-blueGray-200">
-            <div class="w-full mx-auto">
-                <div class="w-full" x-data="{ tab: 'preview1' }">
-                    <div class="flex items-center w-full px-4 py-2 bg-white lg:px-28 ">
+        <section class="px-5 ">
+            <div class="container mx-auto lg:py-16 rounded-xl">
+                <div class="shadow-smallest rounded-xl" x-data="{ tab: 'preview1' }">
+                    <div
+                        class="flex w-full p-4 bg-white border border-blueGray-200 dark:border-blueGray-800 text-blueGray-500 dark:bg-blueGray-800 rounded-t-xl">
                         <div
-                            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-6 border rounded-full border-blueGray-300 bg-blueGray-200 text-blueGray-500">
+                            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 my-4 mr-2 -mt-8 bg-white border-2 rounded-full dark:border-gray-500 dark:bg-blueGray-900 text-lightBlue-400">
                             1
                         </div>
-                        <button :class="{ 'active font-medium bg-blueGray-200 text-blueGray-600': tab === 'preview1' }"
-                            class="items-center justify-center w-full px-8 py-2 my-2 mt-2 mr-2 text-sm font-medium tracking-wide text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer iflex text-blueGray-500 hover:text-blueGray-600 focus:outline-none lg:w-auto hover:border-blueGray-400 focus:ring focus:ring-black focus:ring-opacity-50"
+                        <button
+                            :class="{ 'active font-bold dark:bg-blueGray-600 bg-blueGray-200 text-blueGray-500 dark:text-blueGray-300': tab === 'preview1' }"
+                            class="inline-flex items-center justify-center w-full px-4 py-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform rounded-lg cursor-pointer font-lg focus:outline-none lg:w-auto active focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 text-blueGray-500"
                             @click="tab = 'preview1'">
                             Preview
                         </button>
-                        <button :class="{ 'active font-medium bg-blueGray-200 text-blueGray-600': tab === 'code1' }"
-                            class="items-center justify-center w-full px-8 py-2 my-2 mt-2 mr-2 text-sm font-medium tracking-wide text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer iflex text-blueGray-500 hover:text-blueGray-600 focus:outline-none lg:w-auto hover:border-blueGray-400 focus:ring focus:ring-black focus:ring-opacity-50"
+                        <button
+                            :class="{ 'active font-bold dark:bg-blueGray-600 bg-blueGray-200 text-blueGray-500 dark:text-blueGray-300': tab === 'code1' }"
+                            class="inline-flex items-center justify-center w-full px-4 py-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer text-blueGray-500 font-lg focus:outline-none lg:w-auto focus:shadow-outline focus:ring-2 hover:border-blueGray-300 dark:hover:border-blueGray-800 ring-offset-current ring-offset-2"
                             @click="tab = 'code1'">
                             Code
                         </button>
                         <!---- Copy Buton -->
                         <button
-                            class="inline-flex items-center justify-center w-full p-2 my-2 mt-2 ml-auto mr-2 font-semibold tracking-tighter text-center transition duration-500 ease-in-out transform bg-white border rounded-lg cursor-pointer text-blueGray-500 hover:text-blueGray-600 hover:bg-blueGray-200 focus:outline-none lg:w-auto focus:ring focus:ring-black focus:ring-opacity-50"
-                            onclick="copyToClip(document.getElementById('authOne').innerHTML)" x-data="{}"
+                            class="items-center justify-center w-full p-1 my-2 mt-2 mr-2 transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer ininline-flex hover:border ttext-center text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
+                            onclick=" copyToClip(document.getElementById('authOne').innerHTML)" x-data="{}"
                             @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24"
-                                height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
+                                height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <rect x="8" y="8" width="12" height="12" rx="2" />
-                                <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" />
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <rect x="8" y="8" width="12" height="12" rx="2"></rect>
+                                <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
                             </svg>
                         </button>
                     </div>
                     <div class="lg:h-screen">
-                        <div class="border " x-show="tab === 'preview1'">
-                            <!-- <img class="" loading="lazy" src="./assets/sections/auth/auth-1.png" alt=""> -->
-                            <iframe class="w-full h-screen" src="./tailwindBrightSections/authentication/auth-1.html" title="W3Schools Free Online Web Tutorials"></iframe>
-
+                        <div class="border border-t-0 border-blueGray-200 rounded-b-xl dark:border-blueGray-800"
+                            x-show="tab === 'preview1'">
+                            <iframe class="w-full h-screen rounded-b-xl"
+                                src="./tailwindBrightSections/authentication/auth-1.html" title="wicked"></iframe>
                         </div>
-                        <div class="" x-show="tab === 'code1'">
+                        <div class="rounded-b-xl" x-show="tab === 'code1'" style="display: none;">
                             <div
-                                class="h-screen overflow-auto overflow-y-scroll bg-dark-1 text-lightBlue-200 code-tab">
-                                <div >
+                                class="h-screen overflow-auto overflow-y-scroll bg-blueGray-900 text-blueGray-200 rounded-b-xl code-tab">
+                                <div class="rounded-b-xl">
                                     <div class="hidden" id="authOne">
-                                        <!---------
-<section class="flex flex-col items-center h-screen md:flex-row ">
-            <div class="hidden w-full h-screen bg-gray-400 lg:block md:w-1/3 xl:w-2/3">
+                                        <!------------  <section class="flex flex-col items-center h-screen md:flex-row ">
+            <div class="hidden w-full h-screen bg-white lg:block md:w-1/3 lg:w-2/3">
                  <img src="https://dummyimage.com/1000x800/F3F4F7/64748b"
                     alt="" class="object-cover w-full h-full">
             </div>
-            <div class="flex items-center justify-center w-full h-screen px-6 bg-blue-1300 md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12">
+            <div class="flex items-center justify-center w-full h-screen px-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12">
                 <div class="w-full h-100">
                     <a class="flex items-center w-32 mb-4 font-medium text-gray-900 title-font md:mb-0">
-                        <img src="../badges/WhitePink.svg" alt="">
+                    <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
+                    </div>
+                    <h2
+                        class="text-lg font-bold tracking-tighter text-black uppercase transition duration-500 ease-in-out transform hover:text-lightBlue-500 dark:text-blueGray-400">
+                        Wickedblocks
+                    </h2>
                     </a>
-                    <h1 class="mt-12 text-2xl font-semibold tracking-tighter text-blue-700 sm:text-3xl title-font">Log in to your
+                    <h1 class="mt-12 text-2xl font-semibold text-black tracking-ringtighter sm:text-3xl title-font">Log in to your
                         account</h1>
                     <form class="mt-6" action="#" method="POST">
                         <div>
                             <label class="block text-sm font-medium leading-relaxed tracking-tighter text-gray-700">Email
                                 Address</label>
                             <input type="email" name="" id="" placeholder="Your Email "
-                                class="w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-white focus:ring-0 "
+                                class="w-full px-4 py-2 mt-2 text-base text-black transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 "
                                 autofocus autocomplete required>
                         </div>
                         <div class="mt-4">
                             <label class="block text-sm font-medium leading-relaxed tracking-tighter text-gray-700">Password</label>
                             <input type="password" name="" id="" placeholder="Your Password" minlength="6"
-                                class="w-full px-4 py-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-white focus:ring-0"
+                                class="w-full px-4 py-2 text-base text-black transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 "
                                 required>
                         </div>
                         <div class="mt-2 text-right">
                             <a href="#"
-                                class="text-sm font-semibold leading-relaxed text-gray-700 hover:text-blue-700 focus:text-blue-700">Forgot
+                                class="text-sm font-semibold leading-relaxed text-gray-700 hover:text-black focus:text-blue-700">Forgot
                                 Password?</a>
                         </div>
-                        <button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:shadow-outline focus:outline-none">Log In</button>
+                        <button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-gray-800 hover:to-black focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 ">Log In</button>
                     </form>
-                    <hr class="w-full my-6 border-blueGray-300">
+                    <hr class="w-full my-6 border-gray-300">
                     <div class="flex justify-enter">
                         <button type="button"
-                            class="inline-flex w-full px-4 py-3 font-semibold text-blue-700 border rounded-lg border-blueGray-300 bg-blue-1300 hover:bg-blue-700 hover:text-white focus:bg-gray-100">
+                            class="inline-flex w-full px-4 py-3 font-semibold text-black transition duration-500 ease-in-out transform bg-white border border-gray-300 rounded-lg hover:bg-black hover:text-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ">
                             <div class="flex items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     class="w-6 h-6" viewBox="0 0 48 48">
@@ -357,7 +298,7 @@
                             </div>
                         </button>
                         <button type="button"
-                            class="inline-flex px-4 py-3 ml-8 font-semibold text-blue-700 border rounded-lg border-blueGray-300 bg-blue-1300 hover:bg-blue-700 focus:bg-gray-100 hover:text-blue-500">
+                            class="inline-flex px-4 py-3 ml-8 font-semibold text-black transition duration-500 ease-in-out transform bg-white border border-gray-300 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 hover:bg-black focus:bg-gray-100 hover:text-blue-500">
                             <div class="flex items-center justify-center">
                                 <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     class="w-5 h-5" viewBox="0 0 24 24">
@@ -372,49 +313,54 @@
                             class="font-semibold text-blue-500 hover:text-blue-700">Sign Up</a></p>
                 </div>
             </div>
-        </section>
-                -->
+        </section>---->
                                     </div>
                                     <!---- display code goes here.-->
-                                    <pre class="leading-6"><code data-language="html">
-        &lt;section class="flex flex-col items-center h-screen md:flex-row "&gt;
-            &lt;div class="hidden w-full h-screen bg-gray-400 lg:block md:w-1/3 xl:w-2/3"&gt;
-                &lt;!---- The image will cover the whole right side from bottom to top and side to side--&gt;
+
+                                    <pre class="leading-6">
+                                    <code data-language="html">
+         &lt;section class="flex flex-col items-center h-screen md:flex-row "&gt;
+            &lt;div class="hidden w-full h-screen bg-white lg:block md:w-1/3 lg:w-2/3"&gt;
                  &lt;img src="https://dummyimage.com/1000x800/F3F4F7/64748b"
                     alt="" class="object-cover w-full h-full"&gt;
             &lt;/div&gt;
-            &lt;div class="flex items-center justify-center w-full h-screen px-6 bg-blue-1300 md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12"&gt;
+            &lt;div class="flex items-center justify-center w-full h-screen px-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12"&gt;
                 &lt;div class="w-full h-100"&gt;
                     &lt;a class="flex items-center w-32 mb-4 font-medium text-gray-900 title-font md:mb-0"&gt;
-                        &lt;img src="../badges/WhitePink.svg" alt=""&gt;
+                    &lt;div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500"&gt;
+                    &lt;/div&gt;
+                    &lt;h2
+                        class="text-lg font-bold tracking-tighter text-black uppercase transition duration-500 ease-in-out transform hover:text-lightBlue-500 dark:text-blueGray-400"&gt;
+                        Wickedblocks
+                    &lt;/h2&gt;
                     &lt;/a&gt;
-                    &lt;h1 class="mt-12 text-2xl font-semibold tracking-tighter text-blue-700 sm:text-3xl title-font"&gt;Log in to your
+                    &lt;h1 class="mt-12 text-2xl font-semibold text-black tracking-ringtighter sm:text-3xl title-font"&gt;Log in to your
                         account&lt;/h1&gt;
                     &lt;form class="mt-6" action="#" method="POST"&gt;
                         &lt;div&gt;
                             &lt;label class="block text-sm font-medium leading-relaxed tracking-tighter text-gray-700"&gt;Email
                                 Address&lt;/label&gt;
                             &lt;input type="email" name="" id="" placeholder="Your Email "
-                                class="w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-white focus:ring-0 "
+                                class="w-full px-4 py-2 mt-2 text-base text-black transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 "
                                 autofocus autocomplete required&gt;
                         &lt;/div&gt;
                         &lt;div class="mt-4"&gt;
                             &lt;label class="block text-sm font-medium leading-relaxed tracking-tighter text-gray-700"&gt;Password&lt;/label&gt;
                             &lt;input type="password" name="" id="" placeholder="Your Password" minlength="6"
-                                class="w-full px-4 py-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-white focus:ring-0"
+                                class="w-full px-4 py-2 text-base text-black transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg focus:border-gray-500 focus:bg-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 "
                                 required&gt;
                         &lt;/div&gt;
                         &lt;div class="mt-2 text-right"&gt;
                             &lt;a href="#"
-                                class="text-sm font-semibold leading-relaxed text-gray-700 hover:text-blue-700 focus:text-blue-700"&gt;Forgot
+                                class="text-sm font-semibold leading-relaxed text-gray-700 hover:text-black focus:text-blue-700"&gt;Forgot
                                 Password?&lt;/a&gt;
                         &lt;/div&gt;
-                        &lt;button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:shadow-outline focus:outline-none"&gt;Log In&lt;/button&gt;
+                        &lt;button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-gray-800 hover:to-black focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2 "&gt;Log In&lt;/button&gt;
                     &lt;/form&gt;
-                    &lt;hr class="w-full my-6 border-blueGray-300"&gt;
+                    &lt;hr class="w-full my-6 border-gray-300"&gt;
                     &lt;div class="flex justify-enter"&gt;
                         &lt;button type="button"
-                            class="inline-flex w-full px-4 py-3 font-semibold text-blue-700 border rounded-lg border-blueGray-300 bg-blue-1300 hover:bg-blue-700 hover:text-white focus:bg-gray-100"&gt;
+                            class="inline-flex w-full px-4 py-3 font-semibold text-black transition duration-500 ease-in-out transform bg-white border border-gray-300 rounded-lg hover:bg-black hover:text-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 "&gt;
                             &lt;div class="flex items-center justify-center"&gt;
                                 &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     class="w-6 h-6" viewBox="0 0 48 48"&gt;
@@ -437,7 +383,7 @@
                             &lt;/div&gt;
                         &lt;/button&gt;
                         &lt;button type="button"
-                            class="inline-flex px-4 py-3 ml-8 font-semibold text-blue-700 border rounded-lg border-blueGray-300 bg-blue-1300 hover:bg-blue-700 focus:bg-gray-100 hover:text-blue-500"&gt;
+                            class="inline-flex px-4 py-3 ml-8 font-semibold text-black transition duration-500 ease-in-out transform bg-white border border-gray-300 rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 hover:bg-black focus:bg-gray-100 hover:text-blue-500"&gt;
                             &lt;div class="flex items-center justify-center"&gt;
                                 &lt;svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     class="w-5 h-5" viewBox="0 0 24 24"&gt;
@@ -453,7 +399,9 @@
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/section&gt;
-                                </code></pre>
+
+                                    </code>
+                                    </pre>
                                 </div>
                             </div>
                         </div>
@@ -461,120 +409,130 @@
                 </div>
             </div>
         </section>
-        <!--- auth 2-->
         <!---- WT CTA     -->
         <section class="bg">
-            <div class="container flex flex-wrap items-center px-5 py-8 mx-auto lg:px-20">
+            <div class="container flex flex-wrap items-center px-5 py-20 mx-auto lg:px-24">
                 <div class="flex flex-col w-full mx-auto mb-12 text-left">
-                    <div class="relative items-center block rounded-lg shadow bg-coolGray-900 md:flex"
-                        style="min-height: 19rem;">
-                        <div class="relative w-full h-full overflow-hidden rounded-t-lg md:w-2/5 md:rounded-t-none md:rounded-l-lg"
-                            style="min-height: 19rem;">
-                            <img class="absolute inset-0 object-cover object-center w-full h-full bg-blueGray-500"
-                                src="https://d33wubrfki0l68.cloudfront.net/57d5713377a87d3d50ad57d40b486ae35a00aac7/bb84a/assets/thumbnails/wt3.png"
-                                alt="">
-                            <div class="inset-0 w-full h-full bg-blue-1300"></div>
-                        </div>
-                        <div class="flex items-center w-full h-full rounded-lg md:w-3/5 bg-coolGray-900">
+                    <div
+                        class="relative items-center block px-20 py-5 shadow-xl dark:from-lightblue-700 dark:to-cyan-600 rounded-xl bg-gradient-to-tr from-lightBlue-400 to-cyan-300 md:flex">
+                        <div class="flex items-center w-full h-full rounded-lg lg:w-1/2 ">
                             <div class="items-center p-6 lg:p-8 md:pr-20 md:pl-20 md:py-8">
-                                <p class="text-2xl leading-relaxed tracking-tighter text-blueGray-400">
+                                <p
+                                    class="mb-4 text-base font-semibold leading-relaxed lg:text-2xl text-1 dark:text-dark-1">
                                     <span
-                                        class="font-semibold text-white transition duration-500 ease-in-out transform hover:text-yellow-1000">WICKEDTEMPLATES</span>
+                                        class="font-black text-white transition duration-500 ease-in-out transform lg:text-4xl">WICKEDTEMPLATES</span>
                                     <br>
-                                    "Free &amp; premium Well designed landing pages to integrate with your next
-                                    project."
+                                    Free &amp; premium Well designed landing pages to integrate with your next
+                                    project. Made with Tailwind CSs
                                 </p>
-                                <a class="inline-flex items-center mt-3 transition duration-500 ease-in-out transform text-blueGray-500 hover:text-yellow-1000"
-                                    href="http://wickedtemplates.com/" target="_blank">
-                                    <span>Have a look to Wicked Templates.</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="ml-4 icon icon-tabler icon-tabler-arrow-right" width="20" height="20"
-                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <line x1="5" y1="12" x2="19" y2="12" />
-                                        <line x1="13" y1="18" x2="19" y2="12" />
-                                        <line x1="13" y1="6" x2="19" y2="12" />
-                                    </svg>
+                                <a href="http://wickedtemplates.com/" target="_blank">
+                                    <button
+                                        class="flex items-center w-full px-4 py-2 mt-auto text-white transition duration-1000 ease-in-out transform border-0 rounded-lg bg-opacity-70 bg-dark-1 hover:bg-blueGray-900 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                        Have a look to Wicked Templates.
+                                        <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" height="20"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <line x1="13" y1="18" x2="19" y2="12"></line>
+                                            <line x1="13" y1="6" x2="19" y2="12"></line>
+                                        </svg>
+                                    </button>
                                 </a>
                             </div>
-                            <svg class="absolute inset-y-0 hidden w-24 h-full -ml-12 fill-current text-coolGray-900 md:block"
-                                viewBox="0 0 100 100" preserveAspectRatio="none">
-                                <polygon points="50,0 100,0 50,100 0,100" />
-                            </svg>
+                        </div>
+                        <div class="w-full h-full ml-auto rounded-t-lg md:w-2/5">
+                            <img class="inset-0 z-10 object-cover object-center w-full h-full lg:-mt-32"
+                                src="https://d33wubrfki0l68.cloudfront.net/b92b643f46895b8ed99ea8e50dc50ffb90abb45d/d591f/assets/darkmode.png"
+                                alt="">
                         </div>
                     </div>
                     <!-- Carousel Tabs -->
                 </div>
+            </div>
         </section>
         <!----end  WT CTA -->
-          <section class="w-full my-12 border-t border-b border-blueGray-200">
-            <div class="w-full mx-auto">
-                <div class="w-full" x-data="{ tab: 'preview2' }">
-                    <div class="flex items-center w-full px-4 py-2 bg-white lg:px-28 ">
+        <!--- auth 2-->
+        <section class="px-5 ">
+            <div class="container mx-auto lg:py-16 rounded-xl">
+                <div class="shadow-smallest rounded-xl" x-data="{ tab: 'preview2' }">
+                    <div
+                        class="flex w-full p-4 bg-white border border-blueGray-200 dark:border-blueGray-800 text-blueGray-500 dark:bg-blueGray-800 rounded-t-xl">
                         <div
-                            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-6 border rounded-full border-blueGray-300 bg-blueGray-200 text-blueGray-500">
+                            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 my-4 mr-2 -mt-8 bg-white border-2 rounded-full dark:border-gray-500 dark:bg-blueGray-900 text-lightBlue-400">
                             2
                         </div>
-                        <button :class="{ 'active font-medium bg-blueGray-200 text-blueGray-600': tab === 'preview2' }"
-                            class="items-center justify-center w-full px-8 py-2 my-2 mt-2 mr-2 text-sm font-medium tracking-wide text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer iflex text-blueGray-500 hover:text-blueGray-600 focus:outline-none lg:w-auto hover:border-blueGray-400 focus:ring focus:ring-black focus:ring-opacity-50"
+                        <button
+                            :class="{ 'active font-bold dark:bg-blueGray-600 bg-blueGray-200 text-blueGray-500 dark:text-blueGray-300': tab === 'preview2' }"
+                            class="inline-flex items-center justify-center w-full px-4 py-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform rounded-lg cursor-pointer font-lg focus:outline-none lg:w-auto active focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 text-blueGray-500 "
                             @click="tab = 'preview2'">
                             Preview
                         </button>
-                        <button :class="{ 'active font-medium bg-blueGray-200 text-blueGray-600': tab === 'code2' }"
-                            class="items-center justify-center w-full px-8 py-2 my-2 mt-2 mr-2 text-sm font-medium tracking-wide text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer iflex text-blueGray-500 hover:text-blueGray-600 focus:outline-none lg:w-auto hover:border-blueGray-400 focus:ring focus:ring-black focus:ring-opacity-50"
+                        <button
+                            :class="{ 'active font-bold dark:bg-blueGray-600 bg-blueGray-200 text-blueGray-500 dark:text-blueGray-300': tab === 'code2' }"
+                            class="inline-flex items-center justify-center w-full px-4 py-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer text-blueGray-500 font-lg focus:outline-none lg:w-auto focus:shadow-outline focus:ring-2 hover:border-blueGray-300 dark:hover:border-blueGray-800 ring-offset-current ring-offset-2"
                             @click="tab = 'code2'">
                             Code
                         </button>
                         <!---- Copy Buton -->
                         <button
-                            class="inline-flex items-center justify-center w-full p-2 my-2 mt-2 ml-auto mr-2 font-semibold tracking-tighter text-center transition duration-500 ease-in-out transform bg-white border rounded-lg cursor-pointer text-blueGray-500 hover:text-blueGray-600 hover:bg-blueGray-200 focus:outline-none lg:w-auto focus:ring focus:ring-black focus:ring-opacity-50"
+                            class="items-center justify-center w-full p-1 my-2 mt-2 mr-2 transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer ininline-flex hover:border ttext-center text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                             onclick="copyToClip(document.getElementById('authTwo').innerHTML)" x-data="{}"
                             @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24"
-                                height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
+                                height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <rect x="8" y="8" width="12" height="12" rx="2" />
-                                <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" />
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <rect x="8" y="8" width="12" height="12" rx="2"></rect>
+                                <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
                             </svg>
                         </button>
                     </div>
                     <div class="lg:h-screen">
-                        <div class="border " x-show="tab === 'preview2'">
-                            <img class=" dark:opacity-50" loading="lazy"
-                                src="./assets/sections/auth/auth-2.png" alt="">
+                        <div class="border border-t-0 border-blueGray-200 rounded-b-xl dark:border-blueGray-800"
+                            x-show="tab === 'preview2'">
+                            <iframe class="w-full h-screen rounded-b-xl"
+                                src="./tailwindBrightSections/authentication/auth-2.html" title="wicked"></iframe>
                         </div>
-                        <div  x-show="tab === 'code2'">
+                        <div class=" rounded-b-xl" x-show="tab === 'code2'" style="display: none;">
                             <div
-                                class="h-screen overflow-auto overflow-y-scroll bg-dark-1 text-lightBlue-200 code-tab">
-                                <div >
+                                class="h-screen overflow-auto overflow-y-scroll bg-blueGray-900 text-blueGray-200 rounded-b-xl code-tab">
+                                <div class="rounded-b-xl">
                                     <div class="hidden" id="authTwo">
-                                        <!----
-  <section class="flex flex-col items-center h-screen md:flex-row ">
-            <div class="relative hidden w-full h-screen bg-gray-400 lg:block md:w-1/3 xl:w-1/3">
-                 <img src="https://dummyimage.com/600x500/F3F4F7/64748b"
-                    alt="" class="absolute object-cover w-full h-full">
+                                        <!--------
+<section class="flex flex-col items-center h-screen bg-gray-100 md:flex-row ">
+            <div class="relative hidden w-full h-screen bg-gray-400 lg:block md:w-1/3 lg:w-2/3">
+                <img src="https://dummyimage.com/600x500/F3F4F7/64748b" alt=""
+                    class="absolute object-cover w-full h-full">
                 <div class="relative z-10 m-12 text-left">
-                    <a class="flex items-center w-32 mb-4 font-medium text-gray-900 title-font md:mb-6">
-                        <img src="./dist/badges/WhitePink.svg" alt="">
+                    <a class="flex items-center w-32 mb-4 font-medium text-gray-900 title-font md:mb-10">
+                        <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
+                        </div>
+                        <h2
+                            class="text-lg font-bold tracking-tighter text-black uppercase duration-500 ease-in-out transform ttransition hover:text-lightBlue-500 dark:text-blueGray-400">
+                            Wickedblocks
+                        </h2>
                     </a>
-                    <h1 class="mb-2 text-2xl font-semibold tracking-tighter text-blue-700 tsm:text-5xl title-font">Discover 100+
+                    <h1 class="mb-2 text-2xl font-semibold tracking-tighter text-black-700 tsm:text-5xl title-font">
+                        Discover 100+
                         <br>
                         screens ready to use.
                     </h1>
                 </div>
             </div>
-            <div class="flex w-full h-screen px-6 bg-blue-1300 md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12 items-left justify-left">
+            <div
+                class="flex w-full h-screen px-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12 items-left justify-left">
                 <div class="w-full py-32 lg:py-6 lg:h-100">
-                    <h1 class="my-12 text-2xl font-semibold tracking-tighter text-blue-700 sm:text-3xl title-font">Sign Up to a new
+                    <h1 class="my-12 text-2xl font-semibold tracking-tighter text-black-700 sm:text-3xl title-font">Sign
+                        Up to a new
                         world.</h1>
                     <div class="flex justify-enter">
                         <button type="button"
-                            class="inline-flex w-full px-4 py-3 font-semibold text-blue-800 border rounded-lg border-blueGray-300 bg-blue-1300 hover:bg-blue-800 hover:text-white focus:bg-gray-100">
+                            class="inline-flex w-full px-4 py-3 font-semibold text-black transition duration-500 ease-in-out transform bg-white border border-gray-300 rounded-lg hover:bg-black hover:text-white focus:bg-gray-100 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
                             <div class="flex items-center justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" <svg
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     class="w-6 h-6" viewBox="0 0 48 48">
                                     <defs>
                                         <path id="a"
@@ -595,7 +553,7 @@
                             </div>
                         </button>
                         <button type="button"
-                            class="inline-flex px-4 py-3 ml-8 font-semibold text-blue-800 border rounded-lg border-blueGray-300 bg-blue-1300 hover:bg-blue-800 focus:bg-gray-100 hover:text-blue-500">
+                            class="inline-flex px-4 py-3 ml-8 font-semibold text-black transition duration-500 ease-in-out transform bg-white border border-gray-300 rounded-lg hover:bg-black focus:bg-gray-100 hover:text-black-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
                             <div class="flex items-center justify-center">
                                 <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     class="w-5 h-5" viewBox="0 0 24 24">
@@ -608,61 +566,72 @@
                     </div>
                     <form class="mt-6" action="#" method="POST">
                         <div>
-                            <label class="block text-xs font-medium leading-relaxed tracking-tighter text-gray-700">Email
+                            <label
+                                class="block text-xs font-medium leading-relaxed tracking-tighter text-gray-700">Email
                                 Address</label>
                             <input type="email" name="" id="" placeholder="Your Email "
-                                class="w-full px-4 py-2 mt-2 text-base bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                                class="w-full px-4 py-2 mt-2 text-base transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg ext-black-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                                 autofocus autocomplete required>
                         </div>
                         <div class="mt-4">
-                            <label class="block text-xs font-medium leading-relaxed tracking-tighter text-gray-700">Password</label>
+                            <label
+                                class="block text-xs font-medium leading-relaxed tracking-tighter text-gray-700">Password</label>
                             <input type="password" name="" id="" placeholder="Your Password" minlength="6"
-                                class="w-full px-4 py-2 text-base bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
-                                required>
+                                class="w-full px-4 py-2 text-base transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg ext-black-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2" required>
                         </div>
                         <div class="mt-2 text-right">
                             <a href="#"
-                                class="text-sm font-semibold leading-relaxed text-gray-700 hover:text-blue-700 focus:text-blue-700">Forgot
+                                class="text-sm font-semibold leading-relaxed text-gray-700 hover:text-black-700 focus:text-black-700">Forgot
                                 Password?</a>
                         </div>
-                        <button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:shadow-outline focus:outline-none">Log In</button>
+                        <button type="submit"
+                            class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-gray-800 hover:to-black focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2">Log
+                            In</button>
                     </form>
                     <p class="mt-8 text-center">Need an account? <a href="#"
-                            class="font-semibold text-blue-500 hover:text-blue-400">Sign
+                            class="font-semibold text-black-500 hover:text-black-400">Sign
                             Up</a></p>
                 </div>
             </div>
         </section>
-                      --->
+
+                                    -------->
                                     </div>
                                     <!---- display code goes here.-->
                                     <!-- HTML generated using hilite.me -->
-                                    <pre class="leading-6"><code data-language="html">
-        &lt;section class="flex flex-col items-center h-screen md:flex-row "&gt;
-            &lt;div class="relative hidden w-full h-screen bg-gray-400 lg:block md:w-1/3 xl:w-1/3"&gt;
-                &lt;!---- The image will cover the whole right side from bottom to top and side to side--&gt;
-                 &lt;img src="https://dummyimage.com/600x500/F3F4F7/64748b"
-                    alt="" class="absolute object-cover w-full h-full"&gt;
+                                    <pre class="leading-6"> <code data-language="html">
+        &lt;section class="flex flex-col items-center h-screen bg-gray-100 md:flex-row "&gt;
+            &lt;div class="relative hidden w-full h-screen bg-gray-400 lg:block md:w-1/3 lg:w-2/3"&gt;
+                &lt;img src="https://dummyimage.com/600x500/F3F4F7/64748b" alt=""
+                    class="absolute object-cover w-full h-full"&gt;
                 &lt;div class="relative z-10 m-12 text-left"&gt;
-                    &lt;a class="flex items-center w-32 mb-4 font-medium text-gray-900 title-font md:mb-6"&gt;
-                        &lt;img src="./dist/badges/WhitePink.svg" alt=""&gt;
+                    &lt;a class="flex items-center w-32 mb-4 font-medium text-gray-900 title-font md:mb-10"&gt;
+                        &lt;div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500"&gt;
+                        &lt;/div&gt;
+                        &lt;h2
+                            class="text-lg font-bold tracking-tighter text-black uppercase duration-500 ease-in-out transform ttransition hover:text-lightBlue-500 dark:text-blueGray-400"&gt;
+                            Wickedblocks
+                        &lt;/h2&gt;
                     &lt;/a&gt;
-                    &lt;h1 class="mb-2 text-2xl font-semibold tracking-tighter text-blue-700 tsm:text-5xl title-font"&gt;Discover 100+
+                    &lt;h1 class="mb-2 text-2xl font-semibold tracking-tighter text-black-700 tsm:text-5xl title-font"&gt;
+                        Discover 100+
                         &lt;br&gt;
                         screens ready to use.
                     &lt;/h1&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class="flex w-full h-screen px-6 bg-blue-1300 md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12 items-left justify-left"&gt;
+            &lt;div
+                class="flex w-full h-screen px-6 bg-white md:max-w-md lg:max-w-full md:mx-auto md:w-1/2 xl:w-1/3 lg:px-16 xl:px-12 items-left justify-left"&gt;
                 &lt;div class="w-full py-32 lg:py-6 lg:h-100"&gt;
-                    &lt;h1 class="my-12 text-2xl font-semibold tracking-tighter text-blue-700 sm:text-3xl title-font"&gt;Sign Up to a new
+                    &lt;h1 class="my-12 text-2xl font-semibold tracking-tighter text-black-700 sm:text-3xl title-font"&gt;Sign
+                        Up to a new
                         world.&lt;/h1&gt;
                     &lt;div class="flex justify-enter"&gt;
                         &lt;button type="button"
-                            class="inline-flex w-full px-4 py-3 font-semibold text-blue-800 border rounded-lg border-blueGray-300 bg-blue-1300 hover:bg-blue-800 hover:text-white focus:bg-gray-100"&gt;
+                            class="inline-flex w-full px-4 py-3 font-semibold text-black transition duration-500 ease-in-out transform bg-white border border-gray-300 rounded-lg hover:bg-black hover:text-white focus:bg-gray-100 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"&gt;
                             &lt;div class="flex items-center justify-center"&gt;
-                                &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                &lt;svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" &lt;svg
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                     class="w-6 h-6" viewBox="0 0 48 48"&gt;
                                     &lt;defs&gt;
                                         &lt;path id="a"
@@ -683,7 +652,7 @@
                             &lt;/div&gt;
                         &lt;/button&gt;
                         &lt;button type="button"
-                            class="inline-flex px-4 py-3 ml-8 font-semibold text-blue-800 border rounded-lg border-blueGray-300 bg-blue-1300 hover:bg-blue-800 focus:bg-gray-100 hover:text-blue-500"&gt;
+                            class="inline-flex px-4 py-3 ml-8 font-semibold text-black transition duration-500 ease-in-out transform bg-white border border-gray-300 rounded-lg hover:bg-black focus:bg-gray-100 hover:text-black-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"&gt;
                             &lt;div class="flex items-center justify-center"&gt;
                                 &lt;svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     class="w-5 h-5" viewBox="0 0 24 24"&gt;
@@ -696,32 +665,35 @@
                     &lt;/div&gt;
                     &lt;form class="mt-6" action="#" method="POST"&gt;
                         &lt;div&gt;
-                            &lt;label class="block text-xs font-medium leading-relaxed tracking-tighter text-gray-700"&gt;Email
+                            &lt;label
+                                class="block text-xs font-medium leading-relaxed tracking-tighter text-gray-700"&gt;Email
                                 Address&lt;/label&gt;
                             &lt;input type="email" name="" id="" placeholder="Your Email "
-                                class="w-full px-4 py-2 mt-2 text-base bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                                class="w-full px-4 py-2 mt-2 text-base transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg ext-black-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                                 autofocus autocomplete required&gt;
                         &lt;/div&gt;
                         &lt;div class="mt-4"&gt;
-                            &lt;label class="block text-xs font-medium leading-relaxed tracking-tighter text-gray-700"&gt;Password&lt;/label&gt;
+                            &lt;label
+                                class="block text-xs font-medium leading-relaxed tracking-tighter text-gray-700"&gt;Password&lt;/label&gt;
                             &lt;input type="password" name="" id="" placeholder="Your Password" minlength="6"
-                                class="w-full px-4 py-2 text-base bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
-                                required&gt;
+                                class="w-full px-4 py-2 text-base transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg ext-black-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2" required&gt;
                         &lt;/div&gt;
                         &lt;div class="mt-2 text-right"&gt;
                             &lt;a href="#"
-                                class="text-sm font-semibold leading-relaxed text-gray-700 hover:text-blue-700 focus:text-blue-700"&gt;Forgot
+                                class="text-sm font-semibold leading-relaxed text-gray-700 hover:text-black-700 focus:text-black-700"&gt;Forgot
                                 Password?&lt;/a&gt;
                         &lt;/div&gt;
-                        &lt;button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:shadow-outline focus:outline-none"&gt;Log In&lt;/button&gt;
+                        &lt;button type="submit"
+                            class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-gray-800 hover:to-black focus:shadow-outline focus:outline-none focus:ring-2 ring-offset-current ring-offset-2"&gt;Log
+                            In&lt;/button&gt;
                     &lt;/form&gt;
                     &lt;p class="mt-8 text-center"&gt;Need an account? &lt;a href="#"
-                            class="font-semibold text-blue-500 hover:text-blue-400"&gt;Sign
+                            class="font-semibold text-black-500 hover:text-black-400"&gt;Sign
                             Up&lt;/a&gt;&lt;/p&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/section&gt;
-                                    </code></pre>
+                                    </code> </pre>
                                 </div>
                             </div>
                         </div>
@@ -730,58 +702,69 @@
             </div>
         </section>
         <!--- auth 3-->
-          <section class="w-full my-12 border-t border-b border-blueGray-200">
-            <div class="w-full mx-auto">
-                <div class="w-full" x-data="{ tab: 'preview3' }">
-                    <div class="flex items-center w-full px-4 py-2 bg-white lg:px-28 ">
+        <section class="px-5 ">
+            <div class="container mx-auto lg:py-16 rounded-xl">
+                <div class="shadow-smallest rounded-xl" x-data="{ tab: 'preview3' }">
+                    <div
+                        class="flex w-full p-4 bg-white border border-blueGray-200 dark:border-blueGray-800 text-blueGray-500 dark:bg-blueGray-800 rounded-t-xl">
                         <div
-                            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-6 border rounded-full border-blueGray-300 bg-blueGray-200 text-blueGray-500">
+                            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 my-4 mr-2 -mt-8 bg-white border-2 rounded-full dark:border-gray-500 dark:bg-blueGray-900 text-lightBlue-400">
                             3
                         </div>
-                        <button :class="{ 'active font-medium bg-blueGray-200 text-blueGray-600': tab === 'preview3' }"
-                            class="items-center justify-center w-full px-8 py-2 my-2 mt-2 mr-2 text-sm font-medium tracking-wide text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer iflex text-blueGray-500 hover:text-blueGray-600 focus:outline-none lg:w-auto hover:border-blueGray-400 focus:ring focus:ring-black focus:ring-opacity-50"
+                        <button
+                            :class="{ 'active font-bold dark:bg-blueGray-600 bg-blueGray-200 text-blueGray-500 dark:text-blueGray-300': tab === 'preview3' }"
+                            class="inline-flex items-center justify-center w-full px-4 py-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform rounded-lg cursor-pointer font-lg focus:outline-none lg:w-auto active focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 text-blueGray-500 "
                             @click="tab = 'preview3'">
                             Preview
                         </button>
-                        <button :class="{ 'active font-medium bg-blueGray-200 text-blueGray-600': tab === 'code3' }"
-                            class="items-center justify-center w-full px-8 py-2 my-2 mt-2 mr-2 text-sm font-medium tracking-wide text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer iflex text-blueGray-500 hover:text-blueGray-600 focus:outline-none lg:w-auto hover:border-blueGray-400 focus:ring focus:ring-black focus:ring-opacity-50"
+                        <button
+                            :class="{ 'active font-bold dark:bg-blueGray-600 bg-blueGray-200 text-blueGray-500 dark:text-blueGray-300': tab === 'code3' }"
+                            class="inline-flex items-center justify-center w-full px-4 py-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer text-blueGray-500 font-lg focus:outline-none lg:w-auto focus:shadow-outline focus:ring-2 hover:border-blueGray-300 dark:hover:border-blueGray-800 ring-offset-current ring-offset-2"
                             @click="tab = 'code3'">
                             Code
                         </button>
                         <!---- Copy Buton -->
                         <button
-                            class="inline-flex items-center justify-center w-full p-2 my-2 mt-2 ml-auto mr-2 font-semibold tracking-tighter text-center transition duration-500 ease-in-out transform bg-white border rounded-lg cursor-pointer text-blueGray-500 hover:text-blueGray-600 hover:bg-blueGray-200 focus:outline-none lg:w-auto focus:ring focus:ring-black focus:ring-opacity-50"
+                            class="items-center justify-center w-full p-1 my-2 mt-2 mr-2 transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer ininline-flex hover:border ttext-center text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                             onclick="copyToClip(document.getElementById('authThree').innerHTML)" x-data="{}"
                             @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24"
-                                height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
+                                height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <rect x="8" y="8" width="12" height="12" rx="2" />
-                                <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" />
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <rect x="8" y="8" width="12" height="12" rx="2"></rect>
+                                <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
                             </svg>
                         </button>
                     </div>
                     <div class="lg:h-screen">
-                        <div class="border " x-show="tab === 'preview3'">
-                            <img class=" dark:opacity-50" loading="lazy"
-                                src="./assets/sections/auth/auth-3.png" alt="">
+                        <div class="border border-t-0 border-blueGray-200 rounded-b-xl dark:border-blueGray-800"
+                            x-show="tab === 'preview3'">
+                            <iframe class="w-full h-screen rounded-b-xl"
+                                src="./tailwindBrightSections/authentication/auth-3.html" title="wicked"></iframe>
                         </div>
-                        <div  x-show="tab === 'code3'">
+                        <div class=" rounded-b-xl" x-show="tab === 'code3'" style="display: none;">
                             <div
-                                class="h-screen overflow-auto overflow-y-scroll bg-dark-1 text-lightBlue-200 code-tab">
-                                <div >
+                                class="h-screen overflow-auto overflow-y-scroll bg-blueGray-900 text-blueGray-200 rounded-b-xl code-tab">
+                                <div class="rounded-b-xl">
                                     <div class="hidden" id="authThree">
-                                        <!---- <section class="flex flex-col items-center h-screen md:flex-row">
+
+                                    <!--------------
+<section class="flex flex-col items-center h-screen md:flex-row">
             <div class="container mx-auto">
                 <div class="flex justify-center px-2 py-6 ">
                     <div class="flex w-full rounded-lg xl:w-3/4 lg:w-11/12 lg:shadow-xl ">
-                        <div class="relative hidden w-full h-auto bg-cover border-r rounded-l-lg bg-blue-1300 lg:block lg:w-6/12">
+                        <div class="relative hidden w-full h-auto bg-white bg-cover border-r rounded-l-lg lg:block lg:w-6/12">
                             <div class="relative z-10 m-12 text-left ">
-                                <a class="flex items-center w-32 font-medium text-gray-900 title-font md:mb-6">
-                                    <img src="../badges/WhitePink.svg" alt="">
-                                </a>
-                                <h2 class="mt-12 mb-2 text-2xl font-semibold tracking-tighter text-blue-700 sm:text-3xl title-font">
+                            <a class="flex items-center w-32 mb-4 font-medium text-gray-900 title-font md:mb-10">
+                                <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
+                                </div>
+                                <h2
+                                    class="text-lg font-bold tracking-tighter text-black uppercase transition duration-500 ease-in-out transform hover:text-lightBlack-500 dark:text-lightBlue-400">
+                                    Wickedblocks
+                                </h2>
+                            </a>
+                                <h2 class="mt-12 mb-2 text-2xl font-semibold tracking-tighter text-black sm:text-3xl title-font">
                                     Create an account.
                                 </h2>
                                 <div
@@ -795,11 +778,11 @@
                             </div>
                         </div>
                         <div
-                            class="w-full px-8 py-24 border-gray-100 rounded-lg bg-blue-1300 lg:w-8/12 lg:px-20 lg:py-4 lg:rounded-l-none s">
+                            class="w-full px-8 py-24 bg-white border-gray-100 rounded-lg lg:w-8/12 lg:px-24 lg:py-4 lg:rounded-l-none s">
                             <div class="relative z-10 text-left ">
                                 <div class="flex justify-enter lg:py-6">
                                     <button type="button"
-                                        class="inline-flex w-full px-4 py-3 font-semibold text-blue-700 border rounded-lg border-blueGray-300 bg-blue-1300 hover:bg-blue-700 hover:text-white focus:bg-gray-100">
+                                        class="inline-flex w-full px-4 py-3 font-semibold text-black transition duration-500 ease-in-out transform bg-white border border-gray-300 rounded-lg hover:bg-black hover:text-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
                                         <div class="flex items-center justify-center">
                                             <svg xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink" class="w-6 h-6"
@@ -825,7 +808,7 @@
                                         </div>
                                     </button>
                                     <button type="button"
-                                        class="inline-flex px-4 py-3 ml-8 font-semibold text-blue-700 border rounded-lg border-blueGray-300 bg-blue-1300 hover:bg-blue-870 focus:bg-gray-100 hover:text-blue-500">
+                                        class="inline-flex px-4 py-3 ml-8 font-semibold text-black transition duration-500 ease-in-out transform bg-white border border-gray-300 rounded-lg hover:bg-black focus:bg-gray-100 hover:text-black focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
                                         <div class="flex items-center justify-center">
                                             <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                                 stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
@@ -841,14 +824,14 @@
                                         <label class="block text-base font-medium leading-relaxed text-gray-700">User
                                             Name</label>
                                         <input type="text" name="" id="" placeholder="Your User Name "
-                                            class="w-full px-4 py-2 mt-2 text-base bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                                            class="w-full px-4 py-2 mt-2 text-base transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ext-black focus:border-gray-500"
                                             autofocus autocomplete required>
                                     </div>
                                     <div class="mt-4">
                                         <label class="block text-base font-medium leading-relaxed text-gray-700">Email
                                             Address</label>
                                         <input type="email" name="" id="" placeholder="Your Email "
-                                            class="w-full px-4 py-2 mt-2 text-base bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                                            class="w-full px-4 py-2 mt-2 text-base transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ext-black focus:border-gray-500"
                                             autofocus autocomplete required>
                                     </div>
                                     <div class="flex flex-wrap mt-4 mb-6 -mx-3">
@@ -858,9 +841,9 @@
                                                 Password
                                             </label>
                                             <input
-                                                class="block w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                                                class="block w-full px-4 py-2 mt-2 text-base text-black transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ext-black focus:border-gray-500"
                                                 id="password" type="text" placeholder="Your Password">
-                                            <p class="mt-1 text-xs italic text-blue-500">Please fill out this field.</p>
+                                            <p class="mt-1 text-xs italic text-black">Please fill out this field.</p>
                                         </div>
                                         <div class="w-full px-3 md:w-1/2">
                                             <label class="text-base font-medium leading-relaxed text-gray-700"
@@ -868,14 +851,15 @@
                                                 Confirm
                                             </label>
                                             <input
-                                                class="block w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500 "
+                                                class="block w-full px-4 py-2 mt-2 text-base text-black transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ext-black focus:border-gray-500 "
                                                 id="confirm" type="text" placeholder="Confirm">
                                         </div>
                                     </div>
-                                    <button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-blue-700 hover:from-blue-500 to-blue-500 hover:to-blue-700 focus:shadow-outline focus:outline-none">Log In</button>
+                                    <button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-black hover:from-black to-black focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 hover:to-black">Log In</button>
                                 </form>
+
                                 <p class="mt-8 text-center">Already have an account? <a href="#"
-                                        class="font-semibold text-blue-500 hover:text-blue-700">Sign
+                                        class="font-semibold text-black hover:text-black">Sign
                                         In</a></p>
                             </div>
                         </div>
@@ -883,20 +867,24 @@
                 </div>
             </div>
         </section>
-        ---->
+                                        ----------->
                                     </div>
                                     <!---- display code goes here.-->
-                                    <pre class="leading-6"><code data-language="html">
-        &lt;section class="flex flex-col items-center h-screen md:flex-row"&gt;
+                                    <pre class="leading-6"><code data-language="html"> &lt;section class="flex flex-col items-center h-screen md:flex-row"&gt;
             &lt;div class="container mx-auto"&gt;
                 &lt;div class="flex justify-center px-2 py-6 "&gt;
                     &lt;div class="flex w-full rounded-lg xl:w-3/4 lg:w-11/12 lg:shadow-xl "&gt;
-                        &lt;div class="relative hidden w-full h-auto bg-cover border-r rounded-l-lg bg-blue-1300 lg:block lg:w-6/12"&gt;
+                        &lt;div class="relative hidden w-full h-auto bg-white bg-cover border-r rounded-l-lg lg:block lg:w-6/12"&gt;
                             &lt;div class="relative z-10 m-12 text-left "&gt;
-                                &lt;a class="flex items-center w-32 font-medium text-gray-900 title-font md:mb-6"&gt;
-                                    &lt;img src="../badges/WhitePink.svg" alt=""&gt;
-                                &lt;/a&gt;
-                                &lt;h2 class="mt-12 mb-2 text-2xl font-semibold tracking-tighter text-blue-700 sm:text-3xl title-font"&gt;
+                            &lt;a class="flex items-center w-32 mb-4 font-medium text-gray-900 title-font md:mb-10"&gt;
+                                &lt;div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500"&gt;
+                                &lt;/div&gt;
+                                &lt;h2
+                                    class="text-lg font-bold tracking-tighter text-black uppercase transition duration-500 ease-in-out transform hover:text-lightBlack-500 dark:text-lightBlue-400"&gt;
+                                    Wickedblocks
+                                &lt;/h2&gt;
+                            &lt;/a&gt;
+                                &lt;h2 class="mt-12 mb-2 text-2xl font-semibold tracking-tighter text-black sm:text-3xl title-font"&gt;
                                     Create an account.
                                 &lt;/h2&gt;
                                 &lt;div
@@ -910,11 +898,11 @@
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div
-                            class="w-full px-8 py-24 border-gray-100 rounded-lg bg-blue-1300 lg:w-8/12 lg:px-20 lg:py-4 lg:rounded-l-none s"&gt;
+                            class="w-full px-8 py-24 bg-white border-gray-100 rounded-lg lg:w-8/12 lg:px-24 lg:py-4 lg:rounded-l-none s"&gt;
                             &lt;div class="relative z-10 text-left "&gt;
                                 &lt;div class="flex justify-enter lg:py-6"&gt;
                                     &lt;button type="button"
-                                        class="inline-flex w-full px-4 py-3 font-semibold text-blue-700 border rounded-lg border-blueGray-300 bg-blue-1300 hover:bg-blue-700 hover:text-white focus:bg-gray-100"&gt;
+                                        class="inline-flex w-full px-4 py-3 font-semibold text-black transition duration-500 ease-in-out transform bg-white border border-gray-300 rounded-lg hover:bg-black hover:text-white focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"&gt;
                                         &lt;div class="flex items-center justify-center"&gt;
                                             &lt;svg xmlns="http://www.w3.org/2000/svg"
                                                 xmlns:xlink="http://www.w3.org/1999/xlink" class="w-6 h-6"
@@ -940,7 +928,7 @@
                                         &lt;/div&gt;
                                     &lt;/button&gt;
                                     &lt;button type="button"
-                                        class="inline-flex px-4 py-3 ml-8 font-semibold text-blue-700 border rounded-lg border-blueGray-300 bg-blue-1300 hover:bg-blue-870 focus:bg-gray-100 hover:text-blue-500"&gt;
+                                        class="inline-flex px-4 py-3 ml-8 font-semibold text-black transition duration-500 ease-in-out transform bg-white border border-gray-300 rounded-lg hover:bg-black focus:bg-gray-100 hover:text-black focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"&gt;
                                         &lt;div class="flex items-center justify-center"&gt;
                                             &lt;svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                                 stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24"&gt;
@@ -956,14 +944,14 @@
                                         &lt;label class="block text-base font-medium leading-relaxed text-gray-700"&gt;User
                                             Name&lt;/label&gt;
                                         &lt;input type="text" name="" id="" placeholder="Your User Name "
-                                            class="w-full px-4 py-2 mt-2 text-base bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                                            class="w-full px-4 py-2 mt-2 text-base transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ext-black focus:border-gray-500"
                                             autofocus autocomplete required&gt;
                                     &lt;/div&gt;
                                     &lt;div class="mt-4"&gt;
                                         &lt;label class="block text-base font-medium leading-relaxed text-gray-700"&gt;Email
                                             Address&lt;/label&gt;
                                         &lt;input type="email" name="" id="" placeholder="Your Email "
-                                            class="w-full px-4 py-2 mt-2 text-base bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                                            class="w-full px-4 py-2 mt-2 text-base transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ext-black focus:border-gray-500"
                                             autofocus autocomplete required&gt;
                                     &lt;/div&gt;
                                     &lt;div class="flex flex-wrap mt-4 mb-6 -mx-3"&gt;
@@ -973,9 +961,9 @@
                                                 Password
                                             &lt;/label&gt;
                                             &lt;input
-                                                class="block w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                                                class="block w-full px-4 py-2 mt-2 text-base text-black transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ext-black focus:border-gray-500"
                                                 id="password" type="text" placeholder="Your Password"&gt;
-                                            &lt;p class="mt-1 text-xs italic text-blue-500"&gt;Please fill out this field.&lt;/p&gt;
+                                            &lt;p class="mt-1 text-xs italic text-black"&gt;Please fill out this field.&lt;/p&gt;
                                         &lt;/div&gt;
                                         &lt;div class="w-full px-3 md:w-1/2"&gt;
                                             &lt;label class="text-base font-medium leading-relaxed text-gray-700"
@@ -983,22 +971,22 @@
                                                 Confirm
                                             &lt;/label&gt;
                                             &lt;input
-                                                class="block w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500 "
+                                                class="block w-full px-4 py-2 mt-2 text-base text-black transition duration-500 ease-in-out transform bg-gray-100 border-transparent rounded-lg focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 ext-black focus:border-gray-500 "
                                                 id="confirm" type="text" placeholder="Confirm"&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
-                                    &lt;button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-blue-700 hover:from-blue-500 to-blue-500 hover:to-blue-700 focus:shadow-outline focus:outline-none"&gt;Log In&lt;/button&gt;
+                                    &lt;button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-black hover:from-black to-black focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 hover:to-black"&gt;Log In&lt;/button&gt;
                                 &lt;/form&gt;
+
                                 &lt;p class="mt-8 text-center"&gt;Already have an account? &lt;a href="#"
-                                        class="font-semibold text-blue-500 hover:text-blue-700"&gt;Sign
+                                        class="font-semibold text-black hover:text-black"&gt;Sign
                                         In&lt;/a&gt;&lt;/p&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-        &lt;/section&gt;
-                                    </code></pre>
+        &lt;/section&gt;</code> </pre>
                                 </div>
                             </div>
                         </div>
@@ -1007,76 +995,80 @@
             </div>
         </section>
         <!--- auth 4 -->
-    <section class="w-full">
-        <div class="w-full mx-auto">
-            <div class="w-full" x-data="{ tab: 'preview4' }">
-                    <div class="flex items-center w-full px-4 py-2 bg-white lg:px-28 ">
+        <section class="px-5 ">
+            <div class="container mx-auto lg:py-16 rounded-xl">
+                <div class="shadow-smallest rounded-xl" x-data="{ tab: 'preview4' }">
+                    <div
+                        class="flex w-full p-4 bg-white border border-blueGray-200 dark:border-blueGray-800 text-blueGray-500 dark:bg-blueGray-800 rounded-t-xl">
                         <div
-                            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-6 border rounded-full border-blueGray-300 bg-blueGray-200 text-blueGray-500">
+                            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 my-4 mr-2 -mt-8 bg-white border-2 rounded-full dark:border-gray-500 dark:bg-blueGray-900 text-lightBlue-400">
                             4
                         </div>
-                        <button :class="{ 'active font-medium bg-blueGray-200 text-blueGray-600': tab === 'preview4' }"
-                            class="items-center justify-center w-full px-8 py-2 my-2 mt-2 mr-2 text-sm font-medium tracking-wide text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer iflex text-blueGray-500 hover:text-blueGray-600 focus:outline-none lg:w-auto hover:border-blueGray-400 focus:ring focus:ring-black focus:ring-opacity-50"
+                        <button
+                            :class="{ 'active font-bold dark:bg-blueGray-600 bg-blueGray-200 text-blueGray-500 dark:text-blueGray-300': tab === 'preview4' }"
+                            class="inline-flex items-center justify-center w-full px-4 py-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform rounded-lg cursor-pointer font-lg focus:outline-none lg:w-auto active focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 text-blueGray-500 "
                             @click="tab = 'preview4'">
                             Preview
                         </button>
-                        <button :class="{ 'active font-medium bg-blueGray-200 text-blueGray-600': tab === 'code4' }"
-                            class="items-center justify-center w-full px-8 py-2 my-2 mt-2 mr-2 text-sm font-medium tracking-wide text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer iflex text-blueGray-500 hover:text-blueGray-600 focus:outline-none lg:w-auto hover:border-blueGray-400 focus:ring focus:ring-black focus:ring-opacity-50"
+                        <button
+                            :class="{ 'active font-bold dark:bg-blueGray-600 bg-blueGray-200 text-blueGray-500 dark:text-blueGray-300': tab === 'code4' }"
+                            class="inline-flex items-center justify-center w-full px-4 py-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer text-blueGray-500 font-lg focus:outline-none lg:w-auto focus:shadow-outline focus:ring-2 hover:border-blueGray-300 dark:hover:border-blueGray-800 ring-offset-current ring-offset-2"
                             @click="tab = 'code4'">
                             Code
                         </button>
                         <!---- Copy Buton -->
                         <button
-                            class="inline-flex items-center justify-center w-full p-2 my-2 mt-2 ml-auto mr-2 font-semibold tracking-tighter text-center transition duration-500 ease-in-out transform bg-white border rounded-lg cursor-pointer text-blueGray-500 hover:text-blueGray-600 hover:bg-blueGray-200 focus:outline-none lg:w-auto focus:ring focus:ring-black focus:ring-opacity-50"
+                            class="items-center justify-center w-full p-1 my-2 mt-2 mr-2 transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer ininline-flex hover:border ttext-center text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                             onclick="copyToClip(document.getElementById('authFour').innerHTML)" x-data="{}"
                             @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24"
-                                height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none"
+                                height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <rect x="8" y="8" width="12" height="12" rx="2" />
-                                <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2" />
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                <rect x="8" y="8" width="12" height="12" rx="2"></rect>
+                                <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
                             </svg>
                         </button>
                     </div>
-                    <div class="lg:h-screen">
-                        <div class="border " x-show="tab === 'preview4'">
-                            <img class=" dark:opacity-50" loading="lazy"
-                                src="./assets/sections/auth/auth-4.png" alt="">
-                        </div>
-                        <div  x-show="tab === 'code4'">
-                            <div
-                                class="h-screen overflow-auto overflow-y-scroll bg-dark-1 text-lightBlue-200 code-tab">
-                                <div >
-                                    <div class="hidden" id="authFour">
-                                        <!----
-                      <section class="text-gray-700 body-font">
-            <div class="container px-8 pt-32 mx-auto lg:px-4">
-            <div class="flex flex-col w-full mb-12 text-left lg:text-center">
-                <h2 class="mb-4 text-xs font-semibold tracking-widest text-blue-600 uppercase title-font">a great
-                    header right here</h2>
-                <h1 class="mb-6 text-2xl font-semibold tracking-tighter text-blue-800 sm:text-5xl title-font">
-                    A centered
-                    <br class="md:hidden">
-                    medium lenght display headline.
-                </h1>
-                <p class="mx-auto text-base font-medium leading-relaxed text-gray-700 lg:w-2/3">Whatever cardigan
-                    tote bag tumblr hexagon brooklyn
-                    asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of
-                    them man
-                    bun deep.</p>
-            </div>
+                    <div class="border border-t-0 border-blueGray-200 rounded-b-xl dark:border-blueGray-800"
+                        x-show="tab === 'preview4'">
+                        <iframe class="w-full h-screen rounded-b-xl"
+                            src="./tailwindBrightSections/authentication/auth-4.html" title="wicked"></iframe>
+                    </div>
+                    <div class=" rounded-b-xl" x-show="tab === 'code4'" style="display: none;">
+                        <div
+                            class="h-screen overflow-auto overflow-y-scroll bg-blueGray-900 text-blueGray-200 rounded-b-xl code-tab">
+                            <div class="rounded-b-xl">
+                                <div class="hidden" id="authFour">
+                                   <!----------
+ <section class="text-gray-700 body-font">
+            <div class="container px-8 mx-auto pt-28 lg:px-4">
+                <div class="flex flex-col w-full mb-12 text-left lg:text-center">
+                    <h2 class="mb-4 text-xs font-semibold tracking-widest text-black uppercase title-font">a great
+                        header right here</h2>
+                    <h1 class="mb-6 text-2xl font-black tracking-tighter text-black sm:text-5xl title-font">
+                        A centered
+                        <br class="md:hidden">
+                        medium lenght display headline.
+                    </h1>
+                    <p class="mx-auto text-base font-medium leading-relaxed text-gray-700 lg:w-2/3">Whatever cardigan
+                        tote bag tumblr hexagon brooklyn
+                        asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of
+                        them man
+                        bun deep.</p>
+                </div>
+
                 <form class="flex flex-col w-full pt-6 pb-8 mb-4 bg-white lg:px-32 " name="" method="POST">
-                    <input type="hidden" name="" value="sponsors">
+                    <input type="hidden" name="" value="#">
                     <div class="flex flex-wrap mb-6 -mx-3">
                         <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
                             <input
-                                class="w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                                class="w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                                 id="grid-title" type="text" name="title" placeholder="From..." required="">
                         </div>
                         <div class="w-full px-3 md:w-1/2">
                             <input
-                                class="w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                                class="w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                                 id="grid-url" type="text" name="url" placeholder="To..." required="">
                         </div>
                     </div>
@@ -1084,82 +1076,87 @@
                         <div class="w-full px-3 mb-6 md:w-1/4 md:mb-0">
                             <div class="relative ">
                                 <select name="date[]"
-                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500">
+                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
                                     <option>Check In</option>
                                     <option value="Date 1">Date 1</option>
                                     <option value="Date 2">Date2 </option>
                                 </select>
+
                             </div>
                         </div>
                         <div class="w-full px-3 mb-6 md:w-1/4 md:mb-0">
                             <div class="relative ">
                                 <select name="date[]"
-                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500">
+                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
                                     <option>Check Out</option>
                                     <option value="Date 1">Date 1</option>
                                     <option value="Date 2">Date2 </option>
                                 </select>
+
                             </div>
                         </div>
                         <div class="w-full px-3 mb-6 md:w-1/4 md:mb-0">
                             <div class="relative ">
                                 <select name="date[]"
-                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500">
+                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
                                     <option>Adults</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                 </select>
+
                             </div>
                         </div>
                         <div class="w-full px-3 mb-6 md:w-1/4 md:mb-0">
                             <div class="relative ">
                                 <select name="date[]"
-                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500">
+                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
                                     <option>Kids</option>
                                     <option value="tuesday">1</option>
                                     <option value="thursday">2</option>
                                 </select>
+
                             </div>
                         </div>
                     </div>
                 </form>
                 <div class="flex lg:justify-center">
                     <button
-                        class="inline-flex px-4 py-2 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg shadow-xl bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:shadow-outline focus:outline-none">Button</button>
+                        class="inline-flex px-8 py-3 items.center text-white transition duration-500 ease-in-out transform bg-black rounded-lg shadow-xl hover:bg-trueGray-900 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">Button</button>
                 </div>
             </div>
         </section>
-            ---->
+                                   --------------->
                                     </div>
-                                    <!---- display code goes here.-->
-                                    <pre class="leading-6"><code data-language="html">
-          &lt;section class="text-gray-700 body-font"&gt;
-            &lt;div class="container px-8 pt-32 mx-auto lg:px-4"&gt;
-            &lt;div class="flex flex-col w-full mb-12 text-left lg:text-center"&gt;
-                &lt;h2 class="mb-4 text-xs font-semibold tracking-widest text-blue-600 uppercase title-font"&gt;a great
-                    header right here&lt;/h2&gt;
-                &lt;h1 class="mb-6 text-2xl font-semibold tracking-tighter text-blue-800 sm:text-5xl title-font"&gt;
-                    A centered
-                    &lt;br class="md:hidden"&gt;
-                    medium lenght display headline.
-                &lt;/h1&gt;
-                &lt;p class="mx-auto text-base font-medium leading-relaxed text-gray-700 lg:w-2/3"&gt;Whatever cardigan
-                    tote bag tumblr hexagon brooklyn
-                    asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of
-                    them man
-                    bun deep.&lt;/p&gt;
-            &lt;/div&gt;
+                                <!---- display code goes here.-->
+                                <pre class="leading-6"><code data-language="html">
+                                    &lt;section class="text-gray-700 body-font"&gt;
+            &lt;div class="container px-8 mx-auto pt-28 lg:px-4"&gt;
+                &lt;div class="flex flex-col w-full mb-12 text-left lg:text-center"&gt;
+                    &lt;h2 class="mb-4 text-xs font-semibold tracking-widest text-black uppercase title-font"&gt;a great
+                        header right here&lt;/h2&gt;
+                    &lt;h1 class="mb-6 text-2xl font-black tracking-tighter text-black sm:text-5xl title-font"&gt;
+                        A centered
+                        &lt;br class="md:hidden"&gt;
+                        medium lenght display headline.
+                    &lt;/h1&gt;
+                    &lt;p class="mx-auto text-base font-medium leading-relaxed text-gray-700 lg:w-2/3"&gt;Whatever cardigan
+                        tote bag tumblr hexagon brooklyn
+                        asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of
+                        them man
+                        bun deep.&lt;/p&gt;
+                &lt;/div&gt;
+
                 &lt;form class="flex flex-col w-full pt-6 pb-8 mb-4 bg-white lg:px-32 " name="" method="POST"&gt;
-                    &lt;input type="hidden" name="" value="sponsors"&gt;
+                    &lt;input type="hidden" name="" value="#"&gt;
                     &lt;div class="flex flex-wrap mb-6 -mx-3"&gt;
                         &lt;div class="w-full px-3 mb-6 md:w-1/2 md:mb-0"&gt;
                             &lt;input
-                                class="w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                                class="w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                                 id="grid-title" type="text" name="title" placeholder="From..." required=""&gt;
                         &lt;/div&gt;
                         &lt;div class="w-full px-3 md:w-1/2"&gt;
                             &lt;input
-                                class="w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500"
+                                class="w-full px-4 py-2 mt-2 text-base text-blue-700 bg-gray-100 border-transparent rounded-lg ext-blue-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                                 id="grid-url" type="text" name="url" placeholder="To..." required=""&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
@@ -1167,106 +1164,138 @@
                         &lt;div class="w-full px-3 mb-6 md:w-1/4 md:mb-0"&gt;
                             &lt;div class="relative "&gt;
                                 &lt;select name="date[]"
-                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500"&gt;
+                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"&gt;
                                     &lt;option&gt;Check In&lt;/option&gt;
                                     &lt;option value="Date 1"&gt;Date 1&lt;/option&gt;
                                     &lt;option value="Date 2"&gt;Date2 &lt;/option&gt;
                                 &lt;/select&gt;
                                 &lt;!---pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700--&gt;
+
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class="w-full px-3 mb-6 md:w-1/4 md:mb-0"&gt;
                             &lt;div class="relative "&gt;
                                 &lt;select name="date[]"
-                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500"&gt;
+                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"&gt;
                                     &lt;option&gt;Check Out&lt;/option&gt;
                                     &lt;option value="Date 1"&gt;Date 1&lt;/option&gt;
                                     &lt;option value="Date 2"&gt;Date2 &lt;/option&gt;
                                 &lt;/select&gt;
                                 &lt;!---pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700--&gt;
+
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class="w-full px-3 mb-6 md:w-1/4 md:mb-0"&gt;
                             &lt;div class="relative "&gt;
                                 &lt;select name="date[]"
-                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500"&gt;
+                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"&gt;
                                     &lt;option&gt;Adults&lt;/option&gt;
                                     &lt;option value="1"&gt;1&lt;/option&gt;
                                     &lt;option value="2"&gt;2&lt;/option&gt;
                                 &lt;/select&gt;
                                 &lt;!---pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700--&gt;
+
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class="w-full px-3 mb-6 md:w-1/4 md:mb-0"&gt;
                             &lt;div class="relative "&gt;
                                 &lt;select name="date[]"
-                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500"&gt;
+                                    class="block w-full px-4 py-2 mt-2 text-base text-gray-500 bg-gray-100 border-transparent rounded-lg appearance-none ext-blue-700 focus:border-gray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"&gt;
                                     &lt;option&gt;Kids&lt;/option&gt;
                                     &lt;option value="tuesday"&gt;1&lt;/option&gt;
                                     &lt;option value="thursday"&gt;2&lt;/option&gt;
                                 &lt;/select&gt;
                                 &lt;!---pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700--&gt;
+
                             &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/form&gt;
                 &lt;div class="flex lg:justify-center"&gt;
                     &lt;button
-                        class="inline-flex px-4 py-2 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg shadow-xl bg-gradient-to-r from-blue-700 hover:from-blue-600 to-blue-600 hover:to-blue-700 focus:shadow-outline focus:outline-none"&gt;Button&lt;/button&gt;
+                        class="inline-flex px-8 py-3 items.center text-white transition duration-500 ease-in-out transform bg-black rounded-lg shadow-xl hover:bg-trueGray-900 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"&gt;Button&lt;/button&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/section&gt;
-                                    </code></pre>
-                                </div>
+                                </code></pre>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            </div>
         </section>
-        <footer class="pt-10 border-t border-gray-800 body-font">
+        <footer class="py-6 border dark:border-blueGray-900">
             <div
-                class="container flex flex-col flex-wrap items-center px-5 py-12 mx-auto md:flex-row md:flex-no-wrap lg:px-20 ">
-                <a class="flex items-center justify-start w-64 font-medium text-gray-900 title-font">
-                    <img class="object-cover object-center rounded-lg" alt="badge"
-                        src="./assets/Wickedblockswidget.svg">
-                </a>
-                <nav class="flex flex-wrap items-center justify-center py-6 text-base lg:ml-auto md:py-1 ">
-                    <span class="mr-6 font-semibold tracking-tighter text-blueGray-500 text-md"> OTHER PROJECTS</span>
-                    <a href="https://colorsandfonts.com" class="mr-4 text-blueGray-300 hover:text-yellow-1000">
-                        ColorsAndFonts</a>
-                    <a href="https://unicornsfeed.com"
-                        class="mr-4 text-blueGray-300 hover:text-yellow-1000">TheUnicornsFeed</a>
-                    <a href="https://wickedtemplates.com"
-                        class="mr-4 text-blueGray-300 hover:text-yellow-1000">WickedTemplates</a>
-                </nav>
-            </div>
-        </footer>
-        <footer class="mt-10 border-t border-gray-800 body-font">
-            <div
-                class="container flex flex-col flex-wrap items-center px-5 py-6 mx-auto md:flex-row md:flex-no-wrap lg:px-20 ">
-                <p class="mb-4 text-sm font-semibold text-center text-white lg:mr-6 lg:mb-0">
-                    Released under the MIT License Copyright 2021 © Michael Andreuzza
-                </p>
-                <a href="https://www.producthunt.com/posts/wickedblocks?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wickedblocks"
-                    target="_blank"><img
-                        src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=281332&theme=dark&period=daily"
-                        alt="WickedBlocks - Tailwind V2 blocks ready to copy paste | Product Hunt"
-                        style="width: 250px; height: 54px;" width="250" height="54" /></a>
-                <span class="inline-flex items-center lg:ml-auto">
-                    <p class="mb-4 text-sm font-bold text-center text-white sm:text-left lg:mb-0">
-                        <a href="https://twitter.com/mike_andreuzza"  rel="noopener noreferrer" target="_blank">
-                            <span class="py-2 mx-4 mt-2 text-sm text-white"> by</span>
-                            MICHAEL ANDREUZZA
+                class="container px-6 mx-auto space-y-6 divide-y dark:divide-blueGray-900 lg:px-20 md:space-y-12 divide-opacity-50">
+                <div class="grid grid-cols-12">
+                    <div class="pb-6 col-span-full md:pb-0 md:col-span-6">
+                        <a href="#" class="flex justify-center space-x-3 md:justify-start">
+                            <img class="object-contain rounded-lg objllcfit w-52" alt="badge"
+                                src="./assets/Wickedblockswidget.svg">
                         </a>
-                    </p>
-                    <img loading="lazy  alt=" team"
-                        class="flex-shrink-0 object-cover object-center w-8 h-8 ml-4 rounded-full bg-blueGray-50 lg:mb-0 "
-                        src="./assets/mike.svg">
-                </span>
+                    </div>
+                    <div class="col-span-6 text-center md:text-left md:col-span-3">
+                        <h2
+                            class="mb-3 tracking-tighter text-transparent text-md bg-clip-text bg-gradient-to-r from-lightBlue-400 via-lightBlue-500 to-cyan-400">
+                            SOCIAL</h2>
+                        <ul class="mb-10 list-none">
+                            <li>
+                                <a href="https://twitter.com/WickedTemplates"
+                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">Twitter</a>
+                            </li>
+                            <li>
+                                <a href="https://www.producthunt.com/posts/wicked-templates"
+                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">Product
+                                    Hunt</a>
+                            </li>
+                            <li>
+                                <a href="https://dribbble.com/MichaelAndreuzza"
+                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">Dribbble</a>
+                            </li>
+                            </>
+                    </div>
+                    <div class="col-span-6 text-center md:text-left md:col-span-3">
+                        <h2
+                            class="mb-3 tracking-tighter text-transparent text-md bg-clip-text bg-gradient-to-r from-lightBlue-400 via-lightBlue-500 to-cyan-400">
+                            OTHER PROJECTS</h2>
+                        <ul class="mb-10 list-none">
+                            <li>
+                                <a href="https://www.wickedtemplates.com"
+                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">
+                                    Wicked Templates
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://colorsandfonts.com"
+                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">Colors
+                                    &amp; fonts</a>
+                            </li>
+                            <li>
+                                <a href="https://unicornsfeed.com"
+                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">TheUnicornsFeed</a>
+                            </li>
+                            </>
+                    </div>
+                </div>
+                <div class="grid justify-center pt-6 lg:justify-between">
+                    <div
+                        class="flex flex-col self-center text-sm text-center text-blueGray-500 dark:text-blueGray-200 md:block lg:col-start-1 md:space-x-6">
+                        <span>Released under the MIT License Copyright 2021 © Michael Andreuzza</span>
+                    </div>
+                    <div class="flex items-center justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
+                        <a class="lg:ml-auto"
+                            href="https://www.producthunt.com/posts/wickedblocks?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wickedblocks"
+                            target="_blank"><img
+                                src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=281332&theme=&period=daily"
+                                alt="WickedBlocks - Tailwind V2 blocks ready to copy paste | Product Hunt"
+                                style="width: 250px; height: 54px;" width="250" height="54" /></a>
+                    </div>
+                </div>
             </div>
         </footer>
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        <script defer src="./js/theme.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer=""></script>
         <script>
             function copyToClip(str) {
                 function listener(e) {
@@ -1279,12 +1308,8 @@
                 document.removeEventListener("copy", listener);
             }
         </script>
-        <script defer src="./js/theme.js"></script>
-        <script defer src="./js/select.js"></script>
-        <script src="./rainbow-code/dist/rainbow.js"></script>
-        <script src="./rainbow-code/src/language/generic.js"></script>
-        <script src="./rainbow-code/src/language/html.js"></script>
-        <script src="./rainbow-code/src/language/numbers.js"></script>
+        <script
+            src="https://d33wubrfki0l68.cloudfront.net/bundles/f4494f6467ee3f54a4d548e0c195d9e3e4c6e21d.js"></script>
         <script>
             // Snackbar
             function noticesHandler() {
@@ -1311,8 +1336,27 @@
                 };
             }
         </script>
-        <script>
-
-        </script>
+        <!------ Toggles ----->
+        <div
+            class="fixed bottom-0 right-0 z-10 p-2 m-2 bg-white border shadow dark:bg-dark-1 dark:border-blueGray-900 rounded-xl">
+            <div class="items-center justify-start hidden font-medium text-gray-900 lg:flex title-font">
+                <div class="flex items-center theme-switcher " role="group">
+                    <button
+                        class="p-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-light"
+                        title="Light">
+                        Light
+                    </button>
+                    <button
+                        class="p-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-dark"
+                        title="Dark"> Dark
+                    </button>
+                    <button
+                        class="p-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-auto"
+                        title="Auto"> Auto
+                    </button>
+                </div>
+            </div>
+        </div>
     </body>
+
 </html>

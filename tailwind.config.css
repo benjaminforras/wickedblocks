@@ -11,6 +11,14 @@
  */
  @tailwind base;
 
+ @font-face {
+    font-display: swap !important;
+    font-family: 'IBMPS';
+     font-display: swap; /* or block, auto, fallback, optional */
+    src:url("../fonts/IBMPS.woff2") format("woff2"),
+         url("../fonts/IBMPS.woff") format("woff");
+}
+
 @font-face {
     font-display: swap !important;
     font-family: 'Geo';
@@ -46,18 +54,11 @@
     src:url("../fonts/geomanist-extralight-webfont.woff2") format("woff2"),
          url("../fonts/geomanist-extralight-webfont.woff") format("woff");
 }
-body {
- font-family: 'Geo';
-}
 
-.font-geo-extralight{
-    font-family: 'Geo Extralight';
-}
-.font-geo-ultra{
-    font-family: 'Geo Ultra';
-}
-h1{
-    font-family: 'Geo Bold';
+
+
+body{
+    font-family: 'IBMPS';
 }
 pre {
 font-family: 'JetBrains Mono', monospace;
