@@ -1,7 +1,6 @@
 <!-- component -->
 <!DOCTYPE html>
 <html lang="en" class="t scroll">
-
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -14,7 +13,6 @@
         <link href="./css/blackboard.css" rel="stylesheet" type="text/css">
         <!-- Uncomment for cdn tailwind (if you haven't built your tailwind.css yet) <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">-->
     </head>
-
     <body class="antialiased transition-colors duration-1000 bg-white dark:bg-dark-1">
         <!----- Snackbar -->
         <div x-data="noticesHandler()"
@@ -68,7 +66,7 @@
                     <div @click.away="open = false" class="relative lg:ml-auto" x-data="{ open: false }">
                         <button @click="open = !open"
                             class="items-center px-6 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
-                            <span> Blocks Menu</span>
+                            <span>All Blocks</span>
                             <svg fill="currentColor" viewBox="0 0 20 20"
                                 :class="{'rotate-180': open, 'rotate-0': !open}"
                                 class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform rotate-0 md:-mt-1">
@@ -91,66 +89,66 @@
                                     <ul class="w-full p-2 md:w-1/3">
                                         <li>
                                             <a href="./left-headers.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
                                                 Left Headers</a>
                                         </li>
                                         <li>
                                             <a href="./centered-headers.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
                                                 Center Headers</a>
                                         </li>
                                         <li>
                                             <a href="./right-headers.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
                                                 Right Headers</a>
                                         </li>
                                         <li>
                                             <a href="./auth.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
                                                 Authentication</a>
                                         </li>
                                     </ul>
                                     <ul class="w-full p-2 md:w-1/3">
                                         <li>
                                             <a href="./pricing.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
                                                 Pricing</a>
                                         </li>
                                         <li>
                                             <a href="./clients.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
                                                 Clients</a>
                                         </li>
                                         <li>
                                             <a href="./grids.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
                                                 Grids</a>
                                         </li>
                                         <li>
                                             <a href="./forms.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
                                                 Forms</a>
                                         </li>
                                     </ul>
                                     <ul class="w-full p-2 md:w-1/3">
                                         <li>
                                             <a href="./gallery.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
                                                 Gallery</a>
                                         </li>
                                         <li>
                                             <a href="./navigation.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
                                                 Navigation</a>
                                         </li>
                                         <li>
                                             <a href="./footers.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
                                                 Footers</a>
                                         </li>
                                         <li>
                                             <a href="https://www.wickedtemplates.com/" target="_blank"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
                                                 Wicked Templates</a>
                                         </li>
                                     </ul>
@@ -193,10 +191,7 @@
                 <div class="shadow-smallest rounded-xl" x-data="{ tab: 'preview1' }">
                     <div
                         class="flex w-full p-4 bg-white border border-blueGray-200 dark:border-blueGray-800 text-blueGray-500 dark:bg-blueGray-800 rounded-t-xl">
-                        <div
-                            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 my-4 mr-2 -mt-8 bg-white border-2 rounded-full dark:border-gray-500 dark:bg-blueGray-900 text-lightBlue-400">
-                            1
-                        </div>
+
                         <button
                             :class="{ 'active font-bold dark:bg-blueGray-600 bg-blueGray-200 text-blueGray-500 dark:text-blueGray-300': tab === 'preview1' }"
                             class="inline-flex items-center justify-center w-full px-4 py-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform rounded-lg cursor-pointer font-lg focus:outline-none lg:w-auto active focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 text-blueGray-500"
@@ -211,7 +206,7 @@
                         </button>
                         <!---- Copy Buton -->
                         <button
-                            class="items-center justify-center w-full p-1 my-2 mt-2 mr-2 transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer ininline-flex hover:border ttext-center text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
+                            class="items-center justify-center w-full p-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer ininline-flex hover:border text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                             onclick=" copyToClip(document.getElementById('authOne').innerHTML)" x-data="{}"
                             @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24"
@@ -316,7 +311,6 @@
         </section>---->
                                     </div>
                                     <!---- display code goes here.-->
-
                                     <pre class="leading-6">
                                     <code data-language="html">
          &lt;section class="flex flex-col items-center h-screen md:flex-row "&gt;
@@ -399,7 +393,6 @@
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/section&gt;
-
                                     </code>
                                     </pre>
                                 </div>
@@ -459,10 +452,7 @@
                 <div class="shadow-smallest rounded-xl" x-data="{ tab: 'preview2' }">
                     <div
                         class="flex w-full p-4 bg-white border border-blueGray-200 dark:border-blueGray-800 text-blueGray-500 dark:bg-blueGray-800 rounded-t-xl">
-                        <div
-                            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 my-4 mr-2 -mt-8 bg-white border-2 rounded-full dark:border-gray-500 dark:bg-blueGray-900 text-lightBlue-400">
-                            2
-                        </div>
+
                         <button
                             :class="{ 'active font-bold dark:bg-blueGray-600 bg-blueGray-200 text-blueGray-500 dark:text-blueGray-300': tab === 'preview2' }"
                             class="inline-flex items-center justify-center w-full px-4 py-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform rounded-lg cursor-pointer font-lg focus:outline-none lg:w-auto active focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 text-blueGray-500 "
@@ -477,7 +467,7 @@
                         </button>
                         <!---- Copy Buton -->
                         <button
-                            class="items-center justify-center w-full p-1 my-2 mt-2 mr-2 transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer ininline-flex hover:border ttext-center text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
+                            class="items-center justify-center w-full p-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer ininline-flex hover:border text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                             onclick="copyToClip(document.getElementById('authTwo').innerHTML)" x-data="{}"
                             @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24"
@@ -594,7 +584,6 @@
                 </div>
             </div>
         </section>
-
                                     -------->
                                     </div>
                                     <!---- display code goes here.-->
@@ -707,10 +696,7 @@
                 <div class="shadow-smallest rounded-xl" x-data="{ tab: 'preview3' }">
                     <div
                         class="flex w-full p-4 bg-white border border-blueGray-200 dark:border-blueGray-800 text-blueGray-500 dark:bg-blueGray-800 rounded-t-xl">
-                        <div
-                            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 my-4 mr-2 -mt-8 bg-white border-2 rounded-full dark:border-gray-500 dark:bg-blueGray-900 text-lightBlue-400">
-                            3
-                        </div>
+
                         <button
                             :class="{ 'active font-bold dark:bg-blueGray-600 bg-blueGray-200 text-blueGray-500 dark:text-blueGray-300': tab === 'preview3' }"
                             class="inline-flex items-center justify-center w-full px-4 py-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform rounded-lg cursor-pointer font-lg focus:outline-none lg:w-auto active focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 text-blueGray-500 "
@@ -725,7 +711,7 @@
                         </button>
                         <!---- Copy Buton -->
                         <button
-                            class="items-center justify-center w-full p-1 my-2 mt-2 mr-2 transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer ininline-flex hover:border ttext-center text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
+                            class="items-center justify-center w-full p-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer ininline-flex hover:border text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                             onclick="copyToClip(document.getElementById('authThree').innerHTML)" x-data="{}"
                             @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24"
@@ -748,7 +734,6 @@
                                 class="h-screen overflow-auto overflow-y-scroll bg-blueGray-900 text-blueGray-200 rounded-b-xl code-tab">
                                 <div class="rounded-b-xl">
                                     <div class="hidden" id="authThree">
-
                                     <!--------------
 <section class="flex flex-col items-center h-screen md:flex-row">
             <div class="container mx-auto">
@@ -857,7 +842,6 @@
                                     </div>
                                     <button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-black hover:from-black to-black focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 hover:to-black">Log In</button>
                                 </form>
-
                                 <p class="mt-8 text-center">Already have an account? <a href="#"
                                         class="font-semibold text-black hover:text-black">Sign
                                         In</a></p>
@@ -977,7 +961,6 @@
                                     &lt;/div&gt;
                                     &lt;button type="submit" class="block w-full px-4 py-3 mt-6 font-semibold text-white transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-r from-black hover:from-black to-black focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 hover:to-black"&gt;Log In&lt;/button&gt;
                                 &lt;/form&gt;
-
                                 &lt;p class="mt-8 text-center"&gt;Already have an account? &lt;a href="#"
                                         class="font-semibold text-black hover:text-black"&gt;Sign
                                         In&lt;/a&gt;&lt;/p&gt;
@@ -1000,10 +983,7 @@
                 <div class="shadow-smallest rounded-xl" x-data="{ tab: 'preview4' }">
                     <div
                         class="flex w-full p-4 bg-white border border-blueGray-200 dark:border-blueGray-800 text-blueGray-500 dark:bg-blueGray-800 rounded-t-xl">
-                        <div
-                            class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 my-4 mr-2 -mt-8 bg-white border-2 rounded-full dark:border-gray-500 dark:bg-blueGray-900 text-lightBlue-400">
-                            4
-                        </div>
+                        
                         <button
                             :class="{ 'active font-bold dark:bg-blueGray-600 bg-blueGray-200 text-blueGray-500 dark:text-blueGray-300': tab === 'preview4' }"
                             class="inline-flex items-center justify-center w-full px-4 py-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform rounded-lg cursor-pointer font-lg focus:outline-none lg:w-auto active focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 text-blueGray-500 "
@@ -1018,7 +998,7 @@
                         </button>
                         <!---- Copy Buton -->
                         <button
-                            class="items-center justify-center w-full p-1 my-2 mt-2 mr-2 transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer ininline-flex hover:border ttext-center text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
+                            class="items-center justify-center w-full p-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer ininline-flex hover:border text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
                             onclick="copyToClip(document.getElementById('authFour').innerHTML)" x-data="{}"
                             @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24"
@@ -1057,7 +1037,6 @@
                         them man
                         bun deep.</p>
                 </div>
-
                 <form class="flex flex-col w-full pt-6 pb-8 mb-4 bg-white lg:px-32 " name="" method="POST">
                     <input type="hidden" name="" value="#">
                     <div class="flex flex-wrap mb-6 -mx-3">
@@ -1081,7 +1060,6 @@
                                     <option value="Date 1">Date 1</option>
                                     <option value="Date 2">Date2 </option>
                                 </select>
-
                             </div>
                         </div>
                         <div class="w-full px-3 mb-6 md:w-1/4 md:mb-0">
@@ -1092,7 +1070,6 @@
                                     <option value="Date 1">Date 1</option>
                                     <option value="Date 2">Date2 </option>
                                 </select>
-
                             </div>
                         </div>
                         <div class="w-full px-3 mb-6 md:w-1/4 md:mb-0">
@@ -1103,7 +1080,6 @@
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                 </select>
-
                             </div>
                         </div>
                         <div class="w-full px-3 mb-6 md:w-1/4 md:mb-0">
@@ -1114,7 +1090,6 @@
                                     <option value="tuesday">1</option>
                                     <option value="thursday">2</option>
                                 </select>
-
                             </div>
                         </div>
                     </div>
@@ -1145,7 +1120,6 @@
                         them man
                         bun deep.&lt;/p&gt;
                 &lt;/div&gt;
-
                 &lt;form class="flex flex-col w-full pt-6 pb-8 mb-4 bg-white lg:px-32 " name="" method="POST"&gt;
                     &lt;input type="hidden" name="" value="#"&gt;
                     &lt;div class="flex flex-wrap mb-6 -mx-3"&gt;
@@ -1170,7 +1144,6 @@
                                     &lt;option value="Date 2"&gt;Date2 &lt;/option&gt;
                                 &lt;/select&gt;
                                 &lt;!---pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700--&gt;
-
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class="w-full px-3 mb-6 md:w-1/4 md:mb-0"&gt;
@@ -1182,7 +1155,6 @@
                                     &lt;option value="Date 2"&gt;Date2 &lt;/option&gt;
                                 &lt;/select&gt;
                                 &lt;!---pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700--&gt;
-
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class="w-full px-3 mb-6 md:w-1/4 md:mb-0"&gt;
@@ -1194,7 +1166,6 @@
                                     &lt;option value="2"&gt;2&lt;/option&gt;
                                 &lt;/select&gt;
                                 &lt;!---pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700--&gt;
-
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class="w-full px-3 mb-6 md:w-1/4 md:mb-0"&gt;
@@ -1206,7 +1177,6 @@
                                     &lt;option value="thursday"&gt;2&lt;/option&gt;
                                 &lt;/select&gt;
                                 &lt;!---pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700--&gt;
-
                             &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
@@ -1358,5 +1328,4 @@
             </div>
         </div>
     </body>
-
 </html>
