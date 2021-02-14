@@ -25,7 +25,7 @@
           x-transition:leave="transition ease-out duration-500"
           x-transition:leave-start="transform translate-x-0 opacity-100"
           x-transition:leave-end="transform translate-x-full opacity-0" @click="remove(notice.id)"
-          class="z-50 flex items-center justify-center w-full h-16 mb-4 text-lg font-semibold tracking-tighter border shadow-xl cursor-pointer text-dark-1 lg:mx-auto lg:w-1/4 rounded-xl"
+          class="flex items-center justify-center w-full h-16 mb-4 text-lg font-semibold tracking-tighter border shadow-xl cursor-pointer z-100 text-dark-1 lg:mx-auto lg:w-1/4 rounded-xl"
           :class="{
                               				'bg-white   ': notice.type === 'success',
                               			 }" style="pointer-events:all" x-text="notice.text">
@@ -33,7 +33,7 @@
       </template>
     </div>
     <!--- Opacitiy to nav style="backdrop-filter: saturate(180%) blur(5px) !important; background-color:  rgba(0, 0, 0, 0.30) !important;"-->
-    <div class="fixed z-50 w-full px-5 py-4 bg-white border dark:bg-dark-1 dark:border-blueGray-900 lg:px-20">
+    <div class="fixed z-50 w-full px-5 py-4 bg-white border-b dark:bg-dark-1 dark:border-blueGray-900 lg:px-20">
       <div x-data="{ open: false }" class="flex flex-col w-full md:items-center justify-left md:flex-row lg:px-2 ">
         <div class="flex flex-row items-center justify-between ">
           <a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none">
@@ -221,7 +221,7 @@
             <div class=" rounded-b-xl" x-show="tab === 'code1'">
               <div
                 class="h-screen overflow-auto overflow-y-scroll bg-blueGray-900 text-blueGray-200 rounded-b-xl code-tab">
-                <div class="rounded-b-xl">
+                <div class="z-10 rounded-b-xl">
                   <div class="hidden" id="clientOne">
                     <!-----
  <section class="mx-auto">
@@ -264,7 +264,7 @@
 -->
                   </div>
                   <!---- display code goes here.-->
-                  <pre class="leading-6"><code data-language="html">
+                  <pre class="leading-6 "><code  data-language="html">
       &lt;section class="mx-auto"&gt;
         &lt;div class="container px-5 mx-auto lg:px-24 lg:py-48"&gt;
             &lt;div class="flex flex-col w-full mb-12 text-left lg:text-center"&gt;
