@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Wicked Blocks</title>
-        <meta name="author" content="Michael Andreuzza">
+        <meta name="author" content="<a>Michael Andreuzza</a>">
         <meta name="keywords" content="keywords,here">
         <link rel="stylesheet" href="./css/tailwind.css" type="text/css">
         <link rel="stylesheet" href="./css/wt.css" type="text/css">
@@ -22,149 +22,212 @@
     </head>
 
     <body class="antialiased transition-colors duration-1000 bg-white dark:bg-dark-1">
-        <!--- Opacitiy to nav style="backdrop-filter: saturate(180%) blur(5px) !important; background-color:  rgba(0, 0, 0, 0.30) !important;"-->
-        <div class="fixed z-50 w-full px-5 py-4 bg-white border dark:bg-dark-1 dark:border-blueGray-900 lg:px-20">
-            <div x-data="{ open: false }"
-                class="flex flex-col w-full md:items-center justify-left md:flex-row lg:px-2 ">
+        <div class="fixed z-50 flex items-center w-full px-5 py-4 bg-white border-b dark:bg-dark-1 dark:border-blueGray-900 lg:px-20">
+            <div class="flex flex-wrap items-center w-full justify-left md:flex-row lg:px-2 ">
                 <div class="flex flex-row items-center justify-between ">
-                    <a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none">
+                    <a href='./index.html'
+                        class='text-lg font-semibold rounded-lg focus:outline-none focus:shadow-outline'>
                         <div class="inline-flex items-center">
                             <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
                             </div>
                             <h2
-                                class="font-semibold tracking-tighter transition duration-1000 ease-in-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold lg:mr-8">
-                                Wicked Blocks
+                                class="text-xl font-bold tracking-tighter uppercase transition duration-500 ease-in-out transform text-dark-1 dark:text-gray-300 hover:text-gray-100 ">
+                                Wickedblocks
+                                <span class="text-xs">©</span>
                             </h2>
+
                         </div>
                     </a>
-                    <button class=" md:hidden focus:outline-none" @click="open = !open">
-                        <svg fill="#ffffff" viewBox="0 0 20 20" class="w-12 h-12">
-                            <path x-show="!open" fill-rule="evenodd"
-                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                                clip-rule="evenodd"></path>
-                            <path x-show="open" fill-rule="evenodd"
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clip-rule="evenodd" style="display: none;"></path>
-                        </svg>
-                    </button>
+
                 </div>
-                <nav :class="{'flex': open, 'hidden': !open}"
-                    class="flex-col items-center flex-grow hidden text-left dark:border-blueGray-900 md:border-l-2 md:flex justify-left md:flex-row">
-                    <a class="px-6 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-xl md:ml-4 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-400 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 "
-                        href="#">GitHub</a>
-                    <a class="px-6 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
-                        href="#">Twiter</a>
-                    <div @click.away="open = false" class="relative lg:ml-auto" x-data="{ open: false }">
-                        <button @click="open = !open"
-                            class="items-center px-6 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
-                            <span>All Blocks </span>
-                            <svg fill="currentColor" viewBox="0 0 20 20"
-                                :class="{'rotate-180': open, 'rotate-0': !open}"
-                                class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform rotate-0 md:-mt-1">
-                                <path fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
-                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
-                            x-transition:enter-start="transform opacity-0 scale-95"
-                            x-transition:enter-end="transform opacity-100 scale-100"
-                            x-transition:leave="transition ease-in duration-75"
-                            x-transition:leave-start="transform opacity-100 scale-100"
-                            x-transition:leave-end="transform opacity-0 scale-95"
-                            class="absolute right-0 z-30 w-screen max-w-screen-md mt-2 origin-top-right"
-                            style="display: none;">
-                            <div
-                                class="px-2 pt-2 pb-4 bg-white border shadow-xl dark:border-blueGray-900 dark:bg-dark-1 rounded-xl">
-                                <div class="container flex flex-wrap justify-between w-full mx-auto">
-                                    <ul class="w-full p-2 md:w-1/3">
-                                        <li>
-                                            <a href="./left-headers.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
-                                                Left Headers</a>
-                                        </li>
-                                        <li>
-                                            <a href="./centered-headers.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
-                                                Center Headers</a>
-                                        </li>
-                                        <li>
-                                            <a href="./right-headers.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
-                                                Right Headers</a>
-                                        </li>
-                                        <li>
-                                            <a href="./auth.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
-                                                Authentication</a>
-                                        </li>
+                <span class="justify-center hidden mt-4 md:inline-flex sm:ml-auto sm:mt-0 sm:justify-start">
 
-                                    </ul>
-                                    <ul class="w-full p-2 md:w-1/3">
-                                        <li>
-                                            <a href="./pricing.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
-                                                Pricing</a>
-                                        </li>
-                                        <li>
-                                            <a href="./clients.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
-                                                Clients</a>
-                                        </li>
+                    <a href="https://github.com/michael-andreuzza/wickedblocks" class="mx-3 tracking-tighter uppercase transition duration-500 ease-in-out transform text-dark-1 dark:text-gray-300 hover:text-blueGray-300 ">
+                       GitHub
+                    </a>
 
-                                        <li>
-                                            <a href="./grids.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
-                                                Grids</a>
-                                        </li>
-                                        <li>
-                                            <a href="./forms.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
-                                                Forms</a>
-                                        </li>
+                    <a href="https://twitter.com/Mike_Andreuzza" class="mx-3 tracking-tighter uppercase transition duration-500 ease-in-out transform text-dark-1 dark:text-gray-300 hover:text-blueGray-300 ">
+                       Twitter
+                    </a>
+                </span>
+                <nav class="flex items-center ml-auto rounded-xl" x-data="{ isOpen:false }">
+                    <button @click="isOpen = true"
+                        class="px-4 py-2 transition duration-500 ease-in-out transform bg-white border-4 lg:px-6 dark:bg-dark-1 rounded-xl focus:shadow-outline focus:outline-none focus:ring-2 text-blueGray-500 dark:text-blueGray-200 ring-offset-current ring-offset-2 dark:border-blueGray-800">
 
+                            <span class="mr-4">All Blocks</span>
 
-                                    </ul>
-                                    <ul class="w-full p-2 md:w-1/3">
-
-                                        <li>
-                                            <a href="./gallery.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
-                                                Gallery</a>
-                                        </li>
-                                        <li>
-                                            <a href="./navigation.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
-                                                Navigation</a>
-                                        </li>
-                                        <li>
-                                            <a href="./footers.html"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
-                                                Footers</a>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.wickedtemplates.com/" target="_blank"
-                                                class="block px-6 py-2 transition duration-1000 ease-in-out transform dark:hover:text-lightBlue-500 text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 rounded-xl">
-                                                Wicked Templates</a>
-                                        </li>
-
-                                    </ul>
-
-                                </div>
-                            </div>
+                    </button>
+                    <div class="absolute top-0 left-0 h-screen overflow-y-scroll shadow-2xl w-80 bg-dark-1"
+                        x-show="isOpen" @click.away="isOpen = false"
+                        x-transition:enter="transition ease-out duration-300 -ml-64" x-transition:enter-start=""
+                        x-transition:enter-end="transform translate-x-64"
+                        x-transition:leave="transition ease-out duration-300" x-transition:leave-start=""
+                        x-transition:leave-end="transform -translate-x-64">
+                        <div class="flex justify-end">
+                            <button
+                                class="p-2 mt-1 mr-3 font-bold rounded-full ring-offset-current ring-offset-2 dark:border-blueGray-800 text-blueGray-500 dark:text-blueGray-200"
+                                @click="isOpen = false">&times;</button>
                         </div>
+                        <nav class="font-semibold ">
+                            <a class="flex items-center px-6 py-2 m-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                                href="./left-headers.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round">
+                                    <line x1="20" y1="4" x2="20" y2="20"></line>
+                                    <rect x="4" y="9" width="12" height="6" rx="2" stroke="#0da5e9"></rect>
+                                </svg>
+                                <span class="mx-4 font-medium tracking-tighter">Left Headers</span>
+                            </a>
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                                href="./centered-headers.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <line x1="12" y1="4" x2="12" y2="9"></line>
+                                    <line x1="12" y1="15" x2="12" y2="20"></line>
+                                    <rect x="6" y="9" width="12" height="6" rx="2" stroke="#0da5e9"></rect>
+                                </svg>
+                                <span class="mx-4 font-medium tracking-tighter">Centered Headers</span>
+                            </a>
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                                href="./right-headers.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <line x1="4" y1="4" x2="4" y2="20"></line>
+                                    <rect x="8" y="9" width="12" height="6" rx="2" stroke="#0da5e9"></rect>
+                                </svg>
+                                <span class="mx-4 font-medium tracking-tighter"> Right Headers</span>
+                            </a>
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                                href="./auth.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2">
+                                    </path>
+                                    <path d="M20 12h-13l3 -3m0 6l-3 -3" stroke="#0da5e9"></path>
+                                </svg>
+                                <span class="mx-4 font-medium tracking-tighter">Auth</span>
+                            </a>
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                                href="./pricing.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path
+                                        d="M11 3l9 9a1.5 1.5 0 0 1 0 2l-6 6a1.5 1.5 0 0 1 -2 0l-9 -9v-4a4 4 0 0 1 4 -4h4">
+                                    </path>
+                                    <circle cx="9" cy="9" r="2" stroke="#0da5e9"></circle>
+                                </svg>
+                                <span class="mx-4 font-medium tracking-tighter">Pricing</span>
+                            </a>
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                                href="./clients.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                    <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" stroke="#0da5e9"></path>
+                                </svg>
+                                <span class="mx-4 font-medium tracking-tighter">Clients</span>
+                            </a>
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                                href="./grids.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <rect x="4" y="4" width="6" height="5" rx="2"></rect>
+                                    <rect x="4" y="13" width="6" height="7" rx="2"></rect>
+                                    <rect x="14" y="4" width="6" height="7" rx="2"></rect>
+                                    <rect x="14" y="15" width="6" height="5" rx="2" stroke="#0da5e9"></rect>
+                                </svg>
+                                <span class="mx-4 font-medium tracking-tighter">Grids</span>
+                            </a>
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                                href="./forms.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
+                                    <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" stroke="#0da5e9"></line>
+                                </svg>
+                                <span class="mx-4 font-medium tracking-tighter">Forms</span>
+                            </a>
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                                href="./gallery.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <line x1="15" y1="8" x2="15.01" y2="8"></line>
+                                    <rect x="4" y="4" width="16" height="16" rx="3"></rect>
+                                    <path d="M4 15l4 -4a3 5 0 0 1 3 0l5 5" stroke="#0da5e9"></path>
+                                    <path d="M14 14l1 -1a3 5 0 0 1 3 0l2 2" stroke="#0da5e9"></path>
+                                </svg>
+                                <span class="mx-4 font-medium tracking-tighter">Gallery</span>
+                            </a>
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                                href="./navigation.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                                    <line x1="4" y1="9" x2="20" y2="9" stroke="#0da5e9"></line>
+                                </svg>
+                                <span class="mx-4 font-medium tracking-tighter">Navigation</span>
+                            </a>
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                                href="./footers.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
+                                    stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                                    <line x1="4" y1="15" x2="20" y2="15" stroke="#0da5e9"></line>
+                                </svg>
+                                <span class="mx-4 font-medium tracking-tighter">Footers</span>
+                            </a>
+
+
+
+                            <div class="flex flex-row items-center justify-between px-8 py-2 bg-white bg-opacity-5 theme-switcher"
+                                role="group">
+                                <button
+                                    class="px-5 py-2 my-1 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-light"
+                                    title="Light">
+                                    Light
+                                </button>
+                                <button
+                                    class="px-5 py-2 my-1 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-dark"
+                                    title="Dark"> Dark
+                                </button>
+                                <button
+                                    class="px-5 py-2 my-1 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-auto"
+                                    title="Auto"> Auto
+                                </button>
+                            </div>
+
+                        </nav>
                     </div>
+                </nav>
             </div>
-
-            </nav>
         </div>
-
         <!----Hero  -->
         <section class="text-gray-700 body-font">
             <div class="container px-8 mx-auto py-36 lg:px-4">
-                <div class="flex flex-col w-full mb-8 text-left lg:text-center">
+                <div class="flex flex-col w-full mb-20 text-left md:text-center">
                     <h1
-                        class="mb-6 text-2xl font-semibold tracking-tighter text-dark-1 dark:text-blueGray-300 sm:text-6xl title-font">
+                        class="mb-6 text-5xl font-bold tracking-tighter text-dark-1 dark:text-blueGray-300 md:text-6xl title-font lg:text-8xl">
                         Tailwind CSS blocks.
                     </h1>
                     <p
@@ -176,347 +239,291 @@
                     </p>
                 </div>
         </section>
-        <!----end hero -->
-        <div class="grid grid-cols-1 px-5 bg-white border-t dark:border-blueGray-900 gap-y-8 lg:py-10 lg:px-28 dark:bg-dark-1"
-            style="background-image: radial-gradient(circle 5px at top left, rgba(132,132,132, 0.23) 0%, rgba(132,132,132, 0.23) 50%,rgba(132,132,132, 0.23) 50%, rgba(132,132,132, 0.23) 30%,transparent 30%, transparent 50%),linear-gradient(90deg, rgba(51,51,51, 0),rgba(51,51,51, 0)); background-size: 20px 20px;">
-            <div class="grid grid-cols-1 pt-8 gap-y-6 lg:grid-cols-4 lg:gap-5 lg:-mt-44">
+        <div
+            class="grid grid-cols-1 px-5 pb-20 border-t bg-blueGray-100 dark:border-blueGray-900 gap-y-8 lg:py-10 lg:px-24 dark:bg-dark-1">
+            <div class="grid grid-cols-1 pt-8 -mt-28 md:-mt-32 gap-y-6 lg:grid-cols-4 lg:gap-5 lg:-mt-44">
                 <div class="grid grid-cols-1 gap-y-8 sm:grid-cols-2 sm:gap-x-5 sm:gap-y-6 md:grid-cols-3 lg:col-span-5">
                     <a href="./left-headers.html"
-                        class="block transition ease-in-out transform bg-white shadow-xl rounded-xl duration-5000 ">
+                        class="block transition ease-in-out transform shadow-xl rounded-xl duration-5000 ">
                         <figure>
                             <div
-                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
-                                <img style="filter: grayscale(100%);" class="w-full h-auto "
-                                    src="./assets/sections/headers-left/headers-left-header-1.png" alt="">
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform border rounded-t-xl ">
+                                <img class="w-full h-full " src="./assets/leftheader.png" alt="">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-
                             </div>
-                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
-                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">Left Headers</p>
-                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                            <figcaption
+                                class="flex h-full p-3 border-t dark:bg-blueGray-800 lg:flex-row bg-dark-1 rounded-b-xl">
+                                <p class="font-normal text-md text-blueGray-100 ">Left Headers</p>
+                                <p class="ml-auto text-sm text-blueGray-400 ">
                                     8 blocks</p>
                             </figcaption>
                         </figure>
                     </a>
                     <a href="./centered-headers.html"
-                        class="block transition ease-in-out transform bg-white shadow-xl rounded-xl duration-5000 ">
+                        class="block transition ease-in-out transform shadow-xl rounded-xl duration-5000 ">
                         <figure>
                             <div
-                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
-                                <img style="filter: grayscale(100%);" class="w-full h-auto"
-                                    src="./assets/sections/headers-center/headers-center-header-1.png" alt="">
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform border rounded-t-xl ">
+                                <img class="w-full h-full" src="./assets/centerheader.png" alt="">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-
                             </div>
-                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
-                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">Centered Headers
+                            <figcaption
+                                class="flex h-full p-3 border-t dark:bg-blueGray-800 lg:flex-row bg-dark-1 rounded-b-xl">
+                                <p class="font-normal text-md text-blueGray-100 ">Centered Headers
                                 </p>
-                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                <p class="ml-auto text-sm text-blueGray-400 ">
                                     5 blocks</p>
                             </figcaption>
                         </figure>
                     </a>
                     <a href="./right-headers.html"
-                        class="block transition ease-in-out transform bg-white shadow-xl rounded-xl duration-5000 ">
+                        class="block transition ease-in-out transform shadow-xl rounded-xl duration-5000 ">
                         <figure>
                             <div
-                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
-                                <img style="filter: grayscale(100%);" class="w-full h-auto"
-                                    src="./assets/sections/headers-right/headers-right-header-1.png" alt="">
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform border rounded-t-xl ">
+                                <img class="w-full h-full" src="./assets/rightheader.png" alt="">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-
                             </div>
-                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
-                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">Right Headers
+                            <figcaption
+                                class="flex h-full p-3 border-t dark:bg-blueGray-800 lg:flex-row bg-dark-1 rounded-b-xl">
+                                <p class="font-normal text-md text-blueGray-100 ">Right Headers
                                 </p>
-                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                <p class="ml-auto text-sm text-blueGray-400 ">
                                     8 blocks</p>
                             </figcaption>
                         </figure>
                     </a>
                     <a href="./auth.html"
-                        class="block transition ease-in-out transform bg-white shadow-xl rounded-xl duration-5000 ">
+                        class="block transition ease-in-out transform shadow-xl rounded-xl duration-5000 ">
                         <figure>
                             <div
-                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
-                                <img style="filter: grayscale(100%);" class="w-full h-auto" src="./assets/sections/auth/auth-2.png" alt="">
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform border rounded-t-xl ">
+                                <img class="w-full h-full" src="./assets/auth.png" alt="">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-
                             </div>
-                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
-                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                            <figcaption
+                                class="flex h-full p-3 border-t dark:bg-blueGray-800 lg:flex-row bg-dark-1 rounded-b-xl">
+                                <p class="font-normal text-md text-blueGray-100 ">
                                     Authentication
                                 </p>
-                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                <p class="ml-auto text-sm text-blueGray-400 ">
                                     4 blocks</p>
                             </figcaption>
                         </figure>
                     </a>
                     <a href="./pricing.html"
-                        class="block transition ease-in-out transform bg-white shadow-xl rounded-xl duration-5000 ">
+                        class="block transition ease-in-out transform shadow-xl rounded-xl duration-5000 ">
                         <figure>
                             <div
-                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
-                                <img style="filter: grayscale(100%);" class="w-full h-auto" src="./assets/sections/pricing/price-1.png" alt="">
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform border rounded-t-xl ">
+                                <img class="w-full h-full" src="./assets/pricing.png" alt="">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-
                             </div>
-                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
-                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                            <figcaption
+                                class="flex h-full p-3 border-t dark:bg-blueGray-800 lg:flex-row bg-dark-1 rounded-b-xl">
+                                <p class="font-normal text-md text-blueGray-100 ">
                                     Pricing
                                 </p>
-                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                <p class="ml-auto text-sm text-blueGray-400 ">
                                     6 blocks</p>
                             </figcaption>
                         </figure>
                     </a>
                     <a href="./clients.html"
-                        class="block transition ease-in-out transform bg-white shadow-xl rounded-xl duration-5000 ">
+                        class="block transition ease-in-out transform shadow-xl rounded-xl duration-5000 ">
                         <figure>
                             <div
-                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
-                                <img style="filter: grayscale(100%);" class="w-full h-auto" src="./assets/sections/clients/clients-1.png" alt="">
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform border rounded-t-xl ">
+                                <img class="w-full h-full" src="./assets/clients.png" alt="">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-
                             </div>
-                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
-                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                            <figcaption
+                                class="flex h-full p-3 border-t dark:bg-blueGray-800 lg:flex-row bg-dark-1 rounded-b-xl">
+                                <p class="font-normal text-md text-blueGray-100 ">
                                     Clients
                                 </p>
-                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                <p class="ml-auto text-sm text-blueGray-400 ">
                                     6 blocks</p>
                             </figcaption>
                         </figure>
                     </a>
                     <a href="./grids.html"
-                        class="block transition ease-in-out transform bg-white shadow-xl rounded-xl duration-5000 ">
+                        class="block transition ease-in-out transform shadow-xl rounded-xl duration-5000 ">
                         <figure>
                             <div
-                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
-                                <img style="filter: grayscale(100%);" class="w-full h-auto" src="./assets/sections/grids/grids-1.png" alt="">
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform border rounded-t-xl ">
+                                <img class="w-full h-full" src="./assets/grids.png" alt="">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-
                             </div>
-                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
-                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                            <figcaption
+                                class="flex h-full p-3 border-t dark:bg-blueGray-800 lg:flex-row bg-dark-1 rounded-b-xl">
+                                <p class="font-normal text-md text-blueGray-100 ">
                                     Grids
                                 </p>
-                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                <p class="ml-auto text-sm text-blueGray-400 ">
                                     7 blocks</p>
                             </figcaption>
                         </figure>
                     </a>
                     <a href="./forms.html"
-                        class="block transition ease-in-out transform bg-white shadow-xl rounded-xl duration-5000 ">
+                        class="block transition ease-in-out transform shadow-xl rounded-xl duration-5000 ">
                         <figure>
                             <div
-                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
-                                <img style="filter: grayscale(100%);" class="w-full h-auto" src="./assets/sections/forms/forms-1.png" alt="">
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform border rounded-t-xl ">
+                                <img class="w-full h-full" src="./assets/forms.png" alt="">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-
                             </div>
-                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
-                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                            <figcaption
+                                class="flex h-full p-3 border-t dark:bg-blueGray-800 lg:flex-row bg-dark-1 rounded-b-xl">
+                                <p class="font-normal text-md text-blueGray-100 ">
                                     Forms
                                 </p>
-                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                <p class="ml-auto text-sm text-blueGray-400 ">
                                     3 blocks</p>
                             </figcaption>
                         </figure>
                     </a>
                     <a href="./gallery.html"
-                        class="block transition ease-in-out transform bg-white shadow-xl rounded-xl duration-5000 ">
+                        class="block transition ease-in-out transform shadow-xl rounded-xl duration-5000 ">
                         <figure>
                             <div
-                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
-                                <img style="filter: grayscale(100%);" class="w-full h-auto" src="./assets/sections/gallery/gallery-1.png" alt="">
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform border rounded-t-xl ">
+                                <img class="w-full h-full" src="./assets/gallery.png" alt="">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-
                             </div>
-                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
-                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                            <figcaption
+                                class="flex h-full p-3 border-t dark:bg-blueGray-800 lg:flex-row bg-dark-1 rounded-b-xl">
+                                <p class="font-normal text-md text-blueGray-100 ">
                                     Gallery
                                 </p>
-                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                <p class="ml-auto text-sm text-blueGray-400 ">
                                     5 blocks</p>
                             </figcaption>
                         </figure>
                     </a>
                     <a href="./navigation.html"
-                        class="block transition ease-in-out transform bg-white shadow-xl rounded-xl duration-5000 ">
+                        class="block transition ease-in-out transform shadow-xl rounded-xl duration-5000 ">
                         <figure>
                             <div
-                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
-                                <img style="filter: grayscale(100%);" class="w-full h-auto" src="./assets/sections/nav/nav-1.png" alt="">
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform border rounded-t-xl ">
+                                <img class="w-full h-full" src="./assets/nav.png" alt="">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-
                             </div>
-                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
-                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                            <figcaption
+                                class="flex h-full p-3 border-t dark:bg-blueGray-800 lg:flex-row bg-dark-1 rounded-b-xl">
+                                <p class="font-normal text-md text-blueGray-100 ">
                                     Navigation
                                 </p>
-                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                <p class="ml-auto text-sm text-blueGray-400 ">
                                     3 blocks</p>
                             </figcaption>
                         </figure>
                     </a>
                     <a href="./footers.html"
-                        class="block transition ease-in-out transform bg-white shadow-xl rounded-xl duration-5000 ">
+                        class="block transition ease-in-out transform shadow-xl rounded-xl duration-5000 ">
                         <figure>
                             <div
-                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
-                                <img style="filter: grayscale(100%);" class="w-full h-auto" src="./assets/sections/footers/footer-1.png" alt="">
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform border rounded-t-xl ">
+                                <img class="w-full h-full" src="./assets/footer.png" alt="">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-
                             </div>
-                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
-                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                            <figcaption
+                                class="flex h-full p-3 border-t dark:bg-blueGray-800 lg:flex-row bg-dark-1 rounded-b-xl">
+                                <p class="font-normal text-md text-blueGray-100 ">
                                     Footer
                                 </p>
-                                <p class="ml-auto text-sm text-blueGray-500 dark:text-blueGray-300">
+                                <p class="ml-auto text-sm text-blueGray-400 ">
                                     3 blocks</p>
                             </figcaption>
                         </figure>
                     </a>
-                    <a href="/components/marketing/sections/team-sections"
-                        class="block transition ease-in-out transform bg-white shadow-xl rounded-xl duration-5000 ">
+                    <a href="./components/marketing/sections/team-sections"
+                        class="block transition ease-in-out transform shadow-xl rounded-xl duration-5000 ">
                         <figure>
                             <div
-                                class="relative overflow-hidden transition duration-150 ease-in-out transform rounded-t-xl ">
-                                <img style="filter: grayscale(100%);" class="w-full h-auto" src="./assets/sections/wt.png" alt="">
+                                class="relative overflow-hidden transition duration-150 ease-in-out transform border rounded-t-xl ">
+                                <img class="w-full h-full" src="./assets/wt.png" alt="">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center text-center transition duration-150 ease-in-out opacity-15">
                                 </div>
-
                             </div>
-                            <figcaption class="flex h-full p-3 mt-4 border-t lg:flex-row">
-                                <p class="font-normal text-md text-blueGray-500 dark:text-blueGray-200">
+                            <figcaption
+                                class="flex h-full p-3 border-t dark:bg-blueGray-800 lg:flex-row bg-dark-1 rounded-b-xl">
+                                <p class="font-normal text-md text-blueGray-100 ">
                                     Wicked Templates
                                 </p>
-
                             </figcaption>
                         </figure>
                     </a>
                 </div>
             </div>
         </div>
-        <footer class="py-6 border dark:border-blueGray-900">
-            <div
-                class="container px-6 mx-auto space-y-6 divide-y dark:divide-blueGray-900 lg:px-20 md:space-y-12 divide-opacity-50">
-                <div class="grid grid-cols-12">
-                    <div class="pb-6 col-span-full md:pb-0 md:col-span-6">
-                        <a href="#" class="flex justify-center space-x-3 md:justify-start">
-                            <img class="object-contain rounded-lg objllcfit w-52" alt="badge"
-                                src="./assets/Wickedblockswidget.svg">
-                        </a>
-                    </div>
-                    <div class="col-span-6 text-center md:text-left md:col-span-3">
-                        <h2
-                            class="mb-3 tracking-tighter text-transparent text-md bg-clip-text bg-gradient-to-r from-lightBlue-400 via-lightBlue-500 to-cyan-400">
-                            SOCIAL</h2>
-                        <ul class="mb-10 list-none">
-                            <li>
-                                <a href="https://twitter.com/WickedTemplates"
-                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">Twitter</a>
-                            </li>
-                            <li>
-                                <a href="https://www.producthunt.com/posts/wicked-templates"
-                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">Product
-                                    Hunt</a>
-                            </li>
-                            <li>
-                                <a href="https://dribbble.com/MichaelAndreuzza"
-                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">Dribbble</a>
-                            </li>
-                            </>
-                    </div>
-                    <div class="col-span-6 text-center md:text-left md:col-span-3">
-                        <h2
-                            class="mb-3 tracking-tighter text-transparent text-md bg-clip-text bg-gradient-to-r from-lightBlue-400 via-lightBlue-500 to-cyan-400">
-                            OTHER PROJECTS</h2>
-                        <ul class="mb-10 list-none">
-                            <li>
-                                <a href="https://www.wickedtemplates.com"
-                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">
-                                    Wicked Templates
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://colorsandfonts.com"
-                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">Colors
-                                    &amp; fonts</a>
-                            </li>
-                            <li>
-                                <a href="https://unicornsfeed.com"
-                                    class="text-blueGray-500 dark:text-blueGray-200 hover:text-lightBlue-500">TheUnicornsFeed</a>
-                            </li>
-                            </>
-                    </div>
-                </div>
-                <div class="grid justify-center pt-6 lg:justify-between">
-                    <div
-                        class="flex flex-col self-center text-sm text-center text-blueGray-500 dark:text-blueGray-200 md:block lg:col-start-1 md:space-x-6">
-                        <span>Released under the MIT License Copyright 2021 © Michael Andreuzza</span>
+        <footer class="border-t border-blueGray-800 bg-dark-1 body-font">
+            <div class="container flex flex-col flex-wrap items-center px-5 py-6 mx-auto md:flex-row md:flex-no-wrap ">
+                <nav class="flex flex-wrap items-center justify-center text-base ">
+                    <span class="mr-6 font-semibold tracking-tighter text-lightBlue-500 text-md"> OTHER PROJECTS</span>
+                    <a href="https://colorsandfonts.com" class="mr-4 text-blueGray-300 hover:text-lightBlue-500">
+                        <p>ColorsAndFonts</p>
+                    </a>
+                    <a href="https://unicornsfeed.com/" class="mr-4 text-blueGray-300 hover:text-lightBlue-500">
+                        <p>TheUnicornsFeed</p>
+                    </a>
+                    <a href="https://wickedtemplates.com" class="mr-4 text-blueGray-300 hover:text-lightBlue-500">
+                        <p>WickedTemplates</p>
+                    </a>
+                </nav>
+                <div
+                    class="items-center block ml-auto text-sm text-center lg:text-left md:inline-flex text-blueGray-500 ">
+                    Released under the MIT License Copyright 2021©
 
-                    </div>
-                    <div class="flex items-center justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
+                    <a href="https://twitter.com/Mike_Andreuzza"
+                        class="inline-flex items-center ml-2 text-white hover:text-lightBlue-500">
+                        by Michael andreuzza
+                        <img loading="lazy focus:outline-none" alt="team"
+                            class="flex-shrink-0 object-contain w-8 h-8 mx-4 ml-4 bg-gray-100 rounded-full objecfit lg:mb-0"
+                            src="https://d33wubrfki0l68.cloudfront.net/6d60ae66b2a50b1842d08156aeb53663fa328837/d7f97/assets/badges/mike.jpg">
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <footer class="border-t bg-dark-1 border-blueGray-800">
+            <div class="container px-5 mx-auto ">
+                <div class="flex items-center justify-center py-6 lg:justify-between">
+                    <div class="inline-flex items-center mx-auto text-sm text-left text-blueGray-500 md:block">
                         <a class="lg:ml-auto"
                             href="https://www.producthunt.com/posts/wickedblocks?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wickedblocks"
                             target="_blank"><img
-                                src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=281332&theme=&period=daily"
+                                src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=281332&theme=dark&period=daily"
                                 alt="WickedBlocks - Tailwind V2 blocks ready to copy paste | Product Hunt"
                                 style="width: 250px; height: 54px;" width="250" height="54" /></a>
                     </div>
                 </div>
             </div>
         </footer>
-
-
         <script defer src="./js/theme.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
-        <!------ Toggles ----->
-        <div
-            class="fixed bottom-0 right-0 z-10 p-2 m-2 bg-white border shadow dark:bg-dark-1 dark:border-blueGray-900 rounded-xl">
-            <div class="items-center justify-start hidden font-medium text-gray-900 lg:flex title-font">
-                <div class="flex items-center theme-switcher " role="group">
-                    <button
-                        class="p-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-light"
-                        title="Light">
-                        Light
-                    </button>
-                    <button
-                        class="p-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-dark"
-                        title="Dark"> Dark
-                    </button>
-                    <button
-                        class="p-2 text-sm transition duration-1000 ease-in-out transform bg-transparent hover:text-lightBlue-400 rounded-xl text-blueGray-500 dark:text-blueGray-200 md:mr-4 md:ml-4 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-auto"
-                        title="Auto"> Auto
-                    </button>
-                </div>
-            </div>
-        </div>
     </body>
 
 </html>

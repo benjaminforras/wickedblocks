@@ -6,7 +6,7 @@ const extendedColors = defaultColors;
 
 module.exports = {
   purge: {
-    enabled: false,
+    enabled: true,
     content: [
       './public/**/*.html',
       './public/*.html',

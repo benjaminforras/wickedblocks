@@ -60,6 +60,9 @@
 body{
     font-family: 'IBMPS';
 }
+h1 {
+    font-family: 'Geo Bold';
+}
 pre {
 font-family: 'JetBrains Mono', monospace;
 }
