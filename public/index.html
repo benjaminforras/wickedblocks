@@ -19,6 +19,8 @@
         <meta name="msapplication-TileColor" content="#010412">
         <meta name="theme-color" content="#010412">
         <!-- Uncomment for cdn tailwind (if you haven't built your tailwind.css yet) <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">-->
+                <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+
     </head>
 
     <body class="antialiased transition-colors duration-1000 bg-white dark:bg-dark-1">
@@ -57,11 +59,11 @@
                             <span class="mr-4">All Blocks</span>
 
                     </button>
-                    <div class="absolute top-0 left-0 h-screen overflow-y-scroll shadow-2xl w-80 bg-dark-1"
+                    <div class="absolute top-0 left-0 w-64 h-screen overflow-y-scroll shadow-2xl bg-dark-1"
                         x-show="isOpen" @click.away="isOpen = false"
                         x-transition:enter="transition ease-out duration-300 -ml-64" x-transition:enter-start=""
                         x-transition:enter-end="transform translate-x-64"
-                        x-transition:leave="transition ease-out duration-300" x-transition:leave-start=""
+                        x-transition:leave="transition ease-out duration-500" x-transition:leave-start=""
                         x-transition:leave-end="transform -translate-x-64">
                         <div class="flex justify-end">
                             <button
@@ -69,7 +71,7 @@
                                 @click="isOpen = false">&times;</button>
                         </div>
                         <nav class="font-semibold ">
-                            <a class="flex items-center px-6 py-2 m-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                            <a class="flex items-center px-6 py-2 m-2 tracking-tighter transition duration-1000 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
                                 href="./left-headers.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
                                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round">
@@ -78,7 +80,7 @@
                                 </svg>
                                 <span class="mx-4 font-medium tracking-tighter">Left Headers</span>
                             </a>
-                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-1000 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
                                 href="./centered-headers.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
                                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -90,7 +92,7 @@
                                 </svg>
                                 <span class="mx-4 font-medium tracking-tighter">Centered Headers</span>
                             </a>
-                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-1000 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
                                 href="./right-headers.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
                                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -101,7 +103,7 @@
                                 </svg>
                                 <span class="mx-4 font-medium tracking-tighter"> Right Headers</span>
                             </a>
-                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-1000 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
                                 href="./auth.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
                                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -114,7 +116,7 @@
                                 </svg>
                                 <span class="mx-4 font-medium tracking-tighter">Auth</span>
                             </a>
-                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-1000 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
                                 href="./pricing.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
                                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -127,7 +129,7 @@
                                 </svg>
                                 <span class="mx-4 font-medium tracking-tighter">Pricing</span>
                             </a>
-                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-1000 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
                                 href="./clients.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
                                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -138,7 +140,7 @@
                                 </svg>
                                 <span class="mx-4 font-medium tracking-tighter">Clients</span>
                             </a>
-                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-1000 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
                                 href="./grids.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
                                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -151,7 +153,7 @@
                                 </svg>
                                 <span class="mx-4 font-medium tracking-tighter">Grids</span>
                             </a>
-                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-1000 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
                                 href="./forms.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
                                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -162,7 +164,7 @@
                                 </svg>
                                 <span class="mx-4 font-medium tracking-tighter">Forms</span>
                             </a>
-                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-1000 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
                                 href="./gallery.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
                                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -175,7 +177,7 @@
                                 </svg>
                                 <span class="mx-4 font-medium tracking-tighter">Gallery</span>
                             </a>
-                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-1000 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
                                 href="./navigation.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
                                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -186,7 +188,7 @@
                                 </svg>
                                 <span class="mx-4 font-medium tracking-tighter">Navigation</span>
                             </a>
-                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
+                            <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-1000 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
                                 href="./footers.html">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24"
                                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
@@ -232,8 +234,8 @@
                     </h1>
                     <p
                         class="mx-auto text-xl font-medium leading-relaxed lg:w-1/2 text-blueGray-500 dark:text-blueGray-200">
-                        Tailwind CSS
-                        an open source growing collection of layout blocks and components built with Tailwind CSS V2
+
+                        An open source growing collection of layout blocks and components built with Tailwind CSS V2
                         ready to copy paste on your
                         Tailwind project
                     </p>
@@ -520,7 +522,7 @@
         </section>
         <footer class="border-t border-blueGray-800 bg-dark-1 body-font">
             <div class="container flex flex-col flex-wrap items-center px-5 py-6 mx-auto md:flex-row md:flex-no-wrap ">
-                <nav class="flex flex-wrap items-center justify-center text-base ">
+                <nav class="flex flex-col items-center justify-center text-base lg:flex-row ">
                     <span class="mr-6 font-semibold tracking-tighter text-lightBlue-500 text-md"> OTHER PROJECTS</span>
                     <a href="https://colorsandfonts.com" class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
                         <p>ColorsAndFonts</p>
@@ -542,7 +544,7 @@
                     </a>
                 </nav>
                 <div
-                    class="items-center block ml-auto text-sm text-center lg:text-left md:inline-flex text-blueGray-500 ">
+                    class="items-center block text-sm text-center lg:ml-auto lg:text-left md:inline-flex text-blueGray-500 ">
 
 
                     <a href="https://twitter.com/Mike_Andreuzza"
@@ -557,15 +559,15 @@
         </footer>
         <footer class="border-t bg-dark-1 border-blueGray-800">
             <div class="container px-5 mx-auto ">
-                <div class="flex items-center justify-center py-6 lg:justify-between">
+                <div class="flex flex-wrap items-center justify-center py-2 lg:justify-between">
                     <div class="items-center text-sm text-blueGray-500 md:block">
-                        <div class="items-center text-sm text-left md:inline-flex text-blueGray-500">
+                        <div class="items-center my-2 text-sm text-left md:inline-flex text-blueGray-500">
                             Released under the MIT License Copyright 2021©
 
 
                         </div>
                     </div>
-                    <a class="lg:ml-auto"
+                    <a class="my-2 lg:ml-auto"
                         href="https://www.producthunt.com/posts/wickedblocks?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wickedblocks"
                         target="_blank"><img
                             src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=281332&theme=dark&period=daily"
@@ -575,7 +577,6 @@
             </div>
         </footer>
         <script defer src="./js/theme.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
     </body>
 
 </html>

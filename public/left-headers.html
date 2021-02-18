@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./css/wt.css" type="text/css" />
     <link href="./css/blackboard.css" rel="stylesheet" type="text/css">
     <!-- Uncomment for cdn tailwind (if you haven't built your tailwind.css yet) <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">-->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   </head>
   <body class="antialiased transition-colors duration-1000 bg-white dark:bg-dark-1">
     <!----- Snackbar -->
@@ -65,7 +66,7 @@
                             <span class="mr-4">All Blocks</span>
 
                     </button>
-                    <div class="absolute top-0 left-0 h-screen overflow-y-scroll shadow-2xl w-80 bg-dark-1"
+                    <div class="absolute top-0 left-0 w-64 h-screen overflow-y-scroll shadow-2xl bg-dark-1"
                         x-show="isOpen" @click.away="isOpen = false"
                         x-transition:enter="transition ease-out duration-300 -ml-64" x-transition:enter-start=""
                         x-transition:enter-end="transform translate-x-64"
@@ -272,7 +273,7 @@
             </button>
             <!---- Copy Buton -->
             <button
-              class="inline-flex items-center justify-center w-full p-2 my-2 mt-2 ml-auto mr-2 font-semibold tracking-tighter text-center text-white transition duration-500 ease-in-out transform border-2 border-transparent shadow cursor-pointer rounded-xl font-lg hover:text-white focus:outline-none lg:w-auto hover:border-white"
+              class="justify-center w-full p-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer tems-center ininline-flex hover:border text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
               onclick="copyToClip(document.getElementById('headerTwo').innerHTML)" x-data="{}"
               @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24"
@@ -452,7 +453,7 @@
             </button>
             <!---- Copy Buton -->
             <button
-              class="inline-flex items-center justify-center w-full p-2 my-2 mt-2 ml-auto mr-2 font-semibold tracking-tighter text-center text-white transition duration-500 ease-in-out transform border-2 border-transparent shadow cursor-pointer rounded-xl font-lg hover:text-white focus:outline-none lg:w-auto hover:border-white"
+              class="justify-center w-full p-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer tems-center ininline-flex hover:border text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
               onclick="copyToClip(document.getElementById('headerThree').innerHTML)" x-data="{}"
               @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24"
@@ -569,7 +570,7 @@
             </button>
             <!---- Copy Buton -->
             <button
-              class="inline-flex items-center justify-center w-full p-2 my-2 mt-2 ml-auto mr-2 font-semibold tracking-tighter text-center text-white transition duration-500 ease-in-out transform border-2 border-transparent shadow cursor-pointer rounded-xl font-lg hover:text-white focus:outline-none lg:w-auto hover:border-white"
+              class="justify-center w-full p-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer tems-center ininline-flex hover:border text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
               onclick="copyToClip(document.getElementById('headerFive').innerHTML)" x-data="{}"
               @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24"
@@ -765,7 +766,7 @@
             </button>
             <!---- Copy Buton -->
             <button
-              class="inline-flex items-center justify-center w-full p-2 my-2 mt-2 ml-auto mr-2 font-semibold tracking-tighter text-center text-white transition duration-500 ease-in-out transform border-2 border-transparent shadow cursor-pointer rounded-xl font-lg hover:text-white focus:outline-none lg:w-auto hover:border-white"
+              class="justify-center w-full p-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer tems-center ininline-flex hover:border text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
               onclick="copyToClip(document.getElementById('headerSeven').innerHTML)" x-data="{}"
               @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24"
@@ -917,7 +918,7 @@
             </button>
             <!---- Copy Buton -->
             <button
-              class="inline-flex items-center justify-center w-full p-2 my-2 mt-2 ml-auto mr-2 font-semibold tracking-tighter text-center text-white transition duration-500 ease-in-out transform border-2 border-transparent shadow cursor-pointer rounded-xl font-lg hover:text-white focus:outline-none lg:w-auto hover:border-white"
+              class="justify-center w-full p-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer tems-center ininline-flex hover:border text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
               onclick="copyToClip(document.getElementById('headerEight').innerHTML)" x-data="{}"
               @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24"
@@ -1131,7 +1132,7 @@
             </button>
             <!---- Copy Buton -->
             <button
-              class="inline-flex items-center justify-center w-full p-2 my-2 mt-2 ml-auto mr-2 font-semibold tracking-tighter text-center text-white transition duration-500 ease-in-out transform border-2 border-transparent shadow cursor-pointer rounded-xl font-lg hover:text-white focus:outline-none lg:w-auto hover:border-white"
+              class="justify-center w-full p-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer tems-center ininline-flex hover:border text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
               onclick="copyToClip(document.getElementById('headerTen').innerHTML)" x-data="{}"
               @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24"
@@ -1256,7 +1257,7 @@
             </button>
             <!---- Copy Buton -->
             <button
-              class="inline-flex items-center justify-center w-full p-2 my-2 mt-2 ml-auto mr-2 font-semibold tracking-tighter text-center text-white transition duration-500 ease-in-out transform border-2 border-transparent shadow cursor-pointer rounded-xl font-lg hover:text-white focus:outline-none lg:w-auto hover:border-white"
+              class="justify-center w-full p-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer tems-center ininline-flex hover:border text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
               onclick="copyToClip(document.getElementById('headerEleven').innerHTML)" x-data="{}"
               @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24"
@@ -1510,7 +1511,7 @@
             </button>
             <!---- Copy Buton -->
             <button
-              class="inline-flex items-center justify-center w-full p-2 my-2 mt-2 ml-auto mr-2 font-semibold tracking-tighter text-center text-white transition duration-500 ease-in-out transform border-2 border-transparent shadow cursor-pointer rounded-xl font-lg hover:text-white focus:outline-none lg:w-auto hover:border-white"
+              class="justify-center w-full p-1 my-2 mt-2 mr-2 text-center transition duration-500 ease-in-out transform border border-transparent rounded-lg cursor-pointer tems-center ininline-flex hover:border text-blueGray-500 font-lg e focus:outline-none lg:w-auto hover:border-blueGray-300 dark:hover:border-blueGray-800 focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2"
               onclick="copyToClip(document.getElementById('headerTwelve').innerHTML)" x-data="{}"
               @click="$dispatch('notice', {type: 'success', text: ' ✓ Block Copied To Clipboard!'})">
               <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24"
@@ -1634,7 +1635,7 @@
     </section>
 <footer class="border-t border-blueGray-800 bg-dark-1 body-font">
     <div class="container flex flex-col flex-wrap items-center px-5 py-6 mx-auto md:flex-row md:flex-no-wrap ">
-        <nav class="flex flex-wrap items-center justify-center text-base ">
+        <nav class="flex flex-col items-center justify-center text-base lg:flex-row ">
             <span class="mr-6 font-semibold tracking-tighter text-lightBlue-500 text-md"> OTHER PROJECTS</span>
             <a href="https://colorsandfonts.com" class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
                 <p>ColorsAndFonts</p>
@@ -1656,7 +1657,7 @@
                 <p>Brutalist One</p>
             </a>
         </nav>
-        <div class="items-center block ml-auto text-sm text-center lg:text-left md:inline-flex text-blueGray-500 ">
+        <div class="items-center block text-sm text-center lg:ml-auto lg:text-left md:inline-flex text-blueGray-500 ">
 
 
             <a href="https://twitter.com/Mike_Andreuzza"
@@ -1671,15 +1672,15 @@
 </footer>
 <footer class="border-t bg-dark-1 border-blueGray-800">
     <div class="container px-5 mx-auto ">
-        <div class="flex items-center justify-center py-6 lg:justify-between">
+        <div class="flex flex-wrap items-center justify-center py-2 lg:justify-between">
             <div class="items-center text-sm text-blueGray-500 md:block">
-                <div class="items-center text-sm text-left md:inline-flex text-blueGray-500">
+                <div class="items-center my-2 text-sm text-left md:inline-flex text-blueGray-500">
                     Released under the MIT License Copyright 2021©
 
 
                 </div>
             </div>
-            <a class="lg:ml-auto"
+            <a class="my-2 lg:ml-auto"
                 href="https://www.producthunt.com/posts/wickedblocks?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wickedblocks"
                 target="_blank"><img
                     src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=281332&theme=dark&period=daily"
@@ -1689,7 +1690,6 @@
     </div>
 </footer>
     <script defer src="./js/theme.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer=""></script>
     <script>
       function copyToClip(str) {
         function listener(e) {
