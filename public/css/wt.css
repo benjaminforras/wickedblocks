@@ -22,3 +22,6 @@ background-image: radial-gradient(circle 2px at top left, rgba(226,226,226, 0.34
 html {
     scroll-behavior: smooth;
 }
+.bg-3d {
+transform: perspective(1000px) rotateX(30deg) rotateY(0deg) rotateZ(0deg); transform-origin: center center;
+}

@@ -6,7 +6,7 @@ const extendedColors = defaultColors;
 
 module.exports = {
   purge: {
-    enabled: true,
+    enabled: false,
     content: [
       './public/**/*.html',
       './public/*.html',
@@ -87,6 +87,10 @@ module.exports = {
 
         primary: {
         1: '#2D79F8',
+
+        },
+        cta: {
+        1: '#111213',
 
         },
 
