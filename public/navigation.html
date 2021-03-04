@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="./css/wt.css" type="text/css" />
         <link href="./css/blackboard.css" rel="stylesheet" type="text/css">
         <!-- Uncomment for cdn tailwind (if you haven't built your tailwind.css yet) <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">-->
-                <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     </head>
 
@@ -35,198 +35,86 @@
                 </div>
             </template>
         </div>
-    <div
-        class="fixed z-50 flex items-center w-full px-5 py-4 bg-white border-b dark:bg-dark-1 dark:border-blueGray-900 lg:px-20">
-        <div class="flex flex-wrap items-center w-full justify-left md:flex-row lg:px-2 ">
-            <div class="flex flex-row items-center justify-between ">
-                <a href='./index.html' class='text-lg font-semibold rounded-lg focus:outline-none focus:shadow-outline'>
-                    <div class="inline-flex items-center">
-                        <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
+        <div
+            class="flex items-center w-full px-5 py-4 bg-white border-b dark:bg-dark-1 dark:border-blueGray-900 lg:px-20">
+            <div class="inline-flex flex-wrap items-center w-full justify-left md:flex-row lg:px-2 ">
+                <div class="flex flex-row items-center justify-between ">
+                    <a href='./index.html'
+                        class='text-lg font-semibold rounded-lg focus:outline-none focus:shadow-outline'>
+                        <div class="inline-flex items-center">
+                            <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
+                            </div>
+                            <h2
+                                class="text-xl font-bold tracking-tighter uppercase transition duration-500 ease-in-out transform text-dark-1 dark:text-gray-300 hover:text-gray-100 ">
+                                Wickedblocks
+                                <span class="text-xs">©</span>
+                            </h2>
+
                         </div>
-                        <h2
-                            class="text-xl font-bold tracking-tighter uppercase transition duration-500 ease-in-out transform text-dark-1 dark:text-gray-300 hover:text-gray-100 ">
-                            Wickedblocks
-                            <span class="text-xs">©</span>
-                        </h2>
+                    </a>
 
-                    </div>
-                </a>
-
-            </div>
-            <span class="justify-center hidden mt-4 md:inline-flex sm:ml-auto sm:mt-0 sm:justify-start">
-
-                <a href="https://github.com/michael-andreuzza/wickedblocks"
-                    class="mx-3 tracking-tighter uppercase transition duration-500 ease-in-out transform text-dark-1 dark:text-gray-300 hover:text-blueGray-300 ">
-                    GitHub
-                </a>
-
-                <a href="https://twitter.com/Mike_Andreuzza"
-                    class="mx-3 tracking-tighter uppercase transition duration-500 ease-in-out transform text-dark-1 dark:text-gray-300 hover:text-blueGray-300 ">
-                    Twitter
-                </a>
-            </span>
-            <nav class="flex items-center ml-auto rounded-xl" x-data="{ isOpen:false }">
-                <button @click="isOpen = true"
-                    class="px-4 py-2 transition duration-500 ease-in-out transform bg-white border-4 lg:px-6 dark:bg-dark-1 rounded-xl focus:shadow-outline focus:outline-none focus:ring-2 text-blueGray-500 dark:text-blueGray-200 ring-offset-current ring-offset-2 dark:border-blueGray-800">
-
-                    <span class="mr-4">All Blocks</span>
-
-                </button>
-                <div class="absolute top-0 left-0 w-64 h-screen overflow-y-scroll shadow-2xl bg-dark-1" x-show="isOpen"
-                    @click.away="isOpen = false" x-transition:enter="transition ease-out duration-300 -ml-64"
-                    x-transition:enter-start="" x-transition:enter-end="transform translate-x-64"
-                    x-transition:leave="transition ease-out duration-300" x-transition:leave-start=""
-                    x-transition:leave-end="transform -translate-x-64">
-                    <div class="flex justify-end">
-                        <button
-                            class="p-2 mt-1 mr-3 font-bold rounded-full ring-offset-current ring-offset-2 dark:border-blueGray-800 text-blueGray-500 dark:text-blueGray-200"
-                            @click="isOpen = false">&times;</button>
-                    </div>
-                    <nav class="font-semibold ">
-                        <a class="flex items-center px-6 py-2 m-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
-                            href="./left-headers.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round">
-                                <line x1="20" y1="4" x2="20" y2="20"></line>
-                                <rect x="4" y="9" width="12" height="6" rx="2" stroke="#0da5e9"></rect>
-                            </svg>
-                            <span class="mx-4 font-medium tracking-tighter">Left Headers</span>
-                        </a>
-                        <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
-                            href="./centered-headers.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <line x1="12" y1="4" x2="12" y2="9"></line>
-                                <line x1="12" y1="15" x2="12" y2="20"></line>
-                                <rect x="6" y="9" width="12" height="6" rx="2" stroke="#0da5e9"></rect>
-                            </svg>
-                            <span class="mx-4 font-medium tracking-tighter">Centered Headers</span>
-                        </a>
-                        <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
-                            href="./right-headers.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <line x1="4" y1="4" x2="4" y2="20"></line>
-                                <rect x="8" y="9" width="12" height="6" rx="2" stroke="#0da5e9"></rect>
-                            </svg>
-                            <span class="mx-4 font-medium tracking-tighter"> Right Headers</span>
-                        </a>
-                        <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
-                            href="./auth.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2">
-                                </path>
-                                <path d="M20 12h-13l3 -3m0 6l-3 -3" stroke="#0da5e9"></path>
-                            </svg>
-                            <span class="mx-4 font-medium tracking-tighter">Auth</span>
-                        </a>
-                        <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
-                            href="./pricing.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M11 3l9 9a1.5 1.5 0 0 1 0 2l-6 6a1.5 1.5 0 0 1 -2 0l-9 -9v-4a4 4 0 0 1 4 -4h4">
-                                </path>
-                                <circle cx="9" cy="9" r="2" stroke="#0da5e9"></circle>
-                            </svg>
-                            <span class="mx-4 font-medium tracking-tighter">Pricing</span>
-                        </a>
-                        <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
-                            href="./clients.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" stroke="#0da5e9"></path>
-                            </svg>
-                            <span class="mx-4 font-medium tracking-tighter">Clients</span>
-                        </a>
-                        <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
-                            href="./grids.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <rect x="4" y="4" width="6" height="5" rx="2"></rect>
-                                <rect x="4" y="13" width="6" height="7" rx="2"></rect>
-                                <rect x="14" y="4" width="6" height="7" rx="2"></rect>
-                                <rect x="14" y="15" width="6" height="5" rx="2" stroke="#0da5e9"></rect>
-                            </svg>
-                            <span class="mx-4 font-medium tracking-tighter">Grids</span>
-                        </a>
-                        <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
-                            href="./forms.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4"></path>
-                                <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" stroke="#0da5e9"></line>
-                            </svg>
-                            <span class="mx-4 font-medium tracking-tighter">Forms</span>
-                        </a>
-                        <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
-                            href="./gallery.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <line x1="15" y1="8" x2="15.01" y2="8"></line>
-                                <rect x="4" y="4" width="16" height="16" rx="3"></rect>
-                                <path d="M4 15l4 -4a3 5 0 0 1 3 0l5 5" stroke="#0da5e9"></path>
-                                <path d="M14 14l1 -1a3 5 0 0 1 3 0l2 2" stroke="#0da5e9"></path>
-                            </svg>
-                            <span class="mx-4 font-medium tracking-tighter">Gallery</span>
-                        </a>
-                        <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
-                            href="./navigation.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-                                <line x1="4" y1="9" x2="20" y2="9" stroke="#0da5e9"></line>
-                            </svg>
-                            <span class="mx-4 font-medium tracking-tighter">Navigation</span>
-                        </a>
-                        <a class="flex items-center px-6 py-2 m-2 mt-2 tracking-tighter transition duration-500 ease-in-out transform border-4 border-transparent text-md ring-offset-current ring-offset-2 text-blueGray-300 rounded-xl hover:text-blueGray-100 hover:border-blueGray-600 hover:bg-blueGray-600 focus:shadow-outline focus:outline-none focus:ring-2"
-                            href="./footers.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
-                                <line x1="4" y1="15" x2="20" y2="15" stroke="#0da5e9"></line>
-                            </svg>
-                            <span class="mx-4 font-medium tracking-tighter">Footers</span>
-                        </a>
-
-
-
-                        <div class="flex flex-row items-center justify-between px-8 py-2 bg-white bg-opacity-5 theme-switcher"
-                            role="group">
-                            <button
-                                class="px-5 py-2 my-1 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-light"
-                                title="Light">
-                                Light
-                            </button>
-                            <button
-                                class="px-5 py-2 my-1 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-dark"
-                                title="Dark"> Dark
-                            </button>
-                            <button
-                                class="px-5 py-2 my-1 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-auto"
-                                title="Auto"> Auto
-                            </button>
-                        </div>
-
-                    </nav>
                 </div>
-            </nav>
+                <span class="justify-center hidden mt-4 sm:ml-auto md:inline-flex sm:mt-0 sm:justify-center">
+
+                    <a href="https://github.com/michael-andreuzza/wickedblocks"
+                        class="mx-3 tracking-tighter uppercase transition duration-500 ease-in-out transform text-dark-1 dark:text-gray-300 hover:text-blueGray-300 ">
+                        GitHub
+                    </a>
+
+                    <a href="https://twitter.com/Mike_Andreuzza"
+                        class="mx-3 tracking-tighter uppercase transition duration-500 ease-in-out transform text-dark-1 dark:text-gray-300 hover:text-blueGray-300 ">
+                        Twitter
+                    </a>
+                </span>
+                <nav class="flex flex-row items-center justify-between bg-opacity-5 sm:ml-auto theme-switcher"
+                    role="group">
+                    <button
+                        class="px-5 py-2 my-1 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-light"
+                        title="Light">
+                        Light
+                    </button>
+                    <button
+                        class="px-5 py-2 my-1 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-dark"
+                        title="Dark"> Dark
+                    </button>
+                    <button
+                        class="px-5 py-2 my-1 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 theme-switcher-button theme-switcher-auto"
+                        title="Auto"> Auto
+                    </button>
+                </nav>
+            </div>
+
         </div>
-    </div>
+        <div
+            class="flex items-center justify-between w-full px-5 py-4 overflow-y-auto bg-white border-b menu dark:bg-dark-1 dark:border-blueGray-900 lg:px-20 whitespace-nowrap scroll-hidden">
+            <a class="px-5 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 dark:text-blueGray-200 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 md:my-0"
+                href="./left-headers.html">Left Headers</a>
+            <a class="px-5 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 dark:text-blueGray-200 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 md:my-0"
+                href="./centered-headers.html">Centered Headers</a>
+            <a class="px-5 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 dark:text-blueGray-200 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 md:my-0"
+                href="./right-headers.html">Right Headers</a>
+            <a class="px-5 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 dark:text-blueGray-200 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 md:my-0"
+                href="./auth.html">Auth</a>
+            <a class="px-5 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 dark:text-blueGray-200 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 md:my-0"
+                href="./pricing.html">Pricing</a>
+            <a class="px-5 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 dark:text-blueGray-200 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 md:my-0"
+                href="./clients.html">Clients</a>
+            <a class="px-5 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 dark:text-blueGray-200 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 md:my-0"
+                href="./grids.html">Grids</a>
+            <a class="px-5 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 dark:text-blueGray-200 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 md:my-0"
+                href="./forms">Forms</a>
+            <a class="px-5 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 dark:text-blueGray-200 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 md:my-0"
+                href="./gallery.html">Gallery</a>
+            <a class="px-5 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 dark:text-blueGray-200 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 md:my-0"
+                href="./navigation.html">Navigation</a>
+            <a class="px-5 py-2 text-sm transition duration-1000 ease-in-out transform bg-transparent rounded-lg hover:text-lightBlue-400 text-blueGray-500 dark:text-blueGray-200 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2 md:my-0"
+                href="./footers.html">Footers</a>
+
+
+        </div>
         <!----Hero  -->
         <section class="body-font">
-            <div class="container justify-center px-5 py-8 pt-32 mx-auto lg:px-20">
+            <div class="container justify-center px-5 py-8 mx-auto lg:px-16">
                 <div class="flex flex-col w-full mb-4 ">
                     <h1
                         class="mb-6 text-2xl font-semibold tracking-tighter text-dark-1 dark:text-blueGray-300 sm:text-6xl title-font ">
@@ -288,115 +176,136 @@
                                 src="./tailwindBrightSections/navigation/navigation-1.html" title="wicked"></iframe>
                         </div>
                         <div class=" rounded-b-xl" x-show="tab === 'code1'">
-                            <div <div class="hidden" id="navOne">
-                                <!------------
-                                    <div class="text-gray-700 bg-white body-font">
-            <div class="flex flex-col flex-wrap p-5 mx-auto border-b md:items-center md:flex-row">
-                <a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none">
-                    <div class="inline-flex items-center">
-                        <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
-                        </div>
-                        <h2
-                            class="font-semibold tracking-tighter transition duration-1000 ease-in-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold lg:mr-8">
-                            Wicked Blocks
-                        </h2>
-                    </div>
-                </a>
-                <nav class="flex flex-wrap items-center justify-center text-base md:ml-auto md:mr-auto">
-                    <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Pricing</a>
-                    <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Contact</a>
-                    <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Services</a>
-                    <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Now</a>
-                </nav>
-                <button
-                    class="items-center px-8 py-2 ml-auto font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-blueGray-900 focus:ring focus:outline-none">Button
-                </button>
-            </div>
-        </div>
-        <div class="container w-full p-20 m-4 mx-auto my-16 text-center bg-white border-2 border-dashed border-blueGray-300 h-96 rounded-xl">
-                <p class="mt-20 italic tracking-tighter text-md text-blueGray-500 title-font">
-                  --  Content goes here --
-                </p>
-        </div>
-                                    ----------->
+                            <div class="h-screen overflow-auto overflow-y-scroll bg-blueGray-900 text-blueGray-200 rounded-b-xl code-tab">
+                                <div class="hidden" id="navOne">
+                                    <!------------
+                                        <div class="text-gray-700 bg-white body-font">
+                <div class="flex flex-col flex-wrap p-5 mx-auto border-b md:items-center md:flex-row">
+                    <a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none">
+                        <div class="inline-flex items-center">
+                            <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
                             </div>
-                            <!---- display code goes here.-->
-                            <pre class="leading-6"><code data-language="html">
-        &lt;div class="text-gray-700 bg-white body-font"&gt;
-            &lt;div class="flex flex-col flex-wrap p-5 mx-auto border-b md:items-center md:flex-row"&gt;
-                &lt;a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none"&gt;
-                    &lt;div class="inline-flex items-center"&gt;
-                        &lt;div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500"&gt;
+                            <h2
+                                class="font-semibold tracking-tighter transition duration-1000 ease-in-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold lg:mr-8">
+                                Wicked Blocks
+                            </h2>
+                        </div>
+                    </a>
+                    <nav class="flex flex-wrap items-center justify-center text-base md:ml-auto md:mr-auto">
+                        <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Pricing</a>
+                        <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Contact</a>
+                        <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Services</a>
+                        <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Now</a>
+                    </nav>
+                    <button
+                        class="items-center px-8 py-2 ml-auto font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-blueGray-900 focus:ring focus:outline-none">Button
+                    </button>
+                </div>
+            </div>
+            <div class="container w-full p-20 m-4 mx-auto my-16 text-center bg-white border-2 border-dashed border-blueGray-300 h-96 rounded-xl">
+                    <p class="mt-20 italic tracking-tighter text-md text-blueGray-500 title-font">
+                      --  Content goes here --
+                    </p>
+            </div>
+                                        ----------->
+                                </div>
+                                <!---- display code goes here.-->
+                                <pre class="leading-6"><code data-language="html">
+            &lt;div class="text-gray-700 bg-white body-font"&gt;
+                &lt;div class="flex flex-col flex-wrap p-5 mx-auto border-b md:items-center md:flex-row"&gt;
+                    &lt;a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none"&gt;
+                        &lt;div class="inline-flex items-center"&gt;
+                            &lt;div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500"&gt;
+                            &lt;/div&gt;
+                            &lt;h2
+                                class="font-semibold tracking-tighter transition duration-1000 ease-in-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold lg:mr-8"&gt;
+                                Wicked Blocks
+                            &lt;/h2&gt;
                         &lt;/div&gt;
-                        &lt;h2
-                            class="font-semibold tracking-tighter transition duration-1000 ease-in-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold lg:mr-8"&gt;
-                            Wicked Blocks
-                        &lt;/h2&gt;
-                    &lt;/div&gt;
-                &lt;/a&gt;
-                &lt;nav class="flex flex-wrap items-center justify-center text-base md:ml-auto md:mr-auto"&gt;
-                    &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Pricing&lt;/a&gt;
-                    &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Contact&lt;/a&gt;
-                    &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Services&lt;/a&gt;
-                    &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Now&lt;/a&gt;
-                &lt;/nav&gt;
-                &lt;button
-                    class="items-center px-8 py-2 ml-auto font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-blueGray-900 focus:ring focus:outline-none"&gt;Button
-                &lt;/button&gt;
+                    &lt;/a&gt;
+                    &lt;nav class="flex flex-wrap items-center justify-center text-base md:ml-auto md:mr-auto"&gt;
+                        &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Pricing&lt;/a&gt;
+                        &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Contact&lt;/a&gt;
+                        &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Services&lt;/a&gt;
+                        &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Now&lt;/a&gt;
+                    &lt;/nav&gt;
+                    &lt;button
+                        class="items-center px-8 py-2 ml-auto font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-blueGray-900 focus:ring focus:outline-none"&gt;Button
+                    &lt;/button&gt;
+                &lt;/div&gt;
             &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class="container w-full p-20 m-4 mx-auto my-16 text-center bg-white border-2 border-dashed border-blueGray-300 h-96 rounded-xl"&gt;
-                &lt;p class="mt-20 italic tracking-tighter text-md text-blueGray-500 title-font"&gt;
-                  --  Content goes here --
-                &lt;/p&gt;
-        &lt;/div&gt;
-                                    </code></pre>
+            &lt;div class="container w-full p-20 m-4 mx-auto my-16 text-center bg-white border-2 border-dashed border-blueGray-300 h-96 rounded-xl"&gt;
+                    &lt;p class="mt-20 italic tracking-tighter text-md text-blueGray-500 title-font"&gt;
+                      --  Content goes here --
+                    &lt;/p&gt;
+            &lt;/div&gt;
+                                        </code></pre>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
-            </div>
+
         </section>
-        <!---- WT CTA     -->
-        <section>
-            <div
-                class="container flex flex-col items-center justify-center px-10 py-10 mx-auto border lg:px-32 md:px-10 rounded-xl">
-                <div class="items-center p-6 text-center lg:p-8 md:pr-20 md:pl-20 md:py-8">
+        <!--------WTCTA ------->
+        <section class="px-5 ">
+            <div class="container mx-auto lg:py-20 rounded-xl">
 
-                    <h1
-                        class="text-2xl font-semibold tracking-tighter text-dark-1 dark:text-blueGray-300 sm:text-6xl title-font">
-                        Need a landing page?
-                    </h1>
+                <div
+                    class="relative items-center block border border-transparent rounded-xl bg-blueGray-100 dark:bg-dark-1 dark:border-blueGray-900 md:flex">
+                    <div
+                        class="relative w-full overflow-hidden rounded-t-lg md:w-2/5 md:rounded-t-none md:rounded-l-lg">
+                        <img class="inset-0 object-cover object-center w-full "
+                            src="https://static-2.gumroad.com/res/gumroad/4986662181893/asset_previews/5ffe779d80d747440a218b3be791c3fb/retina/WT2.png"
+                            alt="">
 
-                    <p
-                        class="mx-auto text-xl font-medium leading-snug text-left lg:text-center text-blueGray-400 dark:text-blueGray-200 lg:w-1/2 ">
+                    </div>
+                    <div class="flex items-center w-full rounded-lg bg-blueGray-100 dark:bg-dark-1 md:w-3/5 ">
+                        <div class="p-4 lg:px-10 md:pr-24 md:pl-16 ">
+
+                            <h1
+                                class="mb-4 font-black tracking-tighter transition duration-500 ease-in-out transform text-dark-1 dark:text-white lg:text-3xl">
+                                Keep
+                                coding, I'll do the design.</h1>
+                            <p class="mb-4 text-base font-semibold leading-relaxed text-dark-1 dark:text-white">
 
 
-                        I am also working Wickedtemplates. Free and premium landing pages ready designed and to integrate
-                        with your next project. Made
-                        with Tailwind CSS V2
-                    </p>
+                                Wicked Templates offers you a wide range of landing pages for different purposes to save
+                                you
+                                time
+                                before going live.
+
+                                From landing pages for your app to extensions, mailing list, SAAS, coming soon &
+                                pre-launch.
+                            </p>
+                            <a href="http://wickedtemplates.com/" target="_blank">
+                                <button
+                                    class="flex items-center px-8 py-2 mt-2 text-sm font-bold text-gray-900 transition duration-500 ease-in-out transform rounded-lg bg-gradient-to-tr from-cyan-400 to-lightBlue-500 hover:from-white hover:to-white md:mt-0 hover:text-black focus:text-gray-900 hover:bg-gray-1 focus:bg-gray-1 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
+                                    Have a look to Wicked Templates
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-8" height="20"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <line x1="13" y1="18" x2="19" y2="12"></line>
+                                        <line x1="13" y1="6" x2="19" y2="12"></line>
+                                    </svg>
+                                </button>
+                            </a>
+
+                        </div>
+                        <svg class="absolute inset-y-0 hidden w-24 h-full -ml-12 fill-current text-blueGray-100 dark:text-dark-1 dark:fill-current md:block"
+                            viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <polygon points="50,0 100,0 50,100 0,100" />
+                        </svg>
+                    </div>
 
                 </div>
-                <img class="object-cover p-0 mx-auto rounded-lg lg:w-full bg-3d lg:px-20" alt="hero"
-                    src="https://d33wubrfki0l68.cloudfront.net/177525e6a3b9167133e766ff33f03d1b01c5d264/c73cf/assets/supershot.png">
-                <a href="http://wickedtemplates.com/" target="_blank">
-                    <button
-                        class="flex items-center w-full px-4 py-2 mt-auto transition duration-1000 ease-in-out transform border-0 rounded-lg text-dark-1 bg-opacity-70 hover:bg-lightBlue-600 bg-lightBlue-500 focus:outline-none focus:shadow-outline focus:ring-2 ring-offset-current ring-offset-2">
-                        Have a look to Wicked Templates.
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            class="w-4 h-4 ml-auto" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <line x1="13" y1="18" x2="19" y2="12"></line>
-                            <line x1="13" y1="6" x2="19" y2="12"></line>
-                        </svg>
-                    </button>
-                </a>
+            </div>
+
         </section>
-        <!----end  WT CTA -->
+        <!--------end WTCTA ------->
         <!--- navigtation 2-->
         <section class="px-5 ">
             <div class="container mx-auto lg:py-16 rounded-xl">
@@ -433,13 +342,14 @@
                     <div class="lg:h-screen">
                         <div class="border border-t-0 border-blueGray-200 rounded-b-xl dark:border-blueGray-800"
                             x-show="tab === 'preview2'">
-                            <iframe class="w-full h-screen rounded-b-xl" src="./tailwindBrightSections/navigation/navigation-2.html"
-                                title="wicked"></iframe>
+                            <iframe class="w-full h-screen rounded-b-xl"
+                                src="./tailwindBrightSections/navigation/navigation-2.html" title="wicked"></iframe>
                         </div>
                         <div class=" rounded-b-xl" x-show="tab === 'code2'">
-                            class="h-screen overflow-auto overflow-y-scroll bg-blueGray-900 text-blueGray-200 rounded-b-xl code-tab">
-                            <div class="hidden" id="navTwo">
-                               <!--------
+                            <div
+                                class="h-screen overflow-auto overflow-y-scroll bg-blueGray-900 text-blueGray-200 rounded-b-xl code-tab">
+                                <div class="hidden" id="navTwo">
+                                    <!--------
  <div class="text-gray-700 bg-white border-t border-b body-font">
             <div class="flex flex-col flex-wrap p-5 mx-auto md:items-center md:flex-row">
                 <a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none">
@@ -479,9 +389,10 @@
             </p>
         </div>
 
-                                ------------> </div>
-                            <!---- display code goes here.-->
-                            <pre class="leading-6"><code data-language="html">
+                                ------------>
+                                </div>
+                                <!---- display code goes here.-->
+                                <pre class="leading-6"><code data-language="html">
 
         &lt;div class="text-gray-700 bg-white border-t border-b body-font"&gt;
             &lt;div class="flex flex-col flex-wrap p-5 mx-auto md:items-center md:flex-row"&gt;
@@ -524,12 +435,11 @@
 
 
                             </code></pre>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
-            </div>
+
 
         </section>
         <!--- navigtation 4 -->
@@ -568,142 +478,147 @@
                     <div class="lg:h-screen">
                         <div class="border border-t-0 border-blueGray-200 rounded-b-xl dark:border-blueGray-800"
                             x-show="tab === 'preview4'">
-                            <iframe class="w-full h-screen rounded-b-xl" src="./tailwindBrightSections/navigation/navigation-4.html"
-                                title="wicked"></iframe>
+                            <iframe class="w-full h-screen rounded-b-xl"
+                                src="./tailwindBrightSections/navigation/navigation-4.html" title="wicked"></iframe>
                         </div>
                         <div class=" rounded-b-xl" x-show="tab === 'code4'">
-                            <div class="rounded-b-xl">
-                                <div class="hidden" id="navFour">
-<!-----------
- <div class="text-gray-700 bg-white body-font">
-            <div class="flex flex-col flex-wrap p-5 mx-auto border-b md:items-center md:flex-row">
-                <a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none">
-                    <div class="inline-flex items-center">
-                        <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
+                            <div
+                                class="h-screen overflow-auto overflow-y-scroll bg-blueGray-900 text-blueGray-200 rounded-b-xl code-tab">
+                                <div class="rounded-b-xl">
+                                    <div class="hidden" id="navFour">
+                                        <!-----------
+     <div class="text-gray-700 bg-white body-font">
+                <div class="flex flex-col flex-wrap p-5 mx-auto border-b md:items-center md:flex-row">
+                    <a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none">
+                        <div class="inline-flex items-center">
+                            <div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500">
+                            </div>
+                            <h2
+                                class="font-semibold tracking-tighter transition duration-1000 ease-in-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold lg:mr-8">
+                                Wicked Blocks
+                            </h2>
                         </div>
-                        <h2
-                            class="font-semibold tracking-tighter transition duration-1000 ease-in-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold lg:mr-8">
-                            Wicked Blocks
-                        </h2>
-                    </div>
-                </a>
-                <nav class="flex flex-wrap items-center justify-center text-base md:ml-auto ">
-                    <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Pricing</a>
-                    <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Contact</a>
-                    <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Services</a>
-                    <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Now</a>
-                </nav>
-                <button
-                    class="items-center px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-blueGray-900 focus:ring focus:outline-none">Button
+                    </a>
+                    <nav class="flex flex-wrap items-center justify-center text-base md:ml-auto ">
+                        <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Pricing</a>
+                        <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Contact</a>
+                        <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Services</a>
+                        <a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800">Now</a>
+                    </nav>
+                    <button
+                        class="items-center px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-blueGray-900 focus:ring focus:outline-none">Button
 
-                </button>
+                    </button>
+                </div>
             </div>
-        </div>
-        <div
-            class="container w-full p-20 m-4 mx-auto my-16 text-center bg-white border-2 border-dashed border-blueGray-300 h-96 rounded-xl">
-            <p class="mt-20 italic tracking-tighter text-md text-blueGray-500 title-font">
-                -- Content goes here --
-            </p>
-        </div>
----------------->
-                                </div>
-                                <!---- display code goes here.-->
-                                <pre class="leading-6"><code data-language="html">
-        &lt;div class="text-gray-700 bg-white body-font"&gt;
-            &lt;div class="flex flex-col flex-wrap p-5 mx-auto border-b md:items-center md:flex-row"&gt;
-                &lt;a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none"&gt;
-                    &lt;div class="inline-flex items-center"&gt;
-                        &lt;div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500"&gt;
+            <div
+                class="container w-full p-20 m-4 mx-auto my-16 text-center bg-white border-2 border-dashed border-blueGray-300 h-96 rounded-xl">
+                <p class="mt-20 italic tracking-tighter text-md text-blueGray-500 title-font">
+                    -- Content goes here --
+                </p>
+            </div>
+    ---------------->
+                                    </div>
+                                    <!---- display code goes here.-->
+                                    <pre class="leading-6"><code data-language="html">
+            &lt;div class="text-gray-700 bg-white body-font"&gt;
+                &lt;div class="flex flex-col flex-wrap p-5 mx-auto border-b md:items-center md:flex-row"&gt;
+                    &lt;a href="./index.html" class="pr-2 lg:pr-8 lg:px-6 focus:outline-none"&gt;
+                        &lt;div class="inline-flex items-center"&gt;
+                            &lt;div class="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-cyan-400 to-lightBlue-500"&gt;
+                            &lt;/div&gt;
+                            &lt;h2
+                                class="font-semibold tracking-tighter transition duration-1000 ease-in-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold lg:mr-8"&gt;
+                                Wicked Blocks
+                            &lt;/h2&gt;
                         &lt;/div&gt;
-                        &lt;h2
-                            class="font-semibold tracking-tighter transition duration-1000 ease-in-out transform text-blueGray-500 dark:text-blueGray-200 lg:text-md text-bold lg:mr-8"&gt;
-                            Wicked Blocks
-                        &lt;/h2&gt;
-                    &lt;/div&gt;
-                &lt;/a&gt;
-                &lt;nav class="flex flex-wrap items-center justify-center text-base md:ml-auto "&gt;
-                    &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Pricing&lt;/a&gt;
-                    &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Contact&lt;/a&gt;
-                    &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Services&lt;/a&gt;
-                    &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Now&lt;/a&gt;
-                &lt;/nav&gt;
-                &lt;button
-                    class="items-center px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-blueGray-900 focus:ring focus:outline-none"&gt;Button
+                    &lt;/a&gt;
+                    &lt;nav class="flex flex-wrap items-center justify-center text-base md:ml-auto "&gt;
+                        &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Pricing&lt;/a&gt;
+                        &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Contact&lt;/a&gt;
+                        &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Services&lt;/a&gt;
+                        &lt;a href="#" class="mr-5 text-sm font-semibold text-gray-600 hover:text-gray-800"&gt;Now&lt;/a&gt;
+                    &lt;/nav&gt;
+                    &lt;button
+                        class="items-center px-8 py-2 font-semibold text-white transition duration-500 ease-in-out transform bg-black rounded-lg hover:bg-blueGray-900 focus:ring focus:outline-none"&gt;Button
 
-                &lt;/button&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
             &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div
-            class="container w-full p-20 m-4 mx-auto my-16 text-center bg-white border-2 border-dashed border-blueGray-300 h-96 rounded-xl"&gt;
-            &lt;p class="mt-20 italic tracking-tighter text-md text-blueGray-500 title-font"&gt;
-                -- Content goes here --
-            &lt;/p&gt;
-        &lt;/div&gt;
-                                    </code></pre>
+            &lt;div
+                class="container w-full p-20 m-4 mx-auto my-16 text-center bg-white border-2 border-dashed border-blueGray-300 h-96 rounded-xl"&gt;
+                &lt;p class="mt-20 italic tracking-tighter text-md text-blueGray-500 title-font"&gt;
+                    -- Content goes here --
+                &lt;/p&gt;
+            &lt;/div&gt;
+                                        </code></pre>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
+
 
         </section>
-    <footer class="border-t border-blueGray-800 bg-dark-1 body-font">
-        <div class="container flex flex-col flex-wrap items-center px-5 py-6 mx-auto md:flex-row md:flex-no-wrap ">
-            <nav class="flex flex-col items-center justify-center text-base lg:flex-row ">
-                <span class="mr-6 font-semibold tracking-tighter text-lightBlue-500 text-md"> OTHER PROJECTS</span>
-                <a href="https://colorsandfonts.com" class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
-                    <p>ColorsAndFonts</p>
-                </a>
-                <a href="https://unicornsfeed.com/" class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
-                    <p>TheUnicornsFeed</p>
-                </a>
-                <a href="https://wickedtemplates.com" class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
-                    <p>WickedTemplates</p>
-                </a>
-                <a href="https://30daysoftailwindcss.com" class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
-                    <p>30DaysOFTailwindCSS</p>
-                </a>
-                <a href="https://tailwind-garden.michaelandreuzza.com/"
-                    class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
-                    <p>Tailwind Garden</p>
-                </a>
-                <a href="https://brutalist.one/" class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
-                    <p>Brutalist One</p>
-                </a>
-            </nav>
-            <div class="items-center block text-sm text-center lg:ml-auto lg:text-left md:inline-flex text-blueGray-500 ">
+        <footer class="border-t border-blueGray-800 bg-dark-1 body-font">
+            <div class="container flex flex-col flex-wrap items-center px-5 py-6 mx-auto md:flex-row md:flex-no-wrap ">
+                <nav class="flex flex-col items-center justify-center text-base lg:flex-row ">
+                    <span class="mr-6 font-semibold tracking-tighter text-lightBlue-500 text-md"> OTHER PROJECTS</span>
+                    <a href="https://colorsandfonts.com" class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
+                        <p>ColorsAndFonts</p>
+                    </a>
+                    <a href="https://unicornsfeed.com/" class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
+                        <p>TheUnicornsFeed</p>
+                    </a>
+                    <a href="https://wickedtemplates.com" class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
+                        <p>WickedTemplates</p>
+                    </a>
+                    <a href="https://30daysoftailwindcss.com"
+                        class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
+                        <p>30DaysOFTailwindCSS</p>
+                    </a>
+                    <a href="https://tailwind-garden.michaelandreuzza.com/"
+                        class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
+                        <p>Tailwind Garden</p>
+                    </a>
+                    <a href="https://brutalist.one/" class="my-2 mr-4 text-blueGray-300 hover:text-lightBlue-500">
+                        <p>Brutalist One</p>
+                    </a>
+                </nav>
+                <div
+                    class="items-center block text-sm text-center lg:ml-auto lg:text-left md:inline-flex text-blueGray-500 ">
 
 
-                <a href="https://twitter.com/Mike_Andreuzza"
-                    class="inline-flex items-center ml-2 text-white hover:text-lightBlue-500">
-                    by Michael andreuzza
-                    <img loading="lazy focus:outline-none" alt="team"
-                        class="flex-shrink-0 object-contain w-8 h-8 mx-4 ml-4 bg-gray-100 rounded-full objecfit lg:mb-0"
-                        src="https://d33wubrfki0l68.cloudfront.net/6d60ae66b2a50b1842d08156aeb53663fa328837/d7f97/assets/badges/mike.jpg">
-                </a>
-            </div>
-        </div>
-    </footer>
-    <footer class="border-t bg-dark-1 border-blueGray-800">
-        <div class="container px-5 mx-auto ">
-            <div class="flex flex-wrap items-center justify-center py-2 lg:justify-between">
-                <div class="items-center text-sm text-blueGray-500 md:block">
-                    <div class="items-center my-2 text-sm text-left md:inline-flex text-blueGray-500">
-                        Released under the MIT License Copyright 2021©
-
-
-                    </div>
+                    <a href="https://twitter.com/Mike_Andreuzza"
+                        class="inline-flex items-center ml-2 text-white hover:text-lightBlue-500">
+                        by Michael andreuzza
+                        <img loading="lazy focus:outline-none" alt="team"
+                            class="flex-shrink-0 object-contain w-8 h-8 mx-4 ml-4 bg-gray-100 rounded-full objecfit lg:mb-0"
+                            src="https://d33wubrfki0l68.cloudfront.net/6d60ae66b2a50b1842d08156aeb53663fa328837/d7f97/assets/badges/mike.jpg">
+                    </a>
                 </div>
-                <a class="my-2 lg:ml-auto"
-                    href="https://www.producthunt.com/posts/wickedblocks?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wickedblocks"
-                    target="_blank"><img
-                        src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=281332&theme=dark&period=daily"
-                        alt="WickedBlocks - Tailwind V2 blocks ready to copy paste | Product Hunt"
-                        style="width: 250px; height: 54px;" width="250" height="54" /></a>
             </div>
-        </div>
-    </footer>
+        </footer>
+        <footer class="border-t bg-dark-1 border-blueGray-800">
+            <div class="container px-5 mx-auto ">
+                <div class="flex flex-wrap items-center justify-center py-2 lg:justify-between">
+                    <div class="items-center text-sm text-blueGray-500 md:block">
+                        <div class="items-center my-2 text-sm text-left md:inline-flex text-blueGray-500">
+                            Released under the MIT License Copyright 2021©
+
+
+                        </div>
+                    </div>
+                    <a class="my-2 lg:ml-auto"
+                        href="https://www.producthunt.com/posts/wickedblocks?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-wickedblocks"
+                        target="_blank"><img
+                            src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=281332&theme=dark&period=daily"
+                            alt="WickedBlocks - Tailwind V2 blocks ready to copy paste | Product Hunt"
+                            style="width: 250px; height: 54px;" width="250" height="54" /></a>
+                </div>
+            </div>
+        </footer>
         <script defer src="./js/theme.js"></script>
         <script>
             function copyToClip(str) {

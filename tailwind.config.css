@@ -11,6 +11,30 @@
  */
  @tailwind base;
 
+::-webkit-scrollbar {
+    width: 5px;
+    border-radius:0px;
+
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #475569;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+.bg-3d {
+transform: perspective(1000px) rotateX(30deg) rotateY(0deg) rotateZ(0deg); transform-origin: center center;
+}
+
  @font-face {
     font-display: swap !important;
     font-family: 'IBMPS';
